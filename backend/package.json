@@ -6,7 +6,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=Development nodemon --exec babel-node src/server.js",
-    "test:watch": "jest --watchAll --runInBand --detectOpenHandles --forceExit"
+    "test:watch": "jest --watchAll --runInBand --detectOpenHandles --forceExit",
+    "prepare": "husky install",
+    "check:format": "prettier --check .",
+    "format:fix": "prettier --write ."
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -26,6 +29,7 @@
     "@babel/node": "^7.22.19",
     "@babel/preset-env": "^7.22.20",
     "cross-env": "^7.0.3",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "prettier": "3.0.3"
   }
 }

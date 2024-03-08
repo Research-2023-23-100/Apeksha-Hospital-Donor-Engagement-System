@@ -1,8 +1,8 @@
 import {
-    insert
+	insert
 } from "./Sample.controller";
 
 
 export default {
-    insert
+	insert
 };

@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  frontend:
+    image: sahanpunchihewa19/research-frontend:dev
+    container_name: research-frontend
+    ports:
+      - "5173:5173"
+    env_file:
+      - ./frontend/.env.development
+    restart: always
+  
+  backend:
+    image: sahanpunchihewa19/research-backend:dev
+    container_name: research-backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
+    restart: always

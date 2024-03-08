@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 
 const SampleSchema = new mongoose.Schema({
-
-	name : {
+	name: {
 		type: String,
 		required: true,
 	},
@@ -10,7 +9,7 @@ const SampleSchema = new mongoose.Schema({
 	title: {
 		type: String,
 		required: true,
-	}
+	},
 });
 
 module.exports = mongoose.model("Sample", SampleSchema);

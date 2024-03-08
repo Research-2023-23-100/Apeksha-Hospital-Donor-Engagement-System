@@ -12,16 +12,14 @@ const AppRoutes = () => {
 	return (
 		<>
 			<Router>
-				<Header/>
+				<Header />
 				<div className="">
 					<Routes>
 						{/* Public Routes */}
 						<Route path="/" element={<Home />} />
 					</Routes>
-					<Footer/>
+					<Footer />
 				</div>
-
-			
 			</Router>
 		</>
 	);

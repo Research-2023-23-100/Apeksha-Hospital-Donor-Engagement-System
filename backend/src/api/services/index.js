@@ -18,6 +18,15 @@ import {
 	deleteDonor,
 } from "./Donor.service";
 
+import {
+	authenticateOrganization,
+	insertOrganization,
+	getAllOrganization,
+	getOrganizationDetails,
+	editOrganizationDetails,
+	deleteOrganization,
+} from "./Organization.service";
+
 export default {
 	insert,
 
@@ -36,4 +45,12 @@ export default {
 	getDonorDetails,
 	editDonorDetails,
 	deleteDonor,
+
+	// Organization Section
+	authenticateOrganization,
+	insertOrganization,
+	getAllOrganization,
+	getOrganizationDetails,
+	editOrganizationDetails,
+	deleteOrganization,
 };

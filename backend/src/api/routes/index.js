@@ -24,5 +24,12 @@ router.get("/donor/:id", controller.getOneDonor);
 router.put("/donor/:id", controller.updateDonor);
 router.delete("/donor/:id", controller.deleteDonor);
 
+// Organization endpoints
+router.post("/org/register", controller.registerOrganization);
+router.post("/org/login", controller.loginOrganization);
+router.get("/org/", controller.getAllOrganization);
+router.get("/org/:id", controller.getOneOrganization);
+router.put("/org/:id", controller.updateOrganization);
+router.delete("/org/:id", controller.deleteOrganization);
 
 export default router;

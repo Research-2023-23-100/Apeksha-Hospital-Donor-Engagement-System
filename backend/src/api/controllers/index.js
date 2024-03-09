@@ -2,7 +2,7 @@ import { insert } from "./Sample.controller";
 
 import { loginStaff, registerStaff, getAllStaff, getOneStaff, updateStaff, deleteStaff } from "./Staff.controller";
 
-import { loginDonor, registerDonor } from "./Donor.controller";
+import { loginDonor, registerDonor, getAllDonor, getOneDonor, updateDonor, deleteDonor } from "./Donor.controller";
 
 export default {
 	insert,
@@ -18,4 +18,8 @@ export default {
 	//Donor Section
 	loginDonor,
 	registerDonor,
+	getAllDonor,
+	getOneDonor,
+	updateDonor,
+	deleteDonor,
 };

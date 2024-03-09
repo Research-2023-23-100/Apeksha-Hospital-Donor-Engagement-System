@@ -41,7 +41,7 @@ export function StaffProvider({ children }) {
                 localStorage.setItem("authToken", response.data.token);
                 localStorage.setItem("permissionLevel", response.data.permissionLevel);
                 makeToast({ type: "success", message: "Login Successful" });
-                window.location.href = "/";
+                window.location.href = "/staff";
             })
             .catch((err) => {
                 makeToast({ type: "error", message: "Invalid Email or Password" });
@@ -57,6 +57,13 @@ export function StaffProvider({ children }) {
         }, []);
     };
 
+    //Get all Sfaff
+    useEffect(() => {
+        StaffAPI.getAll().then((response) => {
+            setStaffs(response.data);
+        });
+    }, []);
+
 
 
 
@@ -69,6 +76,7 @@ export function StaffProvider({ children }) {
                 setStaff,
                 register,
                 login,
+                getOne,
             }}
 
         >

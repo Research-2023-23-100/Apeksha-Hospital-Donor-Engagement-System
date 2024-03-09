@@ -4,6 +4,15 @@ import { loginStaff, registerStaff, getAllStaff, getOneStaff, updateStaff, delet
 
 import { loginDonor, registerDonor, getAllDonor, getOneDonor, updateDonor, deleteDonor } from "./Donor.controller";
 
+import {
+	loginOrganization,
+	registerOrganization,
+	getOneOrganization,
+	getAllOrganization,
+	updateOrganization,
+	deleteOrganization,
+} from "./Organization.controller";
+
 export default {
 	insert,
 
@@ -22,4 +31,12 @@ export default {
 	getOneDonor,
 	updateDonor,
 	deleteDonor,
+
+	//Organization Section
+	loginOrganization,
+	registerOrganization,
+	getOneOrganization,
+	getAllOrganization,
+	updateOrganization,
+	deleteOrganization,
 };

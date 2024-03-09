@@ -1,13 +1,13 @@
-import DonorModel from "../models/Donor.model";
-import DonorService from "../services";
+import OrganizationModel from "../models/Organization.model";
 import logger from "../../util/logger";
+import OrganizationService from "../services";
 
-// Donor Login
-export const loginDonor = async (request, response, next) => {
+// Organization Login
+export const loginOrganization = async (request, response, next) => {
 	const { email, password } = request.body;
 
 	if (email && password) {
-		await DonorService.authenticateDonor(email, password)
+		await OrganizationService.authenticateOrganization(email, password)
 			.then(async (user) => {
 				const authToken = await user.generateAuthToken();
 				const data = {
@@ -37,23 +37,22 @@ export const loginDonor = async (request, response, next) => {
 	}
 };
 
-// Donor register
-export const registerDonor = async (request, response, next) => {
-	if (await DonorModel.findOne({ email: request.body.email })) {
+// Organization register
+export const registerOrganization = async (request, response, next) => {
+	if (await OrganizationModel.findOne({ email: request.body.email })) {
 		request.handleResponse.errorRespond(response)("Email already exists");
 		next();
-	} else if (await DonorModel.findOne({ nic: request.body.nic })) {
-		request.handleResponse.errorRespond(response)("NIC already exists");
+	} else if (await OrganizationModel.findOne({ name: request.body.name })) {
+		request.handleResponse.errorRespond(response)("Name already exists");
 	} else {
 		const Staff = {
 			name: request.body.name,
 			email: request.body.email,
-			nic: request.body.nic,
 			password: request.body.password,
-			permissionLevel: "DONOR",
+			permissionLevel: "ORGANIZATION",
 		};
 
-		await DonorService.insertDonor(Staff)
+		await OrganizationService.insertOrganization(Staff)
 			.then((data) => {
 				logger.info(`New User with ID ${data._id} created`);
 				request.handleResponse.successRespond(response)(data);
@@ -67,9 +66,9 @@ export const registerDonor = async (request, response, next) => {
 	}
 };
 
-// Get all donor details
-export const getAllDonor = async (request, response, next) => {
-	await DonorService.getAllDonor("users")
+// Get all organization details
+export const getAllOrganization = async (request, response, next) => {
+	await OrganizationService.getAllOrganization("users")
 		.then(async (data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -80,9 +79,9 @@ export const getAllDonor = async (request, response, next) => {
 		});
 };
 
-// Get one donor details
-export const getOneDonor = async (request, response, next) => {
-	await DonorService.getDonorDetails(request.params.id)
+// Get one organization details
+export const getOneOrganization = async (request, response, next) => {
+	await OrganizationService.getOrganizationDetails(request.params.id)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -93,9 +92,9 @@ export const getOneDonor = async (request, response, next) => {
 		});
 };
 
-// Update donor details
-export const updateDonor = async (request, response, next) => {
-	await DonorService.editDonorDetails(request.params.id, request.body)
+// Update organization details
+export const updateOrganization = async (request, response, next) => {
+	await OrganizationService.editOrganizationDetails(request.params.id, request.body)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -106,9 +105,9 @@ export const updateDonor = async (request, response, next) => {
 		});
 };
 
-// Delete Donor user
-export const deleteDonor = async (request, response, next) => {
-	await DonorService.deleteDonor(request.params.id)
+// Delete Organization user
+export const deleteOrganization = async (request, response, next) => {
+	await OrganizationService.deleteOrganization(request.params.id)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();

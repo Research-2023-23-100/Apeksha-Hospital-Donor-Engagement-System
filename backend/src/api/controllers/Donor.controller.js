@@ -68,3 +68,55 @@ export const registerDonor = async (request, response, next) => {
 			});
 	}
 };
+
+// Get all donor details
+export const getAllDonor = async (request, response, next) => {
+	await DonorService.getAllDonor("users")
+		.then(async (data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Get one donor details
+export const getOneDonor = async (request, response, next) => {
+	await DonorService.getDonorDetails(request.params.id)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Update donor details
+export const updateDonor = async (request, response, next) => {
+	await DonorService.editDonorDetails(request.params.id, request.body)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Delete Donor user
+export const deleteDonor = async (request, response, next) => {
+	await DonorService.deleteDonor(request.params.id)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};

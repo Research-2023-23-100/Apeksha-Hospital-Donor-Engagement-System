@@ -14,4 +14,8 @@ router.post("/staff/login", controller.loginStaff);
 router.get("/staff", controller.getAllStaff);
 router.get("/staff/:id", controller.getOneStaff);
 
+// Donor endpoints
+router.post("/donor/register", controller.registerDonor);
+router.post("/donor/login", controller.loginDonor);
+
 export default router;

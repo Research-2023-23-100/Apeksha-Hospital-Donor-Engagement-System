@@ -3,41 +3,42 @@ const bcrypt = require("bcryptjs");
 import jwt from "jsonwebtoken";
 
 const DonorSchema = new mongoose.Schema(
-    {
-        name: {
+	{
+		name: {
 			type: String,
 			required: true,
 		},
-        email: {
+		email: {
 			type: String,
 			required: true,
 		},
-        password: {
+		nic: {
 			type: String,
 			required: true,
 		},
-        permissionLevel: {
+		password: {
+			type: String,
+			required: true,
+		},
+		permissionLevel: {
 			type: String,
 			default: "DONOR",
 			required: true,
 		},
-        authToken: {
+		authToken: {
 			type: String,
 			required: false,
 		},
-        deletedAt: {
+		deletedAt: {
 			type: Date,
 			required: false,
 			default: null,
 		},
-
-
-    },
-    {
-        timestamps: true,
-    }
+	},
+	{
+		timestamps: true,
+	}
 );
-
 
 DonorSchema.pre("save", async function (next) {
 	const user = this;

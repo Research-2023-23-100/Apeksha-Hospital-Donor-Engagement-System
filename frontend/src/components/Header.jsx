@@ -17,6 +17,15 @@ const Header = () => {
 		};
 	}, []);
 
+
+	const [isOpen, setIsOpen] = useState(false);
+
+	const toggleMenu = () => {
+		setIsOpen(!isOpen);
+	};
+
+
+
 	return (
 		<>
 			<div className={`fixed top-0 left-0 w-full z-50 transition-all ${isScrolled ? "bg-white shadow-md" : ""}`}>
@@ -51,12 +60,37 @@ const Header = () => {
 						>
 							Services
 						</a>
-						<a
-							href="#"
-							className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-						>
-							Donate
-						</a>
+						<div className="relative">
+							<button
+								onClick={toggleMenu}
+								className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+							>
+								Donate
+							</button>
+							{isOpen && (
+								<div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-1">
+									<a
+										href="#"
+										className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-500"
+									>
+										Option 1
+									</a>
+									<a
+										href="#"
+										className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-500"
+									>
+										Option 2
+									</a>
+									<a
+										href="#"
+										className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-500"
+									>
+										Option 3
+									</a>
+								</div>
+							)}
+						</div>
+
 						<a
 							href="#"
 							className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
@@ -73,7 +107,7 @@ const Header = () => {
 					{/* nav - end */}
 					{/* buttons - start */}
 					<div className="flex divide-x border-r sm:border-l">
-						
+
 						<a
 							href="#"
 							className="flex h-12 w-12 flex-col items-center justify-center gap-1.5 transition duration-100 hover:bg-gray-100 active:bg-gray-200 sm:h-20 sm:w-20 md:h-24 md:w-24"
@@ -98,7 +132,7 @@ const Header = () => {
 							href="#"
 							className="flex h-12 w-12 flex-col items-center justify-center gap-1.5 transition duration-100 hover:bg-gray-100 active:bg-gray-200 sm:h-20 sm:w-20 md:h-24 md:w-24"
 						>
-							
+
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								className="h-6 w-6 text-gray-800"

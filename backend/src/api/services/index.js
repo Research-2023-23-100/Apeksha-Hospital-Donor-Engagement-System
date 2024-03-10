@@ -9,6 +9,24 @@ import {
 	deleteStaff,
 } from "./Staff.service";
 
+import {
+	authenticateDonor,
+	insertDonor,
+	getAllDonor,
+	getDonorDetails,
+	editDonorDetails,
+	deleteDonor,
+} from "./Donor.service";
+
+import {
+	authenticateOrganization,
+	insertOrganization,
+	getAllOrganization,
+	getOrganizationDetails,
+	editOrganizationDetails,
+	deleteOrganization,
+} from "./Organization.service";
+
 export default {
 	insert,
 
@@ -19,4 +37,20 @@ export default {
 	getAllStaff,
 	editStaffDetails,
 	deleteStaff,
+
+	//Donor Section
+	authenticateDonor,
+	insertDonor,
+	getAllDonor,
+	getDonorDetails,
+	editDonorDetails,
+	deleteDonor,
+
+	// Organization Section
+	authenticateOrganization,
+	insertOrganization,
+	getAllOrganization,
+	getOrganizationDetails,
+	editOrganizationDetails,
+	deleteOrganization,
 };

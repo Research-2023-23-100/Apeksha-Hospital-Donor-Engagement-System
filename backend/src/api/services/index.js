@@ -27,6 +27,8 @@ import {
 	deleteOrganization,
 } from "./Organization.service";
 
+import { insertItem, getAllItems, getItemDetails, deleteItem, incrementQuantity } from "./Item.service";
+
 export default {
 	insert,
 
@@ -53,4 +55,11 @@ export default {
 	getOrganizationDetails,
 	editOrganizationDetails,
 	deleteOrganization,
+
+	// Item Section
+	insertItem,
+	getAllItems,
+	getItemDetails,
+	deleteItem,
+	incrementQuantity,
 };

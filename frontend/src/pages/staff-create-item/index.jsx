@@ -1,11 +1,11 @@
 import React from "react";
-import StaffEssentialItems from "./StaffEssentialItems";
+import StaffCreateItem from "./StaffCreateItem";
 import { ItemProvider } from "../../contexts/ItemContext";
 
 const index = () => {
 	return (
 		<ItemProvider>
-			<StaffEssentialItems />
+			<StaffCreateItem />
 		</ItemProvider>
 	);
 };

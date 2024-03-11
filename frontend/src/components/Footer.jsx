@@ -110,7 +110,9 @@ const Footer = () => {
 						</div>
 						{/* social - end */}
 					</div>
-					<div className="py-8 text-center text-sm text-gray-400">© 2024 - Apeksha Hospital Donor Engagement System</div>
+					<div className="py-8 text-center text-sm text-gray-400">
+						© 2024 - Apeksha Hospital Donor Engagement System
+					</div>
 				</footer>
 			</div>
 		</>

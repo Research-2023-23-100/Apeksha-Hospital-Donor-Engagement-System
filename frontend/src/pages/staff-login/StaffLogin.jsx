@@ -3,6 +3,20 @@ import StaffContext from "../../contexts/StaffContext";
 
 const StaffLogin = () => {
 
+  const { login } = useContext(StaffContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newStaff = {
+      email: e.target.email.value,
+      password: e.target.password.value,
+    };
+
+    login(newStaff);
+  };
+
+
   return (
     <>
       <div class="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8 px-6">
@@ -19,7 +33,7 @@ const StaffLogin = () => {
 
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
           <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-            <form >
+            <form onSubmit={handleSubmit}>
               <div>
                 <label
                   for="email"

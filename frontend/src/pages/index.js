@@ -2,5 +2,6 @@ import Home from "./home";
 import StaffLogin from "./staff-login";
 import StaffDashboard from "./staff-dashboard";
 import StaffEssentialItems from "./staff-essentials-items";
+import StaffCreateItem from "./staff-create-item";
 
-export { Home, StaffLogin, StaffDashboard, StaffEssentialItems };
+export { Home, StaffLogin, StaffDashboard, StaffEssentialItems, StaffCreateItem };

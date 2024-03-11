@@ -8,12 +8,12 @@ const Home = () => {
 					<div className="mb-8 flex flex-wrap justify-between md:mb-16">
 						<div className="mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-1/3 lg:pb-24 lg:pt-48">
 							<h1 className="mb-4 text-4xl font-bold text-black sm:text-4xl md:mb-8 md:text-4xl">
-							Empowering Hope, 
+								Empowering Hope,
 								<br />
 								Connecting Hearts
 							</h1>
 							<p className="max-w-md leading-relaxed text-gray-500 xl:text-lg">
-							Apeksha Hospital Donor Engagement System
+								Apeksha Hospital Donor Engagement System
 							</p>
 						</div>
 						<div className="mb-12 flex w-full md:mb-16 lg:w-2/3">
@@ -35,8 +35,7 @@ const Home = () => {
 							</div>
 						</div>
 					</div>
-					<div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-					</div>
+					<div className="flex flex-col items-center justify-between gap-8 md:flex-row"></div>
 				</section>
 			</div>
 		</>

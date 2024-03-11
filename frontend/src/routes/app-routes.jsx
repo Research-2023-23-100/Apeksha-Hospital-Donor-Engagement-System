@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Essentials from "../components/Essentials";
 
-import { Home, StaffLogin, StaffDashboard, StaffEssentialItems } from "../pages";
+import { Home, StaffLogin, StaffDashboard, StaffEssentialItems, StaffCreateItem } from "../pages";
 
 const AppRoutes = () => {
 	return (
@@ -27,13 +27,11 @@ const AppRoutes = () => {
 					<Route path="/staff" element={<PrivateRoute permissionLevel="STAFF" />}>
 						<Route path="/staff" element={<StaffDashboard />} />
 						<Route path="/staff/essentials" element={<StaffEssentialItems />} />
+						<Route path="/staff/item/create" element={<StaffCreateItem />} />
 					</Route>
-
-
 				</Routes>
 
 				<Footer />
-
 			</Router>
 		</>
 	);

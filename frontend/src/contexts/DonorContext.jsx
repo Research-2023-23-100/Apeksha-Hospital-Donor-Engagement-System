@@ -6,30 +6,21 @@ import DonorAPI from "./api/DonorAPI";
 const DonorContext = createContext();
 
 export function DonorProvider({ children }) {
-    const [donor, setDonor] = useState([]);
-    const [donors, setDonors] = useState({});
+	const [donor, setDonor] = useState([]);
+	const [donors, setDonors] = useState({});
 
-    return (
-        <DonorContext.Provider
-            value={{
-                donor,
-                setDonor,
-                donors,
-                setDonors,
-
-
-            }}
-
-        >
-
-
-
-            {children}
-        </DonorContext.Provider>
-
-    )
-
-
+	return (
+		<DonorContext.Provider
+			value={{
+				donor,
+				setDonor,
+				donors,
+				setDonors,
+			}}
+		>
+			{children}
+		</DonorContext.Provider>
+	);
 }
 
 export default DonorContext;

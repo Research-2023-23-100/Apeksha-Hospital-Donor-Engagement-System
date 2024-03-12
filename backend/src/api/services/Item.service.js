@@ -70,3 +70,25 @@ export const incrementQuantity = async (itemId, incrementQuantity) => {
 		throw new Error(error.message);
 	}
 };
+
+export const decrementQuantity = async (itemId, incrementQuantity) => {
+	try {
+		const item = await ItemModel.findById(itemId);
+		if (item) {
+			// Perform addition to increment the quantity
+			const updatedQuantity = item.QuantityInStock - incrementQuantity;
+
+			// Update the quantity in the database
+			await ItemModel.findByIdAndUpdate(itemId, { QuantityInStock: updatedQuantity });
+
+			return {
+				message: `Quantity decremented by ${incrementQuantity}`,
+				newQuantity: updatedQuantity,
+			};
+		} else {
+			throw new Error("Item Not Found");
+		}
+	} catch (error) {
+		throw new Error(error.message);
+	}
+};

@@ -17,7 +17,7 @@ const StaffEssentialItems = () => {
 				const filteredItems = items.filter((item) => item.Month === selectedMonth);
 				setDisplayedItems(filteredItems);
 			} else {
-				setDisplayedItems(items.slice(0, 20));
+				setDisplayedItems(items?.slice(0, 20));
 			}
 		}
 	}, [items, showAll, selectedMonth]);

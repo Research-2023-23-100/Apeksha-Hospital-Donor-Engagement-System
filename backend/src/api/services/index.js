@@ -27,7 +27,14 @@ import {
 	deleteOrganization,
 } from "./Organization.service";
 
-import { insertItem, getAllItems, getItemDetails, deleteItem, incrementQuantity } from "./Item.service";
+import {
+	insertItem,
+	getAllItems,
+	getItemDetails,
+	deleteItem,
+	incrementQuantity,
+	decrementQuantity,
+} from "./Item.service";
 
 export default {
 	insert,
@@ -62,4 +69,5 @@ export default {
 	getItemDetails,
 	deleteItem,
 	incrementQuantity,
+	decrementQuantity,
 };

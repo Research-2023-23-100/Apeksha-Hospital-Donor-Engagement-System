@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Essentials from "../components/Essentials";
 
-import { Home, StaffLogin, StaffDashboard, StaffEssentialItems, StaffCreateItem } from "../pages";
+import { Home, StaffLogin, StaffDashboard, StaffEssentialItems, StaffCreateItem, StaffViewAllItems } from "../pages";
 
 const AppRoutes = () => {
 	return (
@@ -28,6 +28,7 @@ const AppRoutes = () => {
 						<Route path="/staff" element={<StaffDashboard />} />
 						<Route path="/staff/essentials" element={<StaffEssentialItems />} />
 						<Route path="/staff/item/create" element={<StaffCreateItem />} />
+						<Route path="/staff/item/" element={<StaffViewAllItems />} />
 					</Route>
 				</Routes>
 

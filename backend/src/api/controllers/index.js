@@ -13,7 +13,14 @@ import {
 	deleteOrganization,
 } from "./Organization.controller";
 
-import { insertItem, getAllItems, getItemDetails, deleteItem, incrementQuantity } from "./Item.controller";
+import {
+	insertItem,
+	getAllItems,
+	getItemDetails,
+	deleteItem,
+	incrementQuantity,
+	decrementQuantity,
+} from "./Item.controller";
 
 export default {
 	insert,
@@ -48,4 +55,5 @@ export default {
 	getItemDetails,
 	deleteItem,
 	incrementQuantity,
+	decrementQuantity,
 };

@@ -2,12 +2,20 @@ import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import makeToast from "../components/toast";
 import ItemAPI from "./api/ItemAPI";
+import DbItemAPI from "./api/DbItemsAPI";
 
 const ItemContext = createContext();
 
 export function ItemProvider({ children }) {
 	const [items, setItems] = useState([]);
 	const [itemError, setItemError] = useState();
+	const [dbItems, setDbItems] = useState([]);
+	const [dbItem, setDbItem] = useState({
+		ItemName: "",
+		ItemID: "",
+		QuantityInStock: "",
+		image: "",
+	});
 
 	//Get all Prediction Values
 	useEffect(() => {
@@ -19,28 +27,63 @@ export function ItemProvider({ children }) {
 	// Create New Item Staff users
 	const createItem = async (values) => {
 		try {
-			const response = await ItemAPI.createItem(values);
-			setItems([...items, response.data]);
+			const response = await DbItemAPI.itemCreate(values);
+			setDbItems([...dbItems, response]);
 			makeToast({ type: "success", message: "Item Created successful" });
 		} catch (error) {
-			if (error.response.data.details == "Item name already exists") {
-				makeToast({ type: "error", message: "Item name already exists" });
-				setItemError(error.response.data.details);
-			} else if (error.response.data.details == "Item code already exist") {
-				makeToast({ type: "error", message: "Item code already exists" });
-				setItemError(error.response.data.details);
-			} else {
-				makeToast({ type: "error", message: "Item not created" });
-			}
+			makeToast({ type: "error", message: "Item not created" });
 		}
 	};
 
 	// View all items
 	useEffect(() => {
-		ItemAPI.getAllItems().then((response) => {
-			setItems(response.data.predictions);
+		DbItemAPI.getAllItems().then((response) => {
+			setDbItems(response.data);
 		});
 	}, []);
+
+	// Increment Stock Quantity
+	const addStock = (id, values) => {
+		// const newQuantity = {
+		// 	QuantityInStock: values.QuantityInStock,
+		// };
+		// console.log(newQuantity)
+
+		DbItemAPI.adding(id, { QuantityInStock: values })
+
+			.then((response) => {
+				makeToast({ type: "success", message: "Quantity Increment" });
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+
+	// Increment Stock Quantity
+	const removeStock = (id, values) => {
+		// const newQuantity = {
+		// 	QuantityInStock: values.QuantityInStock,
+		// };
+		// console.log(newQuantity)
+
+		DbItemAPI.removeStock(id, { QuantityInStock: values })
+
+			.then((response) => {
+				makeToast({ type: "success", message: "Quantity Decrement" });
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+
+	// get one item
+	const getOneDbItem = (id) => {
+		useEffect(() => {
+			DbItemAPI.getOneItem(id).then((res) => {
+				setDbItem(res.data);
+			});
+		}, []);
+	};
 
 	return (
 		<ItemContext.Provider
@@ -50,6 +93,13 @@ export function ItemProvider({ children }) {
 				itemError,
 				setItemError,
 				createItem,
+				dbItems,
+				setDbItems,
+				dbItem,
+				setDbItem,
+				getOneDbItem,
+				addStock,
+				removeStock,
 			}}
 		>
 			{children}

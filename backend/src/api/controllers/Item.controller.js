@@ -70,3 +70,15 @@ export const incrementQuantity = async (request, response, next) => {
 			next();
 		});
 };
+
+export const decrementQuantity = async (request, response, next) => {
+	await ItemService.decrementQuantity(request.params.id, request.body.QuantityInStock)
+		.then(async (data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};

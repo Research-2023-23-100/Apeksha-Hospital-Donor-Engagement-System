@@ -31,6 +31,16 @@ const StaffEssentialItems = () => {
 		setShowAll(false);
 	};
 
+	const calculatePriority = (predictedValue) => {
+		if (predictedValue < 50) {
+			return <span className="bg-green-500 text-white py-1 px-2 rounded-full text-xs">Low</span>;
+		} else if (predictedValue >= 50 && predictedValue <= 100) {
+			return <span className="bg-yellow-500 text-white py-1 px-2 rounded-full text-xs">Medium</span>;
+		} else {
+			return <span className="bg-red-500 text-white py-1 px-2 rounded-full text-xs">High</span>;
+		}
+	};
+
 	return (
 		<>
 			<div className="mt-24 md:mb-4">
@@ -100,12 +110,13 @@ const StaffEssentialItems = () => {
 			</div>
 
 			<div className="shadow-lg rounded-lg overflow-hidden mx-4 md:mx-10 mt-4">
-				<table className="w-full table-fixed">
-					<thead>
-						<tr className="bg-gray-100">
-							<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Item Name</th>
-							<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Month</th>
-							<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Predicted Value</th>
+				<table className="w-full table-fixed rounded-lg overflow-hidden">
+					<thead className="bg-black text-white">
+						<tr>
+							<th className="w-1/2 py-4 px-6 text-left font-bold">Item Name</th>
+							<th className="w-1/2 py-4 px-6 text-left font-bold">Month</th>
+							<th className="w-1/2 py-4 px-6 text-left font-bold">Predicted Value</th>
+							<th className="w-1/2 py-4 px-6 text-left font-bold">Priority</th>
 						</tr>
 					</thead>
 					<tbody className="bg-white">
@@ -139,6 +150,7 @@ const StaffEssentialItems = () => {
 									<td className="py-4 px-6 border-b border-gray-200">{elem.ItemName}</td>
 									<td className="py-4 px-6 border-b border-gray-200 truncate">{elem.Month}</td>
 									<td className="py-4 px-6 border-b border-gray-200">{elem.Prediction}</td>
+									<td className="py-4 px-6 border-b border-gray-200 font-bold">{calculatePriority(elem.Prediction)}</td>
 								</tr>
 							))}
 					</tbody>
@@ -159,3 +171,4 @@ const StaffEssentialItems = () => {
 };
 
 export default StaffEssentialItems;
+

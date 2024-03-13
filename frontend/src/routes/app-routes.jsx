@@ -6,7 +6,7 @@ import CheckLoginStatus from "./CheckLoginStatus";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-import { Home, StaffLogin, StaffDashboard, } from "../pages";
+import { Home, StaffLogin, StaffDashboard,MedicationDashboard } from "../pages";
 
 const AppRoutes = () => {
 	return (
@@ -26,6 +26,8 @@ const AppRoutes = () => {
 					<Route path="/staff" element={<PrivateRoute permissionLevel="STAFF" />}>
 					<Route path="/staff" element={<StaffDashboard />} />
 					</Route>
+					<Route path="/medication" element={<MedicationDashboard />} />
+
 
 
 				</Routes>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import ItemContext from "../../contexts/ItemContext";
-import Chart from "chart.js/auto";
+
 
 const StaffEssentialItems = () => {
 	const { items } = useContext(ItemContext);

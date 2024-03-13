@@ -32,4 +32,11 @@ router.get("/org/:id", controller.getOneOrganization);
 router.put("/org/update/:id", controller.updateOrganization);
 router.delete("/org/delete/:id", controller.deleteOrganization);
 
+router.post("/item/create", controller.insertItem);
+router.get("/item/", controller.getAllItems);
+router.get("/item/:id", controller.getItemDetails);
+router.delete("/item/delete/:id", controller.deleteItem);
+router.put("/item/increment/:id", controller.incrementQuantity);
+router.put("/item/decrement/:id", controller.decrementQuantity);
+
 export default router;

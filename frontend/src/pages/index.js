@@ -4,5 +4,6 @@ import StaffDashboard from "./staff-dashboard";
 import StaffEssentialItems from "./staff-essentials-items";
 import StaffCreateItem from "./staff-create-item";
 import StaffViewAllItems from "./staff-view-all-items";
+import MedicationDashboard from "./medication-dashboard";
 
-export { Home, StaffLogin, StaffDashboard, StaffEssentialItems, StaffCreateItem, StaffViewAllItems };
+export { Home, StaffLogin, StaffDashboard, StaffEssentialItems, StaffCreateItem, StaffViewAllItems,MedicationDashboard };

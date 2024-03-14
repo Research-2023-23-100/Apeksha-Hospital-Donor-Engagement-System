@@ -9,23 +9,23 @@ class StaffAPI {
 	static register(values) {
 		return axios.post(`${BASE_URL}/staff/register`, values, requestConfigJson);
 	}
-    // Login Staff
+	// Login Staff
 	static login(values) {
 		return axios.post(`${BASE_URL}/staff/login`, values, requestConfigJson);
 	}
-    // get all staff details
+	// get all staff details
 	static getAll() {
 		return axios.get(`${BASE_URL}/staff`, requestConfig);
 	}
-    // get one staff details
+	// get one staff details
 	static getOne(id) {
 		return axios.get(`${BASE_URL}/staff/${id}`, requestConfigJson);
 	}
-    // update staff
+	// update staff
 	static edit(id, values) {
 		return axios.put(`${BASE_URL}/staff/update/${id}`, values, requestConfigJson);
 	}
-    // delete staff
+	// delete staff
 	static delete(id) {
 		return axios.delete(`${BASE_URL}/staff/delete/${id}`, requestConfig);
 	}

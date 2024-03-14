@@ -154,32 +154,38 @@ const StaffDashboard = () => {
 
 
 			{/* Table and Bar Chart */}
-			{/* <div className="flex flex-col md:flex-row items-center justify-start ml-4">
-				{/* <div className="w-full md:w-2/3 lg:w-3/4 xl:w-3/4 overflow-x-auto">
-					<table className="min-w-full bg-white rounded-lg overflow-hidden">
-						<thead>
-							<tr>
-								<th className="px-6 py-3 border-b border-black bg-black text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Item Name</th>
-								<th className="px-6 py-3 border-b border-black bg-black text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Month</th>
-								<th className="px-6 py-3 border-b border-black bg-black text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Predicted Value</th>
-							</tr>
-						</thead>
-						<tbody>
-							{filteredItems.map((elem, index) => (
-								<tr key={index}>
-									<td className="px-4 py-4 whitespace-no-wrap border-b border-gray-200">{elem.ItemName}</td>
-									<td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">{elem.Month}</td>
-									<td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">{elem.Prediction}</td>
-								</tr>
-							))}
-						</tbody>
-					</table>
-			{	</div> */}
-			<div className="relative ml-60" style={{ paddingBottom: "25%", width: "50%", height: "50%" }}>
-				<div className="absolute inset-0 flex items-center justify-center">
-					{/* Render your Scatter plot component here */}
-					<Bar data={scatterData} options={scatterOptions} />
+			<div className="flex flex-col md:flex-row items-center justify-start ml-2">
+
+
+				<div className="relative ml-60" style={{ paddingBottom: "25%", width: "50%", height: "50%" }}>
+					<div className="absolute inset-0 flex items-center justify-center">
+						{/* Render your Scatter plot component here */}
+						<Bar data={scatterData} options={scatterOptions} />
+					</div>
+
+
 				</div>
+
+			</div>
+			<div className="w-full md:w-2/3 lg:w-3/4 xl:w-3/4 overflow-x-auto mx-36 my-6">
+				<table className="min-w-full bg-white rounded-lg overflow-hidden">
+					<thead>
+						<tr>
+							<th className="px-6 py-3 border-b border-black bg-black text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Item Name</th>
+							<th className="px-6 py-3 border-b border-black bg-black text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Month</th>
+							<th className="px- py-3 border-b border-black bg-black text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Predicted Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						{items.slice(0, 6).map((elem, index) => (
+							<tr key={index}>
+								<td className="px-4 py-4 whitespace-no-wrap border-b border-gray-200">{elem.ItemName}</td>
+								<td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">{elem.Month}</td>
+								<td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">{elem.Prediction}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
 			</div>
 
 

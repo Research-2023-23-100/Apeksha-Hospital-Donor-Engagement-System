@@ -7,8 +7,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Essentials from "../components/Essentials";
 
-import { Home, StaffLogin, StaffDashboard, StaffEssentialItems, StaffCreateItem, StaffViewAllItems } from "../pages";
-
+import { Home, StaffLogin, StaffDashboard, StaffEssentialItems, StaffCreateItem, StaffViewAllItems,MedicationDashboard } from "../pages";
 const AppRoutes = () => {
 	return (
 		<>
@@ -57,6 +56,8 @@ const AppRoutes = () => {
 					<Route path="/org" element={<PrivateRoute permissionLevel="ORGANIZATION" />}>
 						{/* <Route path="/org" element={<orgDashboard />} /> */}
 					</Route>
+					<Route path="/medication" element={<MedicationDashboard />} />
+
 
 
 

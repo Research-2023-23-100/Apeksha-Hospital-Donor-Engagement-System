@@ -151,6 +151,7 @@ const StaffEssentialItems = () => {
 									<td className="py-4 px-6 border-b border-gray-200 truncate">{elem.Month}</td>
 									<td className="py-4 px-6 border-b border-gray-200">{elem.Prediction}</td>
 									<td className="py-4 px-6 border-b border-gray-200 font-bold">{calculatePriority(elem.Prediction)}</td>
+
 								</tr>
 							))}
 					</tbody>

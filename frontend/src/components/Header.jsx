@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/logo.jpeg"
 
 const Header = () => {
 	const navigate = useNavigate();
@@ -67,22 +68,20 @@ const Header = () => {
 				<div className="mx-auto flex max-w-screen-2xl items-center justify-between px-4 md:px-8">
 					{/* logo - start */}
 					<a
-						href="/"
-						className="inline-flex items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
-						aria-label="logo"
+    			href="/"
+    			className="inline-flex items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
+   				 aria-label="logo"
 					>
-						<svg
-							width={95}
-							height={94}
-							viewBox="0 0 95 94"
-							className="h-auto w-6 text-indigo-500"
-							fill="currentColor"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path d="M96 0V47L48 94H0V47L48 0H96Z" />
-						</svg>
-						Flowrift
-					</a>
+   				 <img
+    			    src={logo}
+    			    alt="Flowrift"
+       				 width="10px"
+        			height="10px"
+    			    className="mt-5 h-auto w-24 text-indigo-500"
+    				/>
+    <div className="text-gray-600">LEND A HAND</div>
+</a>
+
 					{/* logo - end */}
 					{/* nav - start */}
 					<nav className="hidden gap-12 lg:flex 2xl:ml-16">

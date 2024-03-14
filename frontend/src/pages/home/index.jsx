@@ -1,22 +1,28 @@
 import React from "react";
 import servicesImage from '../../assets/doctor.jpg';
+import medication_donation from '../../assets/Medication_donation.jpeg'
+import blood_donation from '../../assets/Blood_donation.jpeg'
+import hair_donation from '../../assets/Hair_donation.jpeg'
+import essentials_donation from '../../assets/Essentials_donation.jpeg'
+
+
 import Carousel from '../carousel-home';
 
 const Home = () => {
 	return (
 		<>
-			<div className="min-h-screen bg-white">
+			<div className="min-h-screen bg-white mt-24">
       <div className="py-10 px-4 sm:px-6 lg:px-8">
         {/* Header */}
         
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 ml-48 md:grid-cols-2 gap-16">
           {/* About Section */}
           <div className="flex flex-col justify-center">
-            <h2 className="text-4xl font-bold text-red-500 mb-4">Join hands for a better tomorrow.</h2>
-            <p className="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec velit tincidunt, ultrices velit at, viverra est. Integer eu tellus nec eros fermentum suscipit ut sit amet risus.</p>
-            <p className="text-gray-600">Sed blandit lorem nec turpis vehicula, ac maximus libero venenatis. Morbi fermentum felis sit amet magna fermentum, ut molestie metus mattis.</p>
+            <h2 className="text-6xl font-bold text-red-500 mb-4">Join hands for a better tomorrow.</h2>
+            <p className="text-gray-600 text-2xl mb-4">Your generosity powers miracles. Dive in, explore, and see the difference you make.</p>
+            <p className="text-gray-600 text-2xl">At Apeksha Hospital's Donor Hub, impact is our currency. Join us, spark change, and be a beacon of hope.</p>
           </div>
           
           {/* Image Section */}
@@ -31,16 +37,16 @@ const Home = () => {
         {/* Call to Action */}
         
         {/* Card Views Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-[5rem]">
+        <div className="ml-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-48">
           {/* Card View 1 */}
           <div class="max-w-xs bg-white border border-gray-200 rounded-lg shadow">
     <a href="#">
-        <img class="rounded-t-lg" src={servicesImage}alt="" />
+        <img class="rounded-t-lg" src={essentials_donation}alt="" />
     </a>
     <div class="p-5">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
-        </a>
+        <div>
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Donate Essentials</h5>
+        </div>
         
         <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300">
             Read more
@@ -52,12 +58,12 @@ const Home = () => {
 </div>
 <div class="max-w-xs bg-white border border-gray-200 rounded-lg shadow">
     <a href="#">
-        <img class="rounded-t-lg" src={servicesImage} alt="" />
+        <img class="rounded-t-lg" src={medication_donation} alt="" />
     </a>
     <div class="p-5">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
-        </a>
+        <div>
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Donate Medication</h5>
+        </div>
         
         <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300">
             Read more
@@ -69,12 +75,12 @@ const Home = () => {
 </div>
 <div class="max-w-xs bg-white border border-gray-200 rounded-lg shadow">
     <a href="#">
-        <img class="rounded-t-lg" src={servicesImage} alt="" />
+        <img class="rounded-t-lg" src={blood_donation} alt="" />
     </a>
     <div class="p-5">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
-        </a>
+        <div>
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Donate Blood</h5>
+        </div>
         
         <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300">
             Read more
@@ -86,12 +92,12 @@ const Home = () => {
 </div>
 <div class="max-w-xs bg-white border border-gray-200 rounded-lg shadow">
     <a href="#">
-        <img class="rounded-t-lg" src={servicesImage} alt="" />
+        <img class="rounded-t-lg" src={hair_donation} alt="" />
     </a>
     <div class="p-5">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
-        </a>
+        <div>
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Donate Hair</h5>
+        </div>
         
         <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300">
             Read more

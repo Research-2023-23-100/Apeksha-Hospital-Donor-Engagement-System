@@ -11,9 +11,9 @@ import { Home, StaffLogin, StaffDashboard,MedicationDashboard } from "../pages";
 const AppRoutes = () => {
 	return (
 		<>
+						
 			<Router>
-				<Header />
-
+			<Header />
 				<Routes>
 					{/* Public Routes */}
 					<Route path="/" element={<Home />} />

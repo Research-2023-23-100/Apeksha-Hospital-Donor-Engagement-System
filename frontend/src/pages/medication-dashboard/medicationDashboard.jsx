@@ -54,7 +54,8 @@ const MedicationDashboard = () => {
           y: {
             beginAtZero: true
           }
-        }
+        },
+        maintainAspectRatio: false // Ensure chart doesn't take too much space
       }
     });
   }, [medications]);
@@ -75,36 +76,31 @@ const MedicationDashboard = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
-    <div className="max-w-4xl mt-24 mx-auto px-4 py-8">
-      <h1 className="text-3xl font-semibold mb-4">Predicted Medication Shortages</h1>
-      {/* Shortage filter */}
-      <div className="mb-4">
-        <label htmlFor="shortageFilter" className="mr-2">Filter by Shortage:</label>
-        <select
-          id="shortageFilter"
-          onChange={e => setShortageFilter(e.target.value)}
-          value={shortageFilter}
-        >
-          <option value="">All</option>
-          <option value="shortaged">Shortaged</option>
-          <option value="not shortaged">Not Shortaged</option>
-        </select>
-      </div>
-      {/* Search bar */}
-      <div className="mb-4">
+    <div className="container mx-auto mt-48">
+      <h1 className="text-3xl font-semibold mb-6">Predicted Medication Shortages</h1>
+      <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center">
+          <label htmlFor="shortageFilter" className="mr-2 font-semibold">Filter by Shortage:</label>
+          <select
+            id="shortageFilter"
+            onChange={e => setShortageFilter(e.target.value)}
+            value={shortageFilter}
+            className="border border-gray-600 bg-gray-200 text-stone-900 rounded-md p-2"
+          >
+            <option value="">All</option>
+            <option value="shortaged">Shortaged</option>
+            <option value="not shortaged">Not Shortaged</option>
+          </select>
+        </div>
         <input
           type="text"
           placeholder="Search by Medication Name"
           value={searchTerm}
           onChange={e => setSearchTerm(e.target.value)}
-          className="p-2 border border-gray-300 rounded"
+          className="border border-gray-600 rounded-md p-2 w-72"
         />
       </div>
-      {/* Bar chart */}
-      <div className="mb-4">
-        <canvas id="shortageChart" width="400" height="200"></canvas>
-      </div>
-      <table className="w-full border-collapse">
+      <table className="w-full border-collapse mb-6">
         <thead className="bg-gray-200">
           <tr>
             <th className="px-4 py-2 text-left">Index</th>
@@ -117,27 +113,36 @@ const MedicationDashboard = () => {
             <tr key={index} className={index % 2 === 0 ? "bg-gray-100" : "bg-white"}>
               <td className="px-4 py-2">{indexOfFirstMedication + index + 1}</td>
               <td className="px-4 py-2">{medication.Name}</td>
-              <td className="px-4 py-2">{medication.shortaged}</td>
+              <td className="px-4 py-2">
+                <div className={`text-center px-4 py-2 ${medication.shortaged==="shortaged"? "bg-red-200 ml-5 w-32 border-2 border-red-600 text-red-700  border-white":"bg-green-200 w-44 border-2 border-green-600 text-green-700"} py-1 rounded text-white shadow-lg`}>{medication.shortaged}</div></td>
             </tr>
           ))}
         </tbody>
       </table>
-      {/* Pagination */}
-      <div className="mt-4">
+      <div className="mt-6 flex justify-center">
         <button
           onClick={() => paginate(currentPage - 1)}
           disabled={currentPage === 1}
-          className="px-4 py-2 mr-2 bg-blue-500 text-white rounded"
+          className="px-4 py-2 mr-2 bg-primary text-white rounded"
         >
           Previous
         </button>
         <button
           onClick={() => paginate(currentPage + 1)}
           disabled={currentMedications.length < medicationsPerPage}
-          className="px-4 py-2 bg-blue-500 text-white rounded"
+          className="px-4 py-2 bg-primary text-white rounded"
         >
           Next
         </button>
+      </div>
+      <div className="mt-32">
+      <h1 className="text-3xl font-semibold mb-6">Medication Counts </h1> 
+      <div className="mb-6 mt-24">
+        <canvas id="shortageChart" width="400" height="200"></canvas>
+      </div>
+      </div>
+      <div>
+        {/* Additional meaningful chart can be added here */}
       </div>
     </div>
   );

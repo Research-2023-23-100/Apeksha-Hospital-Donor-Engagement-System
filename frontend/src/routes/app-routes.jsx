@@ -7,7 +7,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Essentials from "../components/Essentials";
 
-import { Home, StaffLogin, StaffDashboard, StaffEssentialItems, StaffCreateItem, StaffViewAllItems,MedicationDashboard } from "../pages";
+import { Home, StaffLogin, StaffDashboard, StaffEssentialItems, StaffCreateItem, StaffViewAllItems,MedicationDashboard,CampPrediction,DonorHome,
+OrganizerSignup,UnderReview,ViewAllOrganizer, OrganizerLogin,OrganizeDonationCamp } from "../pages";
 const AppRoutes = () => {
 	return (
 		<>
@@ -57,6 +58,17 @@ const AppRoutes = () => {
 						{/* <Route path="/org" element={<orgDashboard />} /> */}
 					</Route>
 					<Route path="/medication" element={<MedicationDashboard />} />
+					<Route path="/camp-prediction" element={<CampPrediction/>} />
+
+					<Route path="/under-review" element={<UnderReview />} />
+					
+           			<Route path="/organizer-login" element={<OrganizerLogin />} />
+            		<Route path="/organizer-signup" element={<OrganizerSignup />} />
+           
+            		
+            		<Route path="/blood-organizers" element={<ViewAllOrganizer />} />
+            		<Route path="/organize-camp" element={<OrganizeDonationCamp />} />
+            		<Route path="/donor-home" element={<DonorHome />} />
 
 
 

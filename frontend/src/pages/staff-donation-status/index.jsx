@@ -1,13 +1,8 @@
 import React from "react";
 import StaffDonationStatus from "./StaffDonationStatus";
 
-
 const index = () => {
-
-    return (
-        <StaffDonationStatus />
-    )
-
-}
+	return <StaffDonationStatus />;
+};
 
 export default index;

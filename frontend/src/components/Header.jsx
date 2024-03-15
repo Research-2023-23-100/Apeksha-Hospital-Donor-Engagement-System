@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/logo.jpeg"
+import logo from "../assets/logo.jpeg";
 
 const Header = () => {
 	const navigate = useNavigate();
@@ -68,19 +68,13 @@ const Header = () => {
 				<div className="mx-auto flex max-w-screen-2xl items-center justify-between px-4 md:px-8">
 					{/* logo - start */}
 					<a
-    			href="/"
-    			className="inline-flex items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
-   				 aria-label="logo"
+						href="/"
+						className="inline-flex items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
+						aria-label="logo"
 					>
-   				 <img
-    			    src={logo}
-    			    alt="Flowrift"
-       				 width="10px"
-        			height="10px"
-    			    className="mt-5 h-auto w-24 text-indigo-500"
-    				/>
-    <div className="text-gray-600">LEND A HAND</div>
-</a>
+						<img src={logo} alt="Flowrift" width="10px" height="10px" className="mt-5 h-auto w-24 text-indigo-500" />
+						<div className="text-gray-600">LEND A HAND</div>
+					</a>
 
 					{/* logo - end */}
 					{/* nav - start */}
@@ -98,7 +92,7 @@ const Header = () => {
 							</button>
 							{isOpen1 && (
 								<div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-1">
-									<Link to="/essentials">
+									<Link to="/donor/essentials/list">
 										<a className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-500">
 											Essential Items
 										</a>

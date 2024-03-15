@@ -162,9 +162,7 @@ const StaffEssentialItems = () => {
 									<td className="py-4 px-6 border-b border-gray-200">{elem.ItemName}</td>
 									<td className="py-4 px-6 border-b border-gray-200 truncate">{elem.Month}</td>
 									<td className="py-4 px-6 border-b border-gray-200">{elem.Prediction}</td>
-									<td className="py-4 px-6 border-b border-gray-200 font-bold">
-										{calculatePriority(elem.Prediction)}
-									</td>
+									<td className="py-4 px-6 border-b border-gray-200 font-bold">{calculatePriority(elem.Prediction)}</td>
 								</tr>
 							))}
 					</tbody>
@@ -172,10 +170,7 @@ const StaffEssentialItems = () => {
 			</div>
 			{!showAll && (
 				<div className="flex justify-center mt-4">
-					<button
-						className="px-4 py-2 bg-gray-800 text-white rounded-md focus:outline-none"
-						onClick={handleSeeMore}
-					>
+					<button className="px-4 py-2 bg-gray-800 text-white rounded-md focus:outline-none" onClick={handleSeeMore}>
 						See more
 					</button>
 				</div>
@@ -187,10 +182,9 @@ const StaffEssentialItems = () => {
 							<li key={index} className="mx-1">
 								<button
 									onClick={() => handlePageChange(index + 1)}
-									className={`px-3 py-1 ${currentPage === index + 1
-										? "bg-gray-800 text-white"
-										: "bg-gray-200 text-gray-800"
-										} rounded-md focus:outline-none`}
+									className={`px-3 py-1 ${
+										currentPage === index + 1 ? "bg-gray-800 text-white" : "bg-gray-200 text-gray-800"
+									} rounded-md focus:outline-none`}
 								>
 									{index + 1}
 								</button>

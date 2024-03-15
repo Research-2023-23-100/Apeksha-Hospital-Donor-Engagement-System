@@ -14,6 +14,7 @@ import UnderReview from "./under-review";
 import ViewAllOrganizer from "./view-all-organizer";
 import OrganizeDonationCamp from "./donation-camp-organize";
 import StaffDonationStatus from "./staff-donation-status";
+import DonorEssentialsList from "./donor-essential-list";
 
 export {
 	Home,
@@ -32,4 +33,5 @@ export {
 	ViewAllOrganizer,
 	OrganizeDonationCamp,
 	StaffDonationStatus,
+	DonorEssentialsList,
 };

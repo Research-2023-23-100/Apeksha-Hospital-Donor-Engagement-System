@@ -1,11 +1,9 @@
-import React from 'react'
+import React from "react";
 
-import PredictionUi from './PredictionUi';
+import PredictionUi from "./PredictionUi";
 
 const index = () => {
-  return (
-    <PredictionUi/>
-  )
-}
+	return <PredictionUi />;
+};
 
-export default index
+export default index;

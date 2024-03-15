@@ -86,6 +86,10 @@ const StaffCreateItem = () => {
 						</div>
 					</form>
 					{/* form - end */}
+					<div>
+						{image}
+						{setImage}
+					</div>
 				</div>
 			</div>
 		</>

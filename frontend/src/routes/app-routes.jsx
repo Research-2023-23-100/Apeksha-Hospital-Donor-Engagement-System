@@ -5,10 +5,25 @@ import CheckLoginStatus from "./CheckLoginStatus";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Essentials from "../components/Essentials";
 
-import { Home, StaffLogin, StaffDashboard, StaffEssentialItems, StaffCreateItem, StaffViewAllItems,MedicationDashboard,CampPrediction,DonorHome,
-OrganizerSignup,UnderReview,ViewAllOrganizer, OrganizerLogin,OrganizeDonationCamp } from "../pages";
+import {
+	Home,
+	StaffLogin,
+	StaffDashboard,
+	StaffEssentialItems,
+	StaffCreateItem,
+	StaffViewAllItems,
+	MedicationDashboard,
+	CampPrediction,
+	DonorHome,
+	OrganizerSignup,
+	UnderReview,
+	ViewAllOrganizer,
+	OrganizerLogin,
+	OrganizeDonationCamp,
+	StaffDonationStatus,
+	DonorEssentialsList,
+} from "../pages";
 const AppRoutes = () => {
 	return (
 		<>
@@ -18,8 +33,7 @@ const AppRoutes = () => {
 				<Routes>
 					{/* Public Routes */}
 					<Route path="/" element={<Home />} />
-					<Route path="/essentials" element={<Essentials />} />
-
+					<Route path="/donor/essentials/list" element={<DonorEssentialsList />} />
 
 					{/* Staff Section */}
 					{/* Staff Check Login Status */}
@@ -33,8 +47,8 @@ const AppRoutes = () => {
 						<Route path="/staff/essentials" element={<StaffEssentialItems />} />
 						<Route path="/staff/item/create" element={<StaffCreateItem />} />
 						<Route path="/staff/item/" element={<StaffViewAllItems />} />
+						<Route path="/staff/donation/" element={<StaffDonationStatus />} />
 					</Route>
-
 
 					{/* Donor Section */}
 					{/* Donor Check Login Status */}
@@ -47,7 +61,6 @@ const AppRoutes = () => {
 						<Route path="/donor" element={<StaffDashboard />} />
 					</Route>
 
-
 					{/* Organization Section */}
 					<Route path="/org/login" element={<CheckLoginStatus />}>
 						{/* <Route path="/org/login" element={<orgLogin />} /> */}
@@ -58,22 +71,16 @@ const AppRoutes = () => {
 						{/* <Route path="/org" element={<orgDashboard />} /> */}
 					</Route>
 					<Route path="/medication" element={<MedicationDashboard />} />
-					<Route path="/camp-prediction" element={<CampPrediction/>} />
+					<Route path="/camp-prediction" element={<CampPrediction />} />
 
 					<Route path="/under-review" element={<UnderReview />} />
-					
-           			<Route path="/organizer-login" element={<OrganizerLogin />} />
-            		<Route path="/organizer-signup" element={<OrganizerSignup />} />
-           
-            		
-            		<Route path="/blood-organizers" element={<ViewAllOrganizer />} />
-            		<Route path="/organize-camp" element={<OrganizeDonationCamp />} />
-            		<Route path="/donor-home" element={<DonorHome />} />
 
+					<Route path="/organizer-login" element={<OrganizerLogin />} />
+					<Route path="/organizer-signup" element={<OrganizerSignup />} />
 
-
-
-
+					<Route path="/blood-organizers" element={<ViewAllOrganizer />} />
+					<Route path="/organize-camp" element={<OrganizeDonationCamp />} />
+					<Route path="/donor-home" element={<DonorHome />} />
 				</Routes>
 
 				<Footer />

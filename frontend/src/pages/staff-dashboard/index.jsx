@@ -8,7 +8,7 @@ const index = () => {
 		<StaffProvider>
 			<ItemProvider>
 				<StaffDashboard />
-			</ItemProvider >
+			</ItemProvider>
 		</StaffProvider>
 	);
 };

@@ -1,12 +1,12 @@
-import React from 'react'
-import Organizer from './OrganizerLogin'
+import React from "react";
+import Organizer from "./OrganizerLogin";
 
 function index() {
-  return (
-    <div>
-      <Organizer/>
-    </div>
-  )
+	return (
+		<div>
+			<Organizer />
+		</div>
+	);
 }
 
-export default index
+export default index;

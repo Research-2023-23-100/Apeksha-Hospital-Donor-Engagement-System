@@ -1,43 +1,54 @@
 import React, { useContext, useState } from "react";
 import StaffContext from "../../contexts/StaffContext";
 import { Chart as ChartJS } from "chart.js/auto";
-import { Bar, Doughnut, Line } from "react-chartjs-2";
+import { Bar, Doughnut, Line, Scatter } from "react-chartjs-2";
+import { Link } from "react-router-dom";
+import ItemContext from "../../contexts/ItemContext";
 
 const StaffDashboard = () => {
 
-	const [showBarChart, setShowBarChart] = useState(true);
+	const { items } = useContext(ItemContext)
+	// const uniqueItemNames = Array.from(new Set(items.map(elem => elem.ItemName)));
 
-	const handleMedicationButtonClick = () => {
-		setShowBarChart(true);
-	};
-
-	const handleEssentialsButtonClick = () => {
-		setShowBarChart(false);
-	};
-
-
-	const data = {
-		labels: [
-			'Red',
-			'Blue',
-			'Yellow'
-		],
+	// Prepare data for Scatter plot
+	const scatterData = {
 		datasets: [{
-			label: 'My First Dataset',
-			data: [300, 50, 100],
+			label: 'Bar Chart for Predicted Values and Items',
+			data: items.map(elem => ({ x: elem.ItemName, y: elem.Prediction })),
 			backgroundColor: [
-				'rgb(255, 99, 132)',
-				'rgb(54, 162, 235)',
-				'rgb(255, 205, 86)'
+				'rgba(255, 99, 132, 0.6)',
+				'rgba(54, 162, 235, 0.6)',
+				'rgba(255, 206, 86, 0.6)',
+				'rgba(75, 192, 192, 0.6)',
+				'rgba(153, 102, 255, 0.6)',
+				'rgba(255, 159, 64, 0.6)'
+				// Add more colors if needed
 			],
-			hoverOffset: 4
 		}]
+	};
+
+	const scatterOptions = {
+		maintainAspectRatio: true,
+		scales: {
+			x: {
+				title: {
+					display: true,
+					text: 'Item Name'
+				}
+			},
+			y: {
+				title: {
+					display: true,
+					text: 'Predicted Value'
+				}
+			}
+		}
 	};
 
 	return (
 		<>
 
-			<div className="flex justify-center ml-32">
+			{/* <div className="flex justify-center ml-32">
 				<div className="grid grid-cols-1 gap-8 p-10 mt-24 lg:grid-cols-2 xl:grid-cols-4">
 					<button
 						role="tab"
@@ -58,9 +69,9 @@ const StaffDashboard = () => {
 						Essentials
 					</button>
 				</div>
-			</div>
+			</div> */}
 
-			<div className="grid grid-cols-1 gap-8 p-10 lg:grid-cols-2 xl:grid-cols-4">
+			<div className="grid grid-cols-1 gap-8 p-10 lg:grid-cols-2 xl:grid-cols-4 mt-24">
 				{/* Value card */}
 				<div className="flex items-center shadow justify-between p-4 bg-white rounded-md dark:bg-darker">
 					<div>
@@ -120,15 +131,17 @@ const StaffDashboard = () => {
 				</div>
 				{/* Tickets card */}
 				<div className="flex items-center shadow justify-between p-4 bg-white rounded-md dark:bg-darker">
-					<div>
-						<h6 className="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light">
-							Essential Items
-						</h6>
-						<span className="text-xl font-semibold">20,516</span>
-						<span className="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">
-							+3.1%
-						</span>
-					</div>
+					<Link to="/staff/item/">
+						<div>
+							<h6 className="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light">
+								Essential Items
+							</h6>
+							<span className="text-xl font-semibold">20,516</span>
+							<span className="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">
+								+3.1%
+							</span>
+						</div>
+					</Link>
 					<div>
 						<span>
 							<svg className="w-12 h-12 text-gray-300 dark:text-primary-dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -139,82 +152,45 @@ const StaffDashboard = () => {
 				</div>
 			</div>
 
-			{showBarChart == ""}
-			{/* Table and Pie Chart */}
-			<div className="flex flex-col md:flex-row items-center justify-start">
-
-				<div className="w-full md:w-2/3 lg:w-3/4 xl:w-3/4 overflow-x-auto">
-					<table className="min-w-full bg-white">
-						{/* Table header */}
-						<thead>
-							<tr>
-								<th className="px-6 py-3 border-b border-gray-200 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Category</th>
-								<th className="px-6 py-3 border-b border-gray-200 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Value</th>
-							</tr>
-						</thead>
-						{/* Table body */}
-						<tbody>
-							{/* Replace the following placeholders with your actual data */}
-							<tr>
-								<td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">Category 1</td>
-								<td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">100</td>
-							</tr>
-							<tr>
-								<td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">Category 2</td>
-								<td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">200</td>
-							</tr>
-							{/* Add more rows as needed */}
-						</tbody>
-					</table>
-				</div>
-				<div className="w-full md:w-1/3 lg:w-1/4 xl:w-1/4">
-					<div className="relative" style={{ paddingBottom: "100%" }}>
-						<div className="absolute inset-0 flex items-center justify-center">
-							{/* Render your Pie chart component here */}
-							<Bar data={data} />
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-
 
 			{/* Table and Bar Chart */}
-			<div className="flex flex-col md:flex-row items-center justify-start">
-				<div className="w-full md:w-2/3 lg:w-3/4 xl:w-3/4 overflow-x-auto">
-					<table className="min-w-full bg-white">
-						{/* Table header */}
-						<thead>
-							<tr>
-								<th className="px-6 py-3 border-b border-gray-200 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Category</th>
-								<th className="px-6 py-3 border-b border-gray-200 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Value</th>
-							</tr>
-						</thead>
-						{/* Table body */}
-						<tbody>
-							{/* Replace the following placeholders with your actual data */}
-							<tr>
-								<td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">Category 1</td>
-								<td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">100</td>
-							</tr>
-							<tr>
-								<td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">Category 2</td>
-								<td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">200</td>
-							</tr>
-							{/* Add more rows as needed */}
-						</tbody>
-					</table>
-				</div>
-				<div className="w-full md:w-1/3 lg:w-1/4 xl:w-1/4">
-					<div className="relative" style={{ paddingBottom: "100%" }}>
-						<div className="absolute inset-0 flex items-center justify-center">
-							{/* Render your Bar chart component here */}
-							<Doughnut data={data} />
-						</div>
+			<div className="flex flex-col md:flex-row items-center justify-start ml-2">
+
+
+				<div className="relative ml-60" style={{ paddingBottom: "25%", width: "50%", height: "50%" }}>
+					<div className="absolute inset-0 flex items-center justify-center">
+						{/* Render your Scatter plot component here */}
+						<Bar data={scatterData} options={scatterOptions} />
 					</div>
+
+
 				</div>
+
 			</div>
+			<div className="w-full md:w-2/3 lg:w-3/4 xl:w-3/4 overflow-x-auto mx-36 my-6">
+				<table className="min-w-full bg-white rounded-lg overflow-hidden">
+					<thead>
+						<tr>
+							<th className="px-6 py-3 border-b border-black bg-black text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Item Name</th>
+							<th className="px-6 py-3 border-b border-black bg-black text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Month</th>
+							<th className="px- py-3 border-b border-black bg-black text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Predicted Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						{items.slice(0, 6).map((elem, index) => (
+							<tr key={index}>
+								<td className="px-4 py-4 whitespace-no-wrap border-b border-gray-200">{elem.ItemName}</td>
+								<td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">{elem.Month}</td>
+								<td className="px-6 py-2 whitespace-no-wrap border-b border-gray-200">{elem.Prediction}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+
+
+
+
 
 		</>
 	);

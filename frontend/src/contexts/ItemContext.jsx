@@ -7,6 +7,7 @@ import DbItemAPI from "./api/DbItemsAPI";
 const ItemContext = createContext();
 
 export function ItemProvider({ children }) {
+	const navigate = useNavigate();
 	const [items, setItems] = useState([]);
 	const [itemError, setItemError] = useState();
 	const [dbItems, setDbItems] = useState([]);
@@ -30,6 +31,7 @@ export function ItemProvider({ children }) {
 			const response = await DbItemAPI.itemCreate(values);
 			setDbItems([...dbItems, response]);
 			makeToast({ type: "success", message: "Item Created successful" });
+			navigate("/staff/item/")
 		} catch (error) {
 			makeToast({ type: "error", message: "Item not created" });
 		}
@@ -85,6 +87,14 @@ export function ItemProvider({ children }) {
 		}, []);
 	};
 
+	// Delete Item
+	const deleteDbItem = (id) => {
+		DbItemAPI.deleteItem(id).then(() => {
+			setDbItems(dbItems.filter((items) => items._id !== id));
+			makeToast({ type: "success", message: "Item Deleted successful" });
+		});
+	};
+
 	return (
 		<ItemContext.Provider
 			value={{
@@ -100,6 +110,7 @@ export function ItemProvider({ children }) {
 				getOneDbItem,
 				addStock,
 				removeStock,
+				deleteDbItem,
 			}}
 		>
 			{children}

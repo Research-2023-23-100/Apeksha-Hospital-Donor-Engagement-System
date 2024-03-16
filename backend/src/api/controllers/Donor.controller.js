@@ -1,6 +1,7 @@
 import DonorModel from "../models/Donor.model";
 import DonorService from "../services";
 import logger from "../../util/logger";
+import sendMail from "../../util/sendMail";
 
 // Donor Login
 export const loginDonor = async (request, response, next) => {
@@ -39,31 +40,43 @@ export const loginDonor = async (request, response, next) => {
 
 // Donor register
 export const registerDonor = async (request, response, next) => {
-	if (await DonorModel.findOne({ email: request.body.email })) {
-		request.handleResponse.errorRespond(response)("Email already exists");
-		next();
-	} else if (await DonorModel.findOne({ nic: request.body.nic })) {
-		request.handleResponse.errorRespond(response)("NIC already exists");
-	} else {
-		const Staff = {
-			name: request.body.name,
-			email: request.body.email,
-			nic: request.body.nic,
-			password: request.body.password,
-			permissionLevel: "DONOR",
-		};
+	try {
+		const existingEmail = await DonorModel.findOne({ email: request.body.email });
+		if (existingEmail) {
+			request.handleResponse.errorRespond(response)("Email already exists");
+		} else {
+			const existingNIC = await DonorModel.findOne({ nic: request.body.nic });
+			if (existingNIC) {
+				request.handleResponse.errorRespond(response)("NIC already exists");
+			} else {
+				const newDonor = {
+					name: request.body.name,
+					email: request.body.email,
+					nic: request.body.nic,
+					password: request.body.password,
+					permissionLevel: "DONOR",
+				};
 
-		await DonorService.insertDonor(Staff)
-			.then((data) => {
-				logger.info(`New User with ID ${data._id} created`);
-				request.handleResponse.successRespond(response)(data);
-				next();
-			})
-			.catch((error) => {
-				logger.error(error.message);
-				request.handleResponse.errorRespond(response)(error.message);
-				next();
-			});
+				const createdDonor = await DonorService.insertDonor(newDonor);
+				logger.info(`New User with ID ${createdDonor._id} created`);
+				request.handleResponse.successRespond(response)(createdDonor);
+
+				// Send email to the registered user
+				await sendMail({
+					to: request.body.email,
+					subject: "User Registered",
+					templateType: "donation",
+					data: {
+						name: request.body.name,
+					},
+				});
+
+				// Assuming logger and request.handleResponse are properly implemented
+			}
+		}
+	} catch (error) {
+		logger.error(error.message);
+		request.handleResponse.errorRespond(response)(error.message);
 	}
 };
 

@@ -16,6 +16,7 @@ import {
 	getDonorDetails,
 	editDonorDetails,
 	deleteDonor,
+	changeStatus,
 } from "./Donor.service";
 
 import {
@@ -36,6 +37,8 @@ import {
 	decrementQuantity,
 } from "./Item.service";
 
+import { deleteCampagin, getAllCampagin, getCampaginDetails, insertCampagin } from "./Campagin.service";
+
 export default {
 	insert,
 
@@ -54,6 +57,7 @@ export default {
 	getDonorDetails,
 	editDonorDetails,
 	deleteDonor,
+	changeStatus,
 
 	// Organization Section
 	authenticateOrganization,
@@ -70,4 +74,10 @@ export default {
 	deleteItem,
 	incrementQuantity,
 	decrementQuantity,
+
+	//Campagin Section
+	insertCampagin,
+	getAllCampagin,
+	getCampaginDetails,
+	deleteCampagin,
 };

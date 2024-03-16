@@ -52,7 +52,11 @@ export const registerDonor = async (request, response, next) => {
 				const newDonor = {
 					name: request.body.name,
 					email: request.body.email,
+					contact: request.body.contact,
 					nic: request.body.nic,
+					bloodGroup: request.body.bloodGroup,
+					image1: request.body.image1,
+					image2: request.body.image2,
 					password: request.body.password,
 					permissionLevel: "DONOR",
 				};
@@ -70,8 +74,6 @@ export const registerDonor = async (request, response, next) => {
 						name: request.body.name,
 					},
 				});
-
-				// Assuming logger and request.handleResponse are properly implemented
 			}
 		}
 	} catch (error) {
@@ -122,6 +124,19 @@ export const updateDonor = async (request, response, next) => {
 // Delete Donor user
 export const deleteDonor = async (request, response, next) => {
 	await DonorService.deleteDonor(request.params.id)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Change Status
+export const changeStatus = async (request, response, next) => {
+	await DonorService.changeStatus(request.params.id, request.body.status)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();

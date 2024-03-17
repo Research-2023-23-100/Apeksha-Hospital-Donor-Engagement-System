@@ -45,7 +45,7 @@ const DonorMedicationList = () => {
                   <td className="px-8 py-4"><div><MdMedication className="fill-red-800 h-[40px] w-[40px]" /></div></td>
                   <td className="px-8 py-4"><div className="ml-10">{medication}</div></td>
                   <td className="px-4 py-2">
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
                       Place a donation Request
                     </button>
                   </td>

@@ -23,6 +23,10 @@ const DonationRequestSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
+		date: {
+			type: Date,
+			required: true,
+		},
 		donationType: {
 			type: String,
 			enum: ["ESSENTIAL", "MEDICATION"],

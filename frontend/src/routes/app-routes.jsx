@@ -27,6 +27,8 @@ import {
 	BloodDonorSignUp,
 	BloodDonorHome,
 	DonorEssentialDonate,
+	DonorMedicationList,
+	DonorDonationCreate
 } from "../pages";
 const AppRoutes = () => {
 	return (
@@ -54,7 +56,10 @@ const AppRoutes = () => {
 						<Route path="/staff/donation/" element={<StaffDonationStatus />} />
 						{/* Need to change file route as donor */}
 						<Route path="/staff/essential/donate/" element={<DonorEssentialDonate />} />
+
+						<Route exact path="/staff/donatation/create/:itemName" element={<DonorDonationCreate />} />
 					</Route>
+
 
 					{/* Donor Section */}
 					{/* Donor Check Login Status */}
@@ -62,9 +67,10 @@ const AppRoutes = () => {
 						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
 					</Route>
 
-					{/* Donor Private Routes */}
-						<Route path="/donor" element={<StaffDashboard />} />
-					
+					{/* Donor Private Routes
+					<Route path="/donor" element={<PrivateRoute permissionLevel="DONOR" />}>
+						<Route path="/donor" element={<DonorDashboard />} />
+					</Route> */}
 
 					{/* Organization Section */}
 					<Route path="/org/login" element={<CheckLoginStatus />}>
@@ -77,6 +83,7 @@ const AppRoutes = () => {
 					</Route>
 
 					<Route path="/medication" element={<MedicationDashboard />} />
+					<Route path="/donor_med_list" element={<DonorMedicationList />} />
 					<Route path="/camp-prediction" element={<CampPrediction />} />
 
 					<Route path="/under-review" element={<UnderReview />} />

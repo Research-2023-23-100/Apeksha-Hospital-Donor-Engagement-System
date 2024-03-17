@@ -154,7 +154,7 @@ const MedicationDashboard = () => {
           </button>
         </div>
       </div>
-      <div className="border-2 border-slate-300 p-5 mt-">
+      <div className="border-2 w-full border-slate-300 p-5 mt-">
         <h1 className="text-3xl font-semibold mb-6">Medication Counts</h1>
         <div className="mt-28 mb-6" style={{ width: "100%", height: "100%" }}>
           <canvas id="shortageChart"></canvas>

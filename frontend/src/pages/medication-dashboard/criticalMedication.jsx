@@ -135,7 +135,7 @@ const CriticalMedication = () => {
             ))}
           </ul>
         </div>
-        <div className="border-2 border-slate-300 p-8">
+        <div className="w-[650px] border-2 p-8 border-slate-300">
           <h2 className="text-xl font-semibold mb-2">Priority Distribution</h2>
           <div className="mt-28 mb-6" style={{ width: "100%", height: "100%" }}>
           <canvas id="medicationChart"></canvas>

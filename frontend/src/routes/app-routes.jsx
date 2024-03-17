@@ -23,6 +23,10 @@ import {
 	OrganizeDonationCamp,
 	StaffDonationStatus,
 	DonorEssentialsList,
+	HairDonationHome,
+	HairSampleUpload1,
+	HairSampleUpload2,
+	HairSampleUpload3,
 } from "../pages";
 const AppRoutes = () => {
 	return (
@@ -65,7 +69,20 @@ const AppRoutes = () => {
 					<Route path="/org/login" element={<CheckLoginStatus />}>
 						{/* <Route path="/org/login" element={<orgLogin />} /> */}
 					</Route>
+					{/* Hair donation Routes */}
+					<Route path="/Hair_Donation" element={<HairDonationHome />}>
+						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
+					</Route>
+					<Route path="/hair_sample" element={<HairSampleUpload1 />}>
+						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
+					</Route>
+					<Route path="/hair_sample2" element={<HairSampleUpload2 />}>
+						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
+					</Route>
 
+					<Route path="/hair_sample3" element={<HairSampleUpload3/>}>
+						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
+					</Route>
 					{/* Organization Private Routes */}
 					<Route path="/org" element={<PrivateRoute permissionLevel="ORGANIZATION" />}>
 						{/* <Route path="/org" element={<orgDashboard />} /> */}

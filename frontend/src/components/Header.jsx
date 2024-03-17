@@ -103,9 +103,11 @@ const Header = () => {
 									<a className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-500">
 										Upcoming Events
 									</a>
-									<a className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-500">
+									<Link to="/Hair_Donation">
+										<a className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-500">
 										Hair Donation
-									</a>
+										</a>
+									</Link>
 								</div>
 							)}
 						</div>
@@ -154,12 +156,14 @@ const Header = () => {
 										>
 											Upcoming Events
 										</a>
-										<a
-											href="#"
-											className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-500"
-										>
-											Hair Donation
-										</a>
+										<Link to="/Hair_Donation">
+											<a
+												href="#"
+												className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-500"
+											>
+												Hair Donation
+											</a>
+										</Link>
 									</div>
 								)}
 							</div>

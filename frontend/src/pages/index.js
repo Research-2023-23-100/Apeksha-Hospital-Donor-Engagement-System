@@ -15,6 +15,11 @@ import ViewAllOrganizer from "./view-all-organizer";
 import OrganizeDonationCamp from "./donation-camp-organize";
 import StaffDonationStatus from "./staff-donation-status";
 import DonorEssentialsList from "./donor-essential-list";
+import HairDonationHome from "./Hair-donation/hair_home";
+import HairSampleUpload1 from "./Hair-donation/hairSampleUpload1";
+import HairSampleUpload2 from "./Hair-donation/hairSampleUpload2";
+import HairSampleUpload3 from "./Hair-donation/hairSampleUpload3";
+
 
 export {
 	Home,
@@ -34,4 +39,8 @@ export {
 	OrganizeDonationCamp,
 	StaffDonationStatus,
 	DonorEssentialsList,
+	HairDonationHome,
+	HairSampleUpload1,
+	HairSampleUpload2,
+	HairSampleUpload3,
 };

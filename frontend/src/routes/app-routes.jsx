@@ -43,9 +43,8 @@ const AppRoutes = () => {
 					</Route>
 
 					{/* Donor Private Routes */}
-					<Route path="/donor" element={<PrivateRoute permissionLevel="DONOR" />}>
 						<Route path="/donor" element={<StaffDashboard />} />
-					</Route>
+					
 
 
 					{/* Organization Section */}

@@ -8,12 +8,12 @@ class MedicationAPI {
 	
 	
 	// get all donor details
-	static getAll() {
+	static getAllShortages() {
 		return axios.get('http://127.0.0.1:8000/predict_all_shortages');
 	}
 	// get one donor details
-	static getOne(id) {
-		return axios.get(`${BASE_URL}/org/${id}`, requestConfigJson);
+	static getAllCritical(id) {
+		return axios.get('http://127.0.0.1:8000/critical_pred');
 	}
 	
 }

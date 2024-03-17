@@ -6,34 +6,35 @@ import MedicationAPI from "./api/MedicationAPI";
 const MedicationContext = createContext();
 
 export function MedicationProvider({ children }) {
-    const [medications, setMedications] = useState([]);
+    const [shortagedMedications, setShortagedMedications] = useState([]);
+    const [criticalMedications, setCriticalMedications] = useState([]);
 
-    
 
-    // Get one Medication
-    const getOne = (id) => {
-        useEffect(() => {
-            MedicationAPI.getOne(id).then((res) => {
-                setStaff(res.data);
-            });
-        }, []);
-    };
 
     //Get all Medications
     useEffect(() => {
-        MedicationAPI.getAll().then((response) => {
+        MedicationAPI.getAllShortages().then((response) => {
 
             console.log('Medicationssss'+response.data);
-            setMedications(response.data);
+            setShortagedMedications(response.data);
         });
+
+        MedicationAPI.getAllCritical().then((response) => {
+
+            console.log('Medicationssss'+response.data);
+            setCriticalMedications(response.data);
+        });
+
+
     }, []);
 
     return (
         <MedicationContext.Provider
             value={{
-                medications,
-                setMedications,
-                getOne,
+                shortagedMedications,
+                criticalMedications,
+                setShortagedMedications,
+                setCriticalMedications,
             }}
 
         >

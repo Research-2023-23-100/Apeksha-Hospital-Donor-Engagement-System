@@ -1,0 +1,33 @@
+<html>
+  <body>
+    <div style="font-family: Arial, sans-serif; margin: 0 auto; padding: 20px">
+      <h2 style="color: #333">Dear <%= name %>,</h2>
+
+      <p>
+        Thank you for your generosity and commitment to supporting our cause!
+      </p>
+
+      <% donationItems.forEach(function(item) { %>
+        <p>
+          We wanted to inform you that your donation of <%= item.quantity %> <%= item.ItemName %> is
+          currently pending processing.
+        </p>
+      <% }); %>
+
+      <p>
+        In the meantime, if you have any questions or concerns, please feel free
+        to contact our support team at
+        <a href="mailto:donation@apekshahospital.com"
+          >donation@apekshahospital.com</a
+        >
+      </p>
+
+      <p>We sincerely appreciate your patience and understanding.</p>
+
+      <p>Thank you once again for your generosity.</p>
+
+      <p>Warm regards,</p>
+      <p>Apeksha Hospital Maharagama</p>
+    </div>
+  </body>
+</html>

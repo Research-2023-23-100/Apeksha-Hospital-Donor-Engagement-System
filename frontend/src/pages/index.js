@@ -23,6 +23,7 @@ import BloodDonorHome from "./blood-donor-home-page/BloodDonorHome";
 import DonorEssentialDonate from "./donor-essential-donate";
 import DonorMedicationList from "./donor-medication-list";
 import DonorDonationCreate from "./donar-donation-create";
+import DonorMedicationCreate from "./donor-medication-create";
 
 export {
 	Home,
@@ -48,5 +49,6 @@ export {
 	BloodDonorCarousel,
 	DonorEssentialDonate,
 	DonorMedicationList,
-	DonorDonationCreate
+	DonorDonationCreate,
+	DonorMedicationCreate,
 };

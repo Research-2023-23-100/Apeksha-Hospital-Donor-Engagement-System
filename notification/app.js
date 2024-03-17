@@ -32,6 +32,8 @@ app.post("/notification/send-email", async (req, res) => {
 
     if (templateType == "donation") {
       file = folder + "/defaultTemplate.ejs";
+    } else if ((templateType == "donationPending")) {
+      file = folder + "/donationPendingTemplate.ejs";
     } else {
       file = folder + "/donationConfirmedTemplate.ejs";
     }

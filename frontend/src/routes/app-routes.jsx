@@ -23,6 +23,10 @@ import {
 	OrganizeDonationCamp,
 	StaffDonationStatus,
 	DonorEssentialsList,
+	BloodDonorLogin,
+	BloodDonorSignUp,
+	BloodDonorHome,
+	DonorEssentialDonate,
 } from "../pages";
 const AppRoutes = () => {
 	return (
@@ -48,6 +52,8 @@ const AppRoutes = () => {
 						<Route path="/staff/item/create" element={<StaffCreateItem />} />
 						<Route path="/staff/item/" element={<StaffViewAllItems />} />
 						<Route path="/staff/donation/" element={<StaffDonationStatus />} />
+						{/* Need to change file route as donor */}
+						<Route path="/staff/essential/donate/" element={<DonorEssentialDonate />} />
 					</Route>
 
 					{/* Donor Section */}
@@ -57,9 +63,8 @@ const AppRoutes = () => {
 					</Route>
 
 					{/* Donor Private Routes */}
-					<Route path="/donor" element={<PrivateRoute permissionLevel="DONOR" />}>
 						<Route path="/donor" element={<StaffDashboard />} />
-					</Route>
+					
 
 					{/* Organization Section */}
 					<Route path="/org/login" element={<CheckLoginStatus />}>
@@ -70,6 +75,7 @@ const AppRoutes = () => {
 					<Route path="/org" element={<PrivateRoute permissionLevel="ORGANIZATION" />}>
 						{/* <Route path="/org" element={<orgDashboard />} /> */}
 					</Route>
+
 					<Route path="/medication" element={<MedicationDashboard />} />
 					<Route path="/camp-prediction" element={<CampPrediction />} />
 
@@ -77,10 +83,14 @@ const AppRoutes = () => {
 
 					<Route path="/organizer-login" element={<OrganizerLogin />} />
 					<Route path="/organizer-signup" element={<OrganizerSignup />} />
+					<Route path="/blood-donor-login" element={<BloodDonorLogin />} />
+					<Route path="/blood-donor-signup" element={<BloodDonorSignUp />} />
 
 					<Route path="/blood-organizers" element={<ViewAllOrganizer />} />
 					<Route path="/organize-camp" element={<OrganizeDonationCamp />} />
-					<Route path="/donor-home" element={<DonorHome />} />
+					<Route path="/blood-donor-home" element={<BloodDonorHome />} />
+
+					<Route path="/donor-ask" element={<DonorHome />} />
 				</Routes>
 
 				<Footer />

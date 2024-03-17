@@ -1,7 +1,8 @@
 import React from "react";
+import DonorAsk from "./DonorHome";
 
 function index() {
-	return <div>index</div>;
+	return <DonorAsk />;
 }
 
 export default index;

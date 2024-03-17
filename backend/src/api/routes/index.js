@@ -32,6 +32,8 @@ router.get("/org/", controller.getAllOrganization);
 router.get("/org/:id", controller.getOneOrganization);
 router.put("/org/update/:id", controller.updateOrganization);
 router.delete("/org/delete/:id", controller.deleteOrganization);
+router.put("/org/donor/update/:id", controller.updateDonorStatus);
+router.get("/org/donor/status", controller.getDonorStatus);
 
 // Essentials Items endpoints
 router.post("/item/create", controller.insertItem);

@@ -70,3 +70,18 @@ export const deleteDonor = async (userId) => {
 			throw new Error(error.message);
 		});
 };
+
+// Update Active Status
+export const changeStatus = async (userId, status) => {
+	return await DonorModel.findByIdAndUpdate(userId, { status: status }, { new: true })
+		.then((user) => {
+			if (user) {
+				return user;
+			} else {
+				throw new Error("User not found");
+			}
+		})
+		.catch((error) => {
+			throw new Error(error.message);
+		});
+};

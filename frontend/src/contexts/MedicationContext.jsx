@@ -6,6 +6,7 @@ import MedicationAPI from "./api/MedicationAPI";
 const MedicationContext = createContext();
 
 export function MedicationProvider({ children }) {
+
     const [shortagedMedications, setShortagedMedications] = useState([]);
     const [criticalMedications, setCriticalMedications] = useState([]);
 
@@ -42,6 +43,7 @@ export function MedicationProvider({ children }) {
             {children}
         </MedicationContext.Provider>
     )
+
 }
 
 export default MedicationContext;

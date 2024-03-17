@@ -35,3 +35,12 @@ jobs:
           file: ./backend/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/research-backend:dev
+      - name: build and push - Notification
+        uses: docker/build-push-action@v4
+        with:
+          context: ./notification
+          file: ./notification/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/research-notification:dev
+          
+

@@ -31,7 +31,7 @@ export function ItemProvider({ children }) {
 			const response = await DbItemAPI.itemCreate(values);
 			setDbItems([...dbItems, response]);
 			makeToast({ type: "success", message: "Item Created successful" });
-			navigate("/staff/item/")
+			navigate("/staff/item/");
 		} catch (error) {
 			makeToast({ type: "error", message: "Item not created" });
 		}

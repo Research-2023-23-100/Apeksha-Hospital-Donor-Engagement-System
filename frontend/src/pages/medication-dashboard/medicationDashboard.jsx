@@ -4,6 +4,7 @@ import Chart from "chart.js/auto";
 import CriticalMedication from "./criticalMedication";
 
 const MedicationDashboard = () => {
+
   const { shortagedMedications,criticalMedications } = useContext(MedicationContext);
   const [currentPage, setCurrentPage] = useState(1);
   const [medicationsPerPage] = useState(5);
@@ -13,23 +14,26 @@ const MedicationDashboard = () => {
   const chartRef = useRef(null);
   const chartContainerRef = useRef(null);
 
-  useEffect(() => {
-    // Calculate shortage data
-    const shortageCounts = {
-      shortaged: 0,
-      "not shortaged": 0
-    };
+
+	useEffect(() => {
+		// Calculate shortage data
+		const shortageCounts = {
+			shortaged: 0,
+			"not shortaged": 0,
+		};
+
 
     shortagedMedications.forEach(medication => {
       shortageCounts[medication.shortaged]++;
     });
 
-    setShortageData(shortageCounts);
 
-    // Destroy previous chart instance
-    if (chartRef.current !== null) {
-      chartRef.current.destroy();
-    }
+		setShortageData(shortageCounts);
+
+		// Destroy previous chart instance
+		if (chartRef.current !== null) {
+			chartRef.current.destroy();
+		}
 
     // Create chart
     const ctx = document.getElementById("shortageChart");
@@ -70,12 +74,14 @@ const MedicationDashboard = () => {
     );
   });
 
-  // Pagination
-  const indexOfLastMedication = currentPage * medicationsPerPage;
-  const indexOfFirstMedication = indexOfLastMedication - medicationsPerPage;
-  const currentMedications = filteredMedications.slice(indexOfFirstMedication, indexOfLastMedication);
 
-  const paginate = pageNumber => setCurrentPage(pageNumber);
+	// Pagination
+	const indexOfLastMedication = currentPage * medicationsPerPage;
+	const indexOfFirstMedication = indexOfLastMedication - medicationsPerPage;
+	const currentMedications = filteredMedications.slice(indexOfFirstMedication, indexOfLastMedication);
+
+	const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
 
   // Calculate table height
   useEffect(() => {
@@ -162,6 +168,7 @@ const MedicationDashboard = () => {
       </div>
     </div>
   );
+
 };
 
 export default MedicationDashboard;

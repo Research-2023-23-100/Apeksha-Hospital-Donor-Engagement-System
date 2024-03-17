@@ -124,10 +124,7 @@ const StaffViewAllItems = () => {
 
 			<div className="flex justify-end mt-4">
 				<Link to="/staff/item/create">
-					<button
-
-						className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full mr-12"
-					>
+					<button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full mr-12">
 						Create New Item
 					</button>
 				</Link>
@@ -143,49 +140,50 @@ const StaffViewAllItems = () => {
 							<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Quantity Status</th>
 							<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Action</th>
 							<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Action</th>
-
 						</tr>
 					</thead>
 					<tbody className="bg-white">
-						{dbItems.filter((val) => {
-							if (searchTerm === "") {
-								return val;
-							} else if (val.ItemName.toLowerCase().includes(searchTerm.toLowerCase())) {
-								return val;
-							}
-						}).map((elem) => (
-							<tr key={elem._id}>
-								<td className="py-4 px-6 border-b border-gray-200">{elem.ItemName}</td>
-								<td className="py-4 px-6 border-b border-gray-200 truncate">{elem.ItemID}</td>
-								<td className="py-4 px-6 border-b border-gray-200">{elem.QuantityInStock}</td>
-								<td className="py-4 px-6 border-b border-gray-200">
-									{elem.QuantityInStock < 50 ? (
-										<span className="bg-red-500 text-white py-1 px-2 rounded-full font-bold text-xs">Low</span>
-									) : elem.QuantityInStock >= 50 && elem.QuantityInStock <= 100 ? (
-										<span className="bg-yellow-500 text-white py-1 px-2 rounded-full font-bold text-xs">Average</span>
-									) : (
-										<span className="bg-green-500 text-white py-1 px-2 rounded-full font-bold text-xs">Good</span>
-									)}
-								</td>
-								<td className="py-4 px-6 border-b border-gray-200">
-									<button
-										onClick={() => handleOpenModal(elem._id)}
-										className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-									>
-										<FaEdit />
-									</button>
-								</td>
+						{dbItems
+							.filter((val) => {
+								if (searchTerm === "") {
+									return val;
+								} else if (val.ItemName.toLowerCase().includes(searchTerm.toLowerCase())) {
+									return val;
+								}
+							})
+							.map((elem) => (
+								<tr key={elem._id}>
+									<td className="py-4 px-6 border-b border-gray-200">{elem.ItemName}</td>
+									<td className="py-4 px-6 border-b border-gray-200 truncate">{elem.ItemID}</td>
+									<td className="py-4 px-6 border-b border-gray-200">{elem.QuantityInStock}</td>
+									<td className="py-4 px-6 border-b border-gray-200">
+										{elem.QuantityInStock < 50 ? (
+											<span className="bg-red-500 text-white py-1 px-2 rounded-full font-bold text-xs">Low</span>
+										) : elem.QuantityInStock >= 50 && elem.QuantityInStock <= 100 ? (
+											<span className="bg-yellow-500 text-white py-1 px-2 rounded-full font-bold text-xs">Average</span>
+										) : (
+											<span className="bg-green-500 text-white py-1 px-2 rounded-full font-bold text-xs">Good</span>
+										)}
+									</td>
+									<td className="py-4 px-6 border-b border-gray-200">
+										<button
+											onClick={() => handleOpenModal(elem._id)}
+											className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+										>
+											<FaEdit />
+										</button>
+									</td>
 
-								<td className="py-4 px-6 border-b border-gray-200">
-									<button
-										onClick={() => deleteDbItem(elem._id)}
-										className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
-									>
-										<FaTrash />
-									</button>
-								</td>
-							</tr>
-						))}
+									<td className="py-4 px-6 border-b border-gray-200">
+										<button
+											onClick={() => deleteDbItem(elem._id)}
+											className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
+										>
+											<FaTrash />
+										</button>
+									</td>
+								</tr>
+							))}
 					</tbody>
 				</table>
 			</div>

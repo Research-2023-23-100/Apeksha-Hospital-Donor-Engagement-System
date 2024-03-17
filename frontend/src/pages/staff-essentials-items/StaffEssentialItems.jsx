@@ -1,34 +1,40 @@
 import React, { useState, useEffect, useContext } from "react";
 import ItemContext from "../../contexts/ItemContext";
 
-
 const StaffEssentialItems = () => {
 	const { items } = useContext(ItemContext);
 	const [showAll, setShowAll] = useState(false);
 	const [selectedMonth, setSelectedMonth] = useState("");
 	const [displayedItems, setDisplayedItems] = useState([]);
 	const [searchTerm, setSearchTerm] = useState("");
+	const [currentPage, setCurrentPage] = useState(1);
+	const [itemsToShow, setItemsToShow] = useState(25);
 
 	useEffect(() => {
 		if (showAll) {
-			setDisplayedItems(items);
+			setDisplayedItems(items.slice(0, itemsToShow));
 		} else {
 			if (selectedMonth) {
 				const filteredItems = items.filter((item) => item.Month === selectedMonth);
-				setDisplayedItems(filteredItems);
+				setDisplayedItems(filteredItems.slice(0, itemsToShow));
 			} else {
-				setDisplayedItems(items?.slice(0, 20));
+				setDisplayedItems(items.slice(0, itemsToShow));
 			}
 		}
-	}, [items, showAll, selectedMonth]);
+	}, [items, showAll, selectedMonth, itemsToShow]);
 
-	const handleSeeMore = () => {
-		setShowAll(true);
+	// Pagination logic
+	const itemsPerPage = 25;
+	const indexOfLastItem = currentPage * itemsPerPage;
+	const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+	const currentItems = displayedItems.slice(indexOfFirstItem, indexOfLastItem);
+
+	const handlePageChange = (pageNumber) => {
+		setCurrentPage(pageNumber);
 	};
 
-	const handleMonthChange = (event) => {
-		setSelectedMonth(event.target.value);
-		setShowAll(false);
+	const handleSeeMore = () => {
+		setItemsToShow(itemsToShow + itemsPerPage);
 	};
 
 	const calculatePriority = (predictedValue) => {
@@ -89,7 +95,10 @@ const StaffEssentialItems = () => {
 				</label>
 				<select
 					id="monthSelect"
-					onChange={handleMonthChange}
+					onChange={(event) => {
+						setSelectedMonth(event.target.value);
+						setShowAll(false);
+					}}
 					value={selectedMonth}
 					className="ml-2 px-2 py-1 border rounded-md"
 				>
@@ -120,11 +129,14 @@ const StaffEssentialItems = () => {
 						</tr>
 					</thead>
 					<tbody className="bg-white">
-						{displayedItems
+						{currentItems
 							.filter((val) => {
 								if (searchTerm === "") {
 									return val;
-								} else if (val.ItemName.toLowerCase().includes(searchTerm.toLowerCase())) {
+								} else if (
+									val.ItemName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+									val.Prediction.toString().includes(searchTerm)
+								) {
 									return val;
 								}
 							})
@@ -151,20 +163,34 @@ const StaffEssentialItems = () => {
 									<td className="py-4 px-6 border-b border-gray-200 truncate">{elem.Month}</td>
 									<td className="py-4 px-6 border-b border-gray-200">{elem.Prediction}</td>
 									<td className="py-4 px-6 border-b border-gray-200 font-bold">{calculatePriority(elem.Prediction)}</td>
-
 								</tr>
 							))}
 					</tbody>
 				</table>
-				{!showAll && (
-					<div className="mx-auto mt-4">
-						<button
-							onClick={handleSeeMore}
-							className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-						>
-							See More
-						</button>
-					</div>
+			</div>
+			{!showAll && (
+				<div className="flex justify-center mt-4">
+					<button className="px-4 py-2 bg-gray-800 text-white rounded-md focus:outline-none" onClick={handleSeeMore}>
+						See more
+					</button>
+				</div>
+			)}
+			<div className="pagination">
+				{displayedItems.length > itemsPerPage && (
+					<ul className="flex justify-center">
+						{[...Array(Math.ceil(displayedItems.length / itemsPerPage))].map((_, index) => (
+							<li key={index} className="mx-1">
+								<button
+									onClick={() => handlePageChange(index + 1)}
+									className={`px-3 py-1 ${
+										currentPage === index + 1 ? "bg-gray-800 text-white" : "bg-gray-200 text-gray-800"
+									} rounded-md focus:outline-none`}
+								>
+									{index + 1}
+								</button>
+							</li>
+						))}
+					</ul>
 				)}
 			</div>
 		</>
@@ -172,4 +198,3 @@ const StaffEssentialItems = () => {
 };
 
 export default StaffEssentialItems;
-

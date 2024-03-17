@@ -32,9 +32,8 @@ function DonorAsk() {
 
 			{/* Right side with main image */}
 			<div className="w-2/3 mt-10 ">
-    <img src={mainImage} alt="Main" className="w-[50rem] max-w-full" />
-</div>
-
+				<img src={mainImage} alt="Main" className="w-[50rem] max-w-full" />
+			</div>
 		</div>
 	);
 }

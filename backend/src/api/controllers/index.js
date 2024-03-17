@@ -38,7 +38,13 @@ import {
 	insertCampagin,
 } from "./Campagin.controller";
 
-import { insertDonation } from "./DonationRequest.controller";
+import {
+	deleteDonation,
+	getAllDonation,
+	getDonationDetails,
+	insertDonation,
+	changeDonationStatus,
+} from "./DonationRequest.controller";
 
 export default {
 	insert,
@@ -85,4 +91,8 @@ export default {
 
 	// Dontation Request
 	insertDonation,
+	getAllDonation,
+	getDonationDetails,
+	deleteDonation,
+	changeDonationStatus,
 };

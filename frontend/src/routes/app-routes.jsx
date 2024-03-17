@@ -23,6 +23,9 @@ import {
 	OrganizeDonationCamp,
 	StaffDonationStatus,
 	DonorEssentialsList,
+	BloodDonorLogin,
+	BloodDonorSignUp,
+	BloodDonorHome
 } from "../pages";
 const AppRoutes = () => {
 	return (
@@ -77,10 +80,15 @@ const AppRoutes = () => {
 
 					<Route path="/organizer-login" element={<OrganizerLogin />} />
 					<Route path="/organizer-signup" element={<OrganizerSignup />} />
+					<Route path="/blood-donor-login" element={<BloodDonorLogin />} />
+					<Route path="/blood-donor-signup" element={<BloodDonorSignUp />} />
 
 					<Route path="/blood-organizers" element={<ViewAllOrganizer />} />
 					<Route path="/organize-camp" element={<OrganizeDonationCamp />} />
-					<Route path="/donor-home" element={<DonorHome />} />
+					<Route path="/blood-donor-home" element={<BloodDonorHome />} />
+					
+
+					<Route path="/donor-ask" element={<DonorHome />} />
 				</Routes>
 
 				<Footer />

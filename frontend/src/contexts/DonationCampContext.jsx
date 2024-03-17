@@ -9,6 +9,8 @@ export const DonateCampProvider = ({ children }) => {
 		organizerName: "",
 		mobile: "",
 		email: "",
+		staff: "",
+		requiredItems: "",
 		date: "",
 		marketingSlip: "",
 	});

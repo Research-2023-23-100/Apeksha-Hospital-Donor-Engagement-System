@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import DonorContext from "../../contexts/DonorContext";
 import ItemContext from "../../contexts/ItemContext";
+import { Link } from "react-router-dom";
 
 const DonorEssentialDonate = () => {
 	const { items, dbItems } = useContext(ItemContext);
@@ -124,15 +125,14 @@ const DonorEssentialDonate = () => {
 								<h2 className="text-xl font-semibold text-gray-800 mb-2">{item.ItemName}</h2>
 								<p className="text-gray-600 mb-4">Quantity Needed: {item.Prediction}</p>
 								<div className="flex justify-end">
-									<button
-										onClick={() => handleDonate(item.ItemName)}
-										className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600"
-									>
-										Donate
-									</button>
-									{/* <button onClick={() => handleDonate(item.ItemName)} className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">
-                                    Donate
-                                </button> */}
+									<Link to={`/staff/donatation/create/${item.ItemName}`}>
+										<button
+											onClick={() => handleDonate(item.ItemName)}
+											className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600"
+										>
+											Donate
+										</button>
+									</Link>
 								</div>
 							</div>
 						</div>

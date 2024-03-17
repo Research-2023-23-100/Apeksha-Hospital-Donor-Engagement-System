@@ -104,7 +104,7 @@ const Header = () => {
 								Home
 							</a>
 						</Link>
-						
+
 						<a
 							href="#"
 							className="text-lg font-semibold text-gray-800 hover:text-red-600 transition-colors duration-300"
@@ -126,45 +126,17 @@ const Header = () => {
 						{permissionLevel === "STAFF" && (
 							<div
 								className="relative dropdown"
-								onMouseEnter={() => handleMouseEnter("menu")}
-								onMouseLeave={() => handleMouseLeave("menu")}
+
 							>
-								<button
-									className="dropdown-button text-lg font-semibold text-gray-800 hover:text-indigo-500 transition-colors duration-300"
-									onClick={handleClick}
-								>
-									Dashboard
-								</button>
-								{isOpen && (
-									<div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-1">
-										<Link to="/staff/essentials">
-											<a
-												href="#"
-												className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-100 hover:text-indigo-500 transition-colors duration-300"
-											>
-												Essential Items
-											</a>
-										</Link>
-										<a
-											href="#"
-											className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-100 hover:text-indigo-500 transition-colors duration-300"
-										>
-											Medication
-										</a>
-										<a
-											href="#"
-											className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-100 hover:text-indigo-500 transition-colors duration-300"
-										>
-											Upcoming Events
-										</a>
-										<a
-											href="#"
-											className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-100 hover:text-indigo-500 transition-colors duration-300"
-										>
-											Hair Donation
-										</a>
-									</div>
-								)}
+								<Link to="/staff">
+									<button
+										className="dropdown-button text-lg font-semibold text-gray-800 hover:text-red-500 transition-colors duration-300"
+
+									>
+										Dashboard
+									</button>
+								</Link>
+
 							</div>
 						)}
 					</nav>

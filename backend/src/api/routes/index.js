@@ -23,6 +23,7 @@ router.get("/donor/", controller.getAllDonor);
 router.get("/donor/:id", controller.getOneDonor);
 router.put("/donor/update/:id", controller.updateDonor);
 router.delete("/donor/delete/:id", controller.deleteDonor);
+router.put("/donor/status/:id", controller.changeStatus);
 
 // Organization endpoints
 router.post("/org/register", controller.registerOrganization);
@@ -32,11 +33,26 @@ router.get("/org/:id", controller.getOneOrganization);
 router.put("/org/update/:id", controller.updateOrganization);
 router.delete("/org/delete/:id", controller.deleteOrganization);
 
+// Essentials Items endpoints
 router.post("/item/create", controller.insertItem);
 router.get("/item/", controller.getAllItems);
 router.get("/item/:id", controller.getItemDetails);
 router.delete("/item/delete/:id", controller.deleteItem);
 router.put("/item/increment/:id", controller.incrementQuantity);
 router.put("/item/decrement/:id", controller.decrementQuantity);
+
+// Campagin endpoints
+router.post("/campagin/create", controller.insertCampagin);
+router.get("/campagin/", controller.getAllCampagin);
+router.get("/campagin/:id", controller.getCampaginDetails);
+router.put("/campagin/update/:id", controller.editCampaginDetails);
+router.delete("/campagin/delete/:id", controller.deleteCampagin);
+
+// Donation Request endpoints
+router.post("/donation/request", controller.insertDonation);
+router.get("/donation/request/", controller.getAllDonation);
+router.get("/donation/request/:id", controller.getDonationDetails);
+router.delete("/donation/request/delete/:id", controller.deleteDonation);
+router.put("/donation/request/status/:id", controller.changeDonationStatus);
 
 export default router;

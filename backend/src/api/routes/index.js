@@ -48,4 +48,7 @@ router.get("/campagin/:id", controller.getCampaginDetails);
 router.put("/campagin/update/:id", controller.editCampaginDetails);
 router.delete("/campagin/delete/:id", controller.deleteCampagin);
 
+// Donation Request endpoints
+router.post("/donation/request", controller.insertDonation);
+
 export default router;

@@ -6,7 +6,6 @@ import DonorAPI from "./api/DonorAPI";
 const DonorContext = createContext();
 
 export function DonorProvider({ children }) {
-
 	const [donors, setDonors] = useState([]);
 
 	const [donor, setDonor] = useState({
@@ -18,7 +17,6 @@ export function DonorProvider({ children }) {
 		password: "",
 		image1: "",
 		image2: "",
-
 	});
 
 	// Donor Login
@@ -69,7 +67,6 @@ export function DonorProvider({ children }) {
 			setDonors(response.data);
 		});
 	}, []);
-
 
 	return (
 		<DonorContext.Provider

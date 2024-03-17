@@ -1,14 +1,13 @@
-import React from 'react'
-import BloodDonorSignUp from './BloodDonorSignUp'
+import React from "react";
+import BloodDonorSignUp from "./BloodDonorSignUp";
 import { BloodDonorProvider } from "../../contexts/BloodDonorContext";
 
-
 function index() {
-  return (
-    <BloodDonorProvider>
-<BloodDonorSignUp/>
-</BloodDonorProvider>
-  )
+	return (
+		<BloodDonorProvider>
+			<BloodDonorSignUp />
+		</BloodDonorProvider>
+	);
 }
 
-export default index
+export default index;

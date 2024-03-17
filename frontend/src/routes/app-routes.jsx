@@ -27,7 +27,8 @@ import {
 	BloodDonorSignUp,
 	BloodDonorHome,
 	DonorEssentialDonate,
-	DonorDonationCreate,
+	DonorMedicationList,
+	DonorDonationCreate
 } from "../pages";
 const AppRoutes = () => {
 	return (
@@ -59,6 +60,7 @@ const AppRoutes = () => {
 						<Route exact path="/staff/donatation/create/:itemName" element={<DonorDonationCreate />} />
 					</Route>
 
+
 					{/* Donor Section */}
 					{/* Donor Check Login Status */}
 					<Route path="/donor/login" element={<CheckLoginStatus />}>
@@ -81,6 +83,7 @@ const AppRoutes = () => {
 					</Route>
 
 					<Route path="/medication" element={<MedicationDashboard />} />
+					<Route path="/donor_med_list" element={<DonorMedicationList />} />
 					<Route path="/camp-prediction" element={<CampPrediction />} />
 
 					<Route path="/under-review" element={<UnderReview />} />

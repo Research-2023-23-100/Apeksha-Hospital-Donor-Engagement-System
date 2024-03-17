@@ -73,6 +73,9 @@ const AppRoutes = () => {
 					<Route path="/org" element={<PrivateRoute permissionLevel="ORGANIZATION" />}>
 						{/* <Route path="/org" element={<orgDashboard />} /> */}
 					</Route>
+
+
+
 					<Route path="/medication" element={<MedicationDashboard />} />
 					<Route path="/camp-prediction" element={<CampPrediction />} />
 
@@ -86,7 +89,7 @@ const AppRoutes = () => {
 					<Route path="/blood-organizers" element={<ViewAllOrganizer />} />
 					<Route path="/organize-camp" element={<OrganizeDonationCamp />} />
 					<Route path="/blood-donor-home" element={<BloodDonorHome />} />
-					
+
 
 					<Route path="/donor-ask" element={<DonorHome />} />
 				</Routes>

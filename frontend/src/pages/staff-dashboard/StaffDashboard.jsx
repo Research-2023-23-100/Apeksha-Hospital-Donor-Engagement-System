@@ -184,10 +184,10 @@ const StaffDashboard = () => {
 						</span>
 					</div>
 				</div>
-			</div >
+			</div>
 
 			{/* Table and Bar Chart */}
-			< div className="flex flex-col md:flex-row items-center justify-start ml-2" >
+			<div className="flex flex-col md:flex-row items-center justify-start ml-2">
 				<div className="relative ml-72" style={{ paddingBottom: "25%", width: "50%", height: "50%" }}>
 					<div className="absolute inset-0 flex items-center justify-center">
 						{/* Render your Scatter plot component here */}
@@ -225,7 +225,7 @@ const StaffDashboard = () => {
 						</svg>
 					</div>
 				</div>
-			</div >
+			</div>
 		</>
 	);
 };

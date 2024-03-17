@@ -45,3 +45,17 @@ export const deleteDonation = async (itemId) => {
 			throw new Error(error.message);
 		});
 };
+
+export const changeDonationStatus = async (donationId, status) => {
+	return await DonationRequestModel.findByIdAndUpdate(donationId, { status: status }, { new: true })
+		.then((donation) => {
+			if (donation) {
+				return donation;
+			} else {
+				throw new Error("Donation not found");
+			}
+		})
+		.catch((error) => {
+			throw new Error(error.message);
+		});
+};

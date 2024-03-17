@@ -11,6 +11,7 @@ if (environment == "Development") {
 		mongodb: {
 			uri: process.env.DEV_MONGO_URI,
 		},
+		notification_service: process.env.DEV_NOTIFICATION_SERVICE,
 	};
 }
 

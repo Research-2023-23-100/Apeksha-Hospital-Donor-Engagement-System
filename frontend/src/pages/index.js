@@ -17,9 +17,11 @@ import ViewAllOrganizer from "./view-all-organizer";
 import OrganizeDonationCamp from "./donation-camp-organize";
 import StaffDonationStatus from "./staff-donation-status";
 import DonorEssentialsList from "./donor-essential-list";
-import BloodDonorLogin from './blood-donor-login';
-import BloodDonorSignUp from './blood-donor-signup';
+import BloodDonorLogin from './donor-login';
+import BloodDonorSignUp from './donor-signup';
 import BloodDonorHome from "./blood-donor-home-page/BloodDonorHome";
+import BloodCampAdmin from "./blood-camp-admin-panel/BloodCampAdmin";
+
 
 
 export {
@@ -43,5 +45,6 @@ export {
 	BloodDonorLogin,
 	BloodDonorSignUp,
 	BloodDonorHome,
-	BloodDonorCarousel
+	BloodDonorCarousel,
+	BloodCampAdmin
 };

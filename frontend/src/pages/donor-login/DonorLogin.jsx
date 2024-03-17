@@ -5,57 +5,7 @@ import formImage from '../../assets/bloodman.jpg'; // Import the background imag
 import Carousel from '../carousel-home';
 
 function DonorLogin() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errors, setErrors] = useState({});
-  const navigate = useNavigate(); // Initialize useHistory hook
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const errors = {};
-
-    // Validate email
-    if (!email.trim()) {
-      errors.email = 'Email is required';
-    }
-
-    // Validate password
-    if (!password.trim()) {
-      errors.password = 'Password is required';
-    }
-
-    // Set errors
-    setErrors(errors);
-
-    // If there are no errors, submit the form
-    if (Object.keys(errors).length === 0) {
-      try {
-        const response = await axios.post('http://localhost:3000/donor/login', {
-          email,
-          password
-        });
-
-        // Check account status
-        const statusResponse = await axios.post('http://localhost:3000/donor/status', {
-          email
-        });
-
-        if (statusResponse.data.status === 'pending') {
-          // Redirect to under review page if account status is pending
-          navigate('/under-review');
-        } else {
-          // Redirect to home page if account status is active
-          navigate('/home');
-        }
-
-        console.log('Login successful:', response.data);
-        // Handle successful login (redirect, show message, etc.)
-      } catch (error) {
-        console.error('Error logging in:', error.response.data);
-        // Handle login error (show error message, clear form fields, etc.)
-      }
-    }
-  };
+  
 
   return (
     <div className="container mx-auto flex items-center justify-center mt-10">

@@ -1,5 +1,5 @@
 import React from 'react'
-import BloodDonorSignUp from './BloodDonorSignUp'
+import BloodDonorSignUp from './DonorSignUp'
 import { BloodDonorProvider } from "../../contexts/BloodDonorContext";
 
 

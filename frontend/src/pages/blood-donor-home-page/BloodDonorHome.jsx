@@ -8,7 +8,7 @@ function CampsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/camp/all-camps')
+    axios.get('http://localhost:3000/camp/view-all-camps')
       .then(response => {
         console.log('All camps:', response.data.data);
         setCamps(response.data.data);

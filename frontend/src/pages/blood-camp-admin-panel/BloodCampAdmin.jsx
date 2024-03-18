@@ -42,15 +42,17 @@ function BloodCampAdmin() {
 		}
 	};
 
-	const filteredOrganizers = organizers.filter((organizer) =>
-		organizer.name.toLowerCase().includes(searchQuery.toLowerCase())
-	);
+  const filteredOrganizers = organizers.filter((organizer) =>
+    organizer.name.toLowerCase().includes(searchQuery.toLowerCase())
 
-	const accountStatusCounts = {
-		active: filteredOrganizers.filter((org) => org.accountStatus === "active").length,
-		block: filteredOrganizers.filter((org) => org.accountStatus === "block").length,
-		pending: filteredOrganizers.filter((org) => org.accountStatus === "pending").length,
-	};
+  );
+   
+  const accountStatusCounts = {
+    active: filteredOrganizers.filter(org => org.accountStatus === 'active').length,
+    block: filteredOrganizers.filter(org => org.accountStatus === 'block').length,
+    pending: filteredOrganizers.filter(org => org.accountStatus === 'pending').length
+  };
+
 
 	const pieChartData = {
 		labels: Object.keys(accountStatusCounts),

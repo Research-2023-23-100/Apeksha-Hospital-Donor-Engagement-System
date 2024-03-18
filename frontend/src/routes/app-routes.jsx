@@ -31,11 +31,11 @@ import {
 	HospitalStaffDashboard,
 	BloodCampAdmin,
 	OrganizerHome,
-	GetAllBloodCamps,
+	GetAllCamps,
 	StaffDonationView,
 	DonorRegister,
 	DonorLogin,
-	DonorDashboard,
+	DonorDashboard
 } from "../pages";
 const AppRoutes = () => {
 	return (
@@ -48,6 +48,7 @@ const AppRoutes = () => {
 					<Route path="/" element={<Home />} />
 					<Route path="/donor/essentials/list" element={<DonorEssentialsList />} />
 					<Route path="/donor/register" element={<DonorRegister />} />
+					<Route path="/donor/medication/donate/" element={<DonorMedicationList />} />
 
 					{/* Staff Section */}
 					{/* Staff Check Login Status */}
@@ -79,7 +80,7 @@ const AppRoutes = () => {
 					<Route path="/donor" element={<PrivateRoute permissionLevel="DONOR" />}>
 						<Route path="/donor" element={<DonorDashboard />} />
 						{/* Donor Medication Donation */}
-						<Route path="/donor/medication/donate/" element={<DonorMedicationList />} />
+
 						<Route exact path="/donor/medication/donatation/create/:medication" element={<DonorMedicationCreate />} />
 
 						{/* Donor Essential Donation */}
@@ -112,7 +113,8 @@ const AppRoutes = () => {
 
 					<Route path="/donor-ask" element={<DonorHome />} />
 					<Route path="/blood-camp-admin" element={<BloodCampAdmin />} />
-					<Route path="/get-all-blood-camps" element={<GetAllBloodCamps />} />
+					
+					<Route path="/get-all-camps" element={<GetAllCamps />} />
 				</Routes>
 
 				<Footer />

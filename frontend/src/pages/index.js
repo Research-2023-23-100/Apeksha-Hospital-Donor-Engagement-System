@@ -24,7 +24,7 @@ import DonorMedicationCreate from "./donor-medication-create";
 import HospitalStaffDashboard from "./hospital-staff-dashboard/index";
 import BloodCampAdmin from "./blood-camp-admin-panel";
 import OrganizerHome from "./organizer-home";
-import GetAllBloodCamps from "./get-all-blood-camps/GetAllBloodCamps";
+import GetAllCamps from './get-all-camps/GetAllCamps';
 import StaffDonationView from "./staff-donation-view";
 import DonorRegister from "./donor-register";
 import DonorLogin from "./donor-login";
@@ -56,9 +56,9 @@ export {
 	HospitalStaffDashboard,
 	BloodCampAdmin,
 	OrganizerHome,
-	GetAllBloodCamps,
 	StaffDonationView,
 	DonorRegister,
 	DonorLogin,
+	GetAllCamps,
 	DonorDashboard,
 };

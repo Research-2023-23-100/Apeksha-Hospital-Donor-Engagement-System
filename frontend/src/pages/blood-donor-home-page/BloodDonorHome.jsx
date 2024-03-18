@@ -10,7 +10,7 @@ function CampsPage() {
 
 	useEffect(() => {
 		axios
-			.get("http://localhost:3000/camp/all-camps")
+			.get("http://localhost:3000/camp/view-all-camps")
 			.then((response) => {
 				console.log("All camps:", response.data.data);
 				setCamps(response.data.data);

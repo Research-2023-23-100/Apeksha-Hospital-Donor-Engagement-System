@@ -125,7 +125,7 @@ const DonorEssentialDonate = () => {
 								<h2 className="text-xl font-semibold text-gray-800 mb-2">{item.ItemName}</h2>
 								<p className="text-gray-600 mb-4">Quantity Needed: {item.Prediction}</p>
 								<div className="flex justify-end">
-									<Link to={`/staff/donatation/create/${item.ItemName}`}>
+									<Link to={`/donor/donatation/create/${item.ItemName}`}>
 										<button
 											onClick={() => handleDonate(item.ItemName)}
 											className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600"

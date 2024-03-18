@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Carousel from "../carousel-home";
+import { useNavigate } from "react-router-dom";
 
 const months = [
 	{ label: "January", value: 1 },
@@ -25,6 +26,7 @@ const PredictionForm = () => {
 	});
 
 	const [prediction, setPrediction] = useState(null);
+	const navigate = useNavigate();
 
 	const handleFormDataChange = (field, value) => {
 		setFormData({ ...formData, [field]: value });
@@ -56,12 +58,14 @@ const PredictionForm = () => {
 		setPrediction(null);
 	};
 
+	const handleOrganizeCamp = () => {
+		// Navigate to the /organize-camp route and pass prediction as state
+		navigate("/organize-camp", { state: { prediction } });
+	};
+
 	return (
 		<div className="grid grid-cols-2 md:grid-cols-2 gap-2 mt-8 p-6  ">
 			<div className="max-w-xl ml-8 p-6 mt-[4rem] bg-white rounded-lg shadow-lg bg-gradient-to-b from-red-500 via-red-300 to-slate-50">
-				{/* <p className="text-lg font-extrabold text-white justify-center text-center ">
-    "In the canvas of life, organizing a blood donation camp is like painting strokes of kindness that color the world with hope and healing."
-</p> */}
 				<div className="max-w-xl  mt-[4rem] p-8 bg-white rounded-lg shadow-lg mb-7">
 					<p className="text-lg font-semibold mb-4">Attendance Prediction</p>
 					<div className="mb-4">
@@ -97,16 +101,6 @@ const PredictionForm = () => {
 							<option value="weekend">Weekend</option>
 						</select>
 					</div>
-					{/* <div className="mb-4">
-        <label htmlFor="promotionCost" className="block text-sm font-medium text-gray-700 mb-1">Promotion Cost:</label>
-        <input
-          type="number"
-          id="promotionCost"
-          className="form-input block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-          value={formData.promotion_cost}
-          onChange={(e) => handleFormDataChange('promotion_cost', e.target.value)}
-        />
-      </div> */}
 					<div className="flex space-x-4 ">
 						<button
 							className="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -116,7 +110,7 @@ const PredictionForm = () => {
 						</button>
 						<button
 							className="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-							onClick={handleRequest}
+							onClick={handleOrganizeCamp}
 						>
 							Organize Camp
 						</button>

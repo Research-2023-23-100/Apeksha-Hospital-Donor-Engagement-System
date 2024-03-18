@@ -1,6 +1,7 @@
 import React from "react";
 import formImage from "../../assets/bloodbag.png";
 import mainImage from "../../assets/main_image.jpg";
+import { Link } from "react-router-dom";
 
 function DonorAsk() {
 	return (
@@ -22,7 +23,9 @@ function DonorAsk() {
 					</div>
 					<div className="grid grid-cols-2 md:grid-cols-2 gap-2 ">
 						{/* First red button with margin-bottom */}
-						<button className="bg-red-500 text-white px-4 py-2 rounded-lg ">As Organizer</button>
+						<Link to="/organizer-login">
+							<button className="bg-red-500 text-white px-4 py-2 rounded-lg">As Organizer</button>
+						</Link>
 
 						{/* Second red button */}
 						<button className="bg-red-500 text-white px-4 py-2 rounded-lg">As Donor</button>

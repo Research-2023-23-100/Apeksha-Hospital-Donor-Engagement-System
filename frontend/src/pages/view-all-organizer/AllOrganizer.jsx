@@ -26,7 +26,7 @@ function ViewAllOrganizer() {
 	// Function to handle status change
 	const handleStatusChange = async (id, newStatus) => {
 		try {
-			await axios.put(`http://localhost:3000/api/organizers/${id}`, { accountStatus: newStatus });
+			await axios.put(`http://localhost:3000/organizer/organizers/${id}`, { accountStatus: newStatus });
 			// Optionally, you can fetch all organizers again to update the UI
 			getAllOrganizers();
 		} catch (error) {

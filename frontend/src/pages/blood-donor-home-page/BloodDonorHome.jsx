@@ -8,19 +8,19 @@ function CampsPage() {
 	const [camps, setCamps] = useState([]);
 	const [loading, setLoading] = useState(true);
 
-	useEffect(() => {
-		axios
-			.get("http://localhost:3000/camp/view-all-camps")
-			.then((response) => {
-				console.log("All camps:", response.data.data);
-				setCamps(response.data.data);
-				setLoading(false);
-			})
-			.catch((error) => {
-				console.error("Error fetching camps:", error);
-				setLoading(false);
-			});
-	}, []);
+  useEffect(() => {
+    axios.get('http://localhost:5000/campaign')
+      .then(response => {
+        console.log('All camps:', response.data.data);
+        setCamps(response.data.data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error fetching camps:', error);
+        setLoading(false);
+      });
+  }, []);
+
 
 	// Sample top blood donors data
 	const topBloodDonors = [
@@ -30,6 +30,7 @@ function CampsPage() {
 	];
 
 	return (
+		<div>
 		<div className="container mx-auto px-4 py-8 flex flex-col md:flex-row mt-[7rem] ml-[3rem]">
 			{/* Left Side Column with Image */}
 			<div className="md:w-1/3">
@@ -70,28 +71,7 @@ function CampsPage() {
 				</section>
 
 				{/* Display All Camps Section */}
-				<section className="mt-[5rem]">
-					{/* Upcoming Events */}
-					<section className="mb-8 ">
-						<h2 className="text-2xl font-bold mb-4">Upcoming Events</h2>
-						{/* Add your upcoming events component here */}
-					</section>
-					{loading ? (
-						<p>Loading...</p>
-					) : camps.length === 0 ? (
-						<p>No camps available</p>
-					) : (
-						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-							{camps.map((camp) => (
-								<div key={camp._id} className="bg-white shadow-md rounded-md p-4">
-									<h3 className="text-xl font-semibold mb-2">{camp.organizerName}</h3>
-									<p>Date: {new Date(camp.date).toLocaleDateString()}</p>
-									{/* Add more details here as needed */}
-								</div>
-							))}
-						</div>
-					)}
-				</section>
+				
 			</div>
 			{/* Top Blood Donors */}
 			<section className="mb-8 w-[15rem] ml-[6rem]">
@@ -106,6 +86,32 @@ function CampsPage() {
 				</div>
 			</section>
 		</div>
+		<div className="mt-[5rem] w-full p-10">
+    {/* Upcoming Events */}
+    <div className="mb-8 max-w-full">
+        <h2 className="text-2xl font-bold mb-4">Upcoming Events</h2>
+        {/* Add your upcoming events component here */}
+    </div>
+	
+    {loading ? (
+        <p>Loading...</p>
+    ) : camps.length === 0 ? (
+        <p>No camps available</p>
+    ) : (
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            {camps.filter(cmp=>cmp.accountStatus === 'Approved').map((camp) => (
+                <div key={camp._id} className="bg-white shadow-md rounded-md p-4">
+                    <h3 className="text-xl font-semibold mb-2">{camp.place}</h3>
+                    <p>Date: {new Date(camp.date).toLocaleDateString()}</p>
+                    {/* Add more details here as needed */}
+                </div>
+            ))}
+			
+        </div>
+    )}
+</div>
+		</div>
+		
 	);
 }
 

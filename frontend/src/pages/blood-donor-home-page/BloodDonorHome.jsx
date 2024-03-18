@@ -8,19 +8,18 @@ function CampsPage() {
 	const [camps, setCamps] = useState([]);
 	const [loading, setLoading] = useState(true);
 
-	useEffect(() => {
-		axios
-			.get("http://localhost:3000/camp/all-camps")
-			.then((response) => {
-				console.log("All camps:", response.data.data);
-				setCamps(response.data.data);
-				setLoading(false);
-			})
-			.catch((error) => {
-				console.error("Error fetching camps:", error);
-				setLoading(false);
-			});
-	}, []);
+  useEffect(() => {
+    axios.get('http://localhost:3000/camp/view-all-camps')
+      .then(response => {
+        console.log('All camps:', response.data.data);
+        setCamps(response.data.data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error fetching camps:', error);
+        setLoading(false);
+      });
+  }, []);
 
 	// Sample top blood donors data
 	const topBloodDonors = [

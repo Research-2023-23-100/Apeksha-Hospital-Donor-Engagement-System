@@ -13,21 +13,29 @@ class OrganizationAPI {
 	static login(values) {
 		return axios.post(`${BASE_URL}/org/login`, values, requestConfigJson);
 	}
-	// get all donor details
-	static getAll() {
+	// get all organization details
+	static getAllOrganizations() {
 		return axios.get(`${BASE_URL}/org`, requestConfig);
 	}
-	// get one donor details
-	static getOne(id) {
+	// get one organization details
+	static getOneOrganization(id) {
 		return axios.get(`${BASE_URL}/org/${id}`, requestConfigJson);
 	}
-	// update donor
-	static edit(id, values) {
+	// update organization
+	static editOrganization(id, values) {
 		return axios.put(`${BASE_URL}/org/update/${id}`, values, requestConfigJson);
 	}
-	// delete donor
-	static delete(id) {
+	// delete organization
+	static deleteOrganization(id) {
 		return axios.delete(`${BASE_URL}/org/delete/${id}`, requestConfig);
+	}
+	// Update donor status
+	static updateOrganizerStatus(id, values) {
+		return axios.put(`${BASE_URL}/org/update-status/${id}`, values, requestConfigJson);
+	}
+	// Get donor status
+	static getOrganizerStatus(email) {
+		return axios.post(`${BASE_URL}/org/status`, email, requestConfigJson);
 	}
 }
 

@@ -31,7 +31,6 @@ import {
 	HospitalStaffDashboard,
 	BloodCampAdmin,
 	OrganizerHome,
-	GetAllBloodCamps,
 	GetAllCamps,
 	StaffDonationView,
 	DonorRegister,
@@ -113,7 +112,7 @@ const AppRoutes = () => {
 
 					<Route path="/donor-ask" element={<DonorHome />} />
 					<Route path="/blood-camp-admin" element={<BloodCampAdmin />} />
-					<Route path="/get-all-blood-camps" element={<GetAllBloodCamps />} />
+					
 					<Route path="/get-all-camps" element={<GetAllCamps />} />
 				</Routes>
 

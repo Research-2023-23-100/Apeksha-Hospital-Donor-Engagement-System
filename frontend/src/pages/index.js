@@ -52,7 +52,7 @@ export {
 	DonorMedicationList,
 	DonorDonationCreate,
 	DonorMedicationCreate,
-	HospitalStaffDashboard
+	HospitalStaffDashboard,
 	BloodCampAdmin,
 	OrganizerHome,
 	DonorLogin,

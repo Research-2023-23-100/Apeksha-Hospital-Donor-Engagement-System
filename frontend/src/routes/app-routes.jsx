@@ -28,11 +28,13 @@ import {
 	DonorMedicationList,
 	DonorDonationCreate,
 	DonorMedicationCreate,
-  HospitalStaffDashboard,
+	HospitalStaffDashboard,
 	BloodCampAdmin,
 	OrganizerHome,
 	GetAllBloodCamps,
 	StaffDonationView,
+	DonorLogin,
+	DonorRegister,
 
 } from "../pages";
 const AppRoutes = () => {
@@ -45,6 +47,7 @@ const AppRoutes = () => {
 					{/* Public Routes */}
 					<Route path="/" element={<Home />} />
 					<Route path="/donor/essentials/list" element={<DonorEssentialsList />} />
+					<Route path="/donor/register" element={<DonorRegister />} />
 
 					{/* Staff Section */}
 					{/* Staff Check Login Status */}
@@ -74,7 +77,7 @@ const AppRoutes = () => {
 					{/* Donor Section */}
 					{/* Donor Check Login Status */}
 					<Route path="/donor/login" element={<CheckLoginStatus />}>
-						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
+						<Route path="/donor/login" element={<DonorLogin />} />
 					</Route>
 
 					{/* Donor Private Routes

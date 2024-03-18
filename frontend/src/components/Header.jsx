@@ -153,12 +153,16 @@ const Header = () => {
 						) : (
 							<>
 								<div className="flex gap-3 max-w-sm">
-									<button className="py-2.5 px-6 rounded-lg text-sm font-medium bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-700 hover:to-red-800 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 transition-colors duration-300">
-										Sign-Up
-									</button>
-									<button className="py-2.5 px-6 rounded-lg text-sm font-medium text-white bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50 transition-colors duration-300">
-										Sign-In
-									</button>
+									<Link>
+										<button className="py-2.5 px-6 rounded-lg text-sm font-medium bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-700 hover:to-red-800 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 transition-colors duration-300">
+											Sign-Up
+										</button>
+									</Link>
+									<Link to="/donor/register">
+										<button className="py-2.5 px-6 rounded-lg text-sm font-medium text-white bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50 transition-colors duration-300">
+											Sign-In
+										</button>
+									</Link>
 								</div>
 							</>
 						)}

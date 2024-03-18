@@ -54,9 +54,6 @@ export const registerDonor = async (request, response, next) => {
 					email: request.body.email,
 					contact: request.body.contact,
 					nic: request.body.nic,
-					bloodGroup: request.body.bloodGroup,
-					image1: request.body.image1,
-					image2: request.body.image2,
 					password: request.body.password,
 					permissionLevel: "DONOR",
 				};

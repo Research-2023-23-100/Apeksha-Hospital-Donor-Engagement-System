@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
+import { toast } from "react-toastify"; // Import toast from react-toastify
+import "react-toastify/dist/ReactToastify.css"; 
 import bloodNotice from '../../assets/blood-notice2.png'
 
 
 function OrganizeDonationCamp(props) {
+     const navigate = useNavigate();
 	const [uid, setUid] = useState(""); // State to hold the UID
 
     useEffect(() => {
@@ -17,14 +21,15 @@ function OrganizeDonationCamp(props) {
     console.log("UID:", uid); 
     const [formData, setFormData] = useState({
         organizerName: "",
-		organizerId:uid,
+        organizerId: uid,
         mobile: "",
         email: "",
         place: "",
         date: "",
-        marketingSlip: null,
+        marketingSlip: "http://example.com/default-marketing-slip.png", // Hard-coded link for the marketing slip
         expectedPeopleAmount: "",
     });
+    
 
 	useEffect(() => {
         // Check if props.location exists and has a state property
@@ -89,6 +94,10 @@ function OrganizeDonationCamp(props) {
                 expectedPeopleAmount: 0,
 				
             });
+            toast.success("Blood donation camp created successfully!");
+
+            // Redirect to organizer's home page
+            navigate("/organizer-home"); 
         } catch (error) {
             console.error("Error creating camp:", error);
         }
@@ -188,7 +197,7 @@ function OrganizeDonationCamp(props) {
         </div>
         <div className="mb-4">
             <label htmlFor="slipImage" className="block text-gray-700 font-semibold">
-                Marketing Slip:
+                Upload Permission Letter:
             </label>
             <input
                 type="file"
@@ -217,14 +226,13 @@ function OrganizeDonationCamp(props) {
 				<div className="bg-gray-200 p-4 rounded-lg shadow-md">
 				<h2 className="text-xl font-semibold mb-2 text-red-500">Blood Donation Camp Organizer Notice</h2>
     <p className="text-lg text-gray-700">
-        If you need to organize a blood donation camp, you may contribute some amount for the campaign marketing purposes.
+        If you need to organize a blood donation camp, you may get permission from relevant authority.
         <br/><br/>
-        <strong>The amount required is Rs. 20,000.</strong> Please deposit this amount to the following bank account:
-        <br/><br/>
-        <strong>Bank: Bank of Ceylon</strong><br/>
-        <strong>Account No: 8888888</strong><br/>
+       
+        <strong>submit a permission letter from the relevant authority of the location where you will hold the blood campaign.</strong><br/>
+        
         <br/>
-        After depositing, please upload the slip. Thank you for your contribution!
+        As an example you gonna organize donation camp in the school main hall you need to get requested letter from principle.
     </p>
 				</div>
 			</div>

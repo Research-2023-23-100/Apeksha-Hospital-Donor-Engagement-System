@@ -57,7 +57,7 @@ function BloodCampAdmin() {
     datasets: [
       {
         data: Object.values(accountStatusCounts),
-        backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56']
+        backgroundColor: ['#22c55e', '#FF6384', '#FFCE56']
       }
     ]
   };

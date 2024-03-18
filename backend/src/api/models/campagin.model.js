@@ -47,7 +47,7 @@ const CampaginSchema = new mongoose.Schema({
     },
     marketingSlip: {
         type: String,
-        required: true,
+        required: false,
     },
 });
 

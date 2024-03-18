@@ -2,11 +2,28 @@ import React, { useContext, useState, useEffect } from "react";
 import DonationRequestContext from "../../contexts/DonationRequestContext";
 
 const StaffDonationView = () => {
-	const { donations } = useContext(DonationRequestContext);
+	const { donations,changeStatus } = useContext(DonationRequestContext);
 	const [currentPage, setCurrentPage] = useState("Essential");
 
 	const handlePageChange = (page) => {
 		setCurrentPage(page);
+	};
+
+	const handleStatusChange = async (id, newStatus) => {
+		try {
+
+			const values={
+				id:id,
+				status:newStatus
+			}
+
+			changeStatus(values)
+
+			location.reload()
+
+		} catch (error) {
+			console.error("Error updating status:", error);
+		}
 	};
 
 	// Rendering content based on currentPage
@@ -25,7 +42,9 @@ const StaffDonationView = () => {
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Donor Email</th>
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Hand Over Date</th>
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Donation Type</th>
+										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Change Status</th>
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Status</th>
+
 									</tr>
 								</thead>
 								<tbody className="bg-white">
@@ -39,6 +58,18 @@ const StaffDonationView = () => {
 												<td className="py-4 px-6 border-b border-gray-200">{elem.email}</td>
 												<td className="py-4 px-6 border-b border-gray-200">{elem.date?.slice(0, 10)}</td>
 												<td className="py-4 px-6 border-b border-gray-200">{elem.donationType}</td>
+												<td className="border px-4 py-2">
+											<select
+												className="border rounded-md px-2 py-1"
+												value={elem.status}
+												onChange={(e) => handleStatusChange(elem._id, e.target.value)}
+											>
+												<option value="PENDING">Pending</option>
+												<option value="ACCEPTED">Accepted</option>
+												<option value="COMPLETED">Completed</option>
+												<option value="REJECT">Rejected</option>
+											</select>
+										</td>
 												<td className="py-4 px-6 border-b border-gray-200">
 													<span
 														className={`py-1 px-2 font-bold rounded-full text-xs ${
@@ -90,6 +121,17 @@ const StaffDonationView = () => {
 												<td className="py-4 px-6 border-b border-gray-200">{elem.email}</td>
 												<td className="py-4 px-6 border-b border-gray-200">{elem.date?.slice(0, 10)}</td>
 												<td className="py-4 px-6 border-b border-gray-200">{elem.donationType}</td>
+												<td className="border px-4 py-2">
+											<select
+												className="border rounded-md px-2 py-1"
+												value={organizer.accountStatus}
+												onChange={(e) => handleStatusChange(organizer._id, e.target.value)}
+											>
+												<option value="pending">Pending</option>
+												<option value="active">Active</option>
+												<option value="block">Block</option>
+											</select>
+										</td>
 												<td className="py-4 px-6 border-b border-gray-200">
 													<span
 														className={`py-1 px-2 font-bold rounded-full text-xs ${

@@ -93,7 +93,7 @@ function OrganizerSignup() {
 				<h2 className="text-2xl font-semibold mb-4">User Sign Up</h2>
 				<form onSubmit={handleSubmit}>
 				<div className=" grid grid-flow-col gap-3">
-					
+
 					<div className="mb-4">
 						<label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
 							Organizer Name

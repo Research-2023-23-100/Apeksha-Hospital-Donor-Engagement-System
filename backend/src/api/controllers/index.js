@@ -90,7 +90,6 @@ export default {
 	updateBloodRequiredItems,
 	updateBloodCampAccountStatus,
 
-	
 	// Dontation Request
 	insertDonation,
 	getAllDonation,

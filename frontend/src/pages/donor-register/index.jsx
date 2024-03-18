@@ -1,11 +1,11 @@
 import React from "react";
-import DonorLogin from "./DonorLogin";
+import DonorRegister from "./DonorRegister";
 import { DonorProvider } from "../../contexts/DonorContext";
 
 const index = () => {
 	return (
 		<DonorProvider>
-			<DonorLogin />
+			<DonorRegister />
 		</DonorProvider>
 	);
 };

@@ -71,6 +71,7 @@ function GetAllBloodCamps() {
       </div>
     </div>
   );
+
 }
 
 export default GetAllBloodCamps;

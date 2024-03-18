@@ -5,10 +5,9 @@ import { OrganizerProvider } from "../../contexts/OrganizerContext";
 function index() {
 	return (
 		<div>
-		<OrganizerProvider>
-		<Organizer />
-		</OrganizerProvider>
-			
+			<OrganizerProvider>
+				<Organizer />
+			</OrganizerProvider>
 		</div>
 	);
 }

@@ -40,7 +40,7 @@ export function StaffProvider({ children }) {
 				localStorage.setItem("authToken", response.data.token);
 				localStorage.setItem("permissionLevel", response.data.permissionLevel);
 				makeToast({ type: "success", message: "Login Successful" });
-				window.location.href = "/staff";
+				window.location.href = "/staff/dashboard";
 			})
 			.catch((err) => {
 				makeToast({ type: "error", message: "Invalid Email or Password" });

@@ -21,13 +21,15 @@ import DonorEssentialDonate from "./donor-essential-donate";
 import DonorMedicationList from "./donor-medication-list";
 import DonorDonationCreate from "./donar-donation-create";
 import DonorMedicationCreate from "./donor-medication-create";
-import DonorLogin from "./donor-login";
+import HospitalStaffDashboard from "./hospital-staff-dashboard/index";
 import BloodCampAdmin from "./blood-camp-admin-panel";
 import OrganizerHome from "./organizer-home";
 import GetAllBloodCamps from "./get-all-blood-camps/GetAllBloodCamps";
 import GetAllCamps from './get-all-camps/GetAllCamps';
-
-
+import StaffDonationView from "./staff-donation-view";
+import DonorRegister from "./donor-register";
+import DonorLogin from "./donor-login";
+import DonorDashboard from "./donor-dashboard";
 export {
 	Home,
 	StaffLogin,
@@ -52,9 +54,14 @@ export {
 	DonorMedicationList,
 	DonorDonationCreate,
 	DonorMedicationCreate,
+	HospitalStaffDashboard,
 	BloodCampAdmin,
 	OrganizerHome,
+	GetAllBloodCamps,
+	StaffDonationView,
+	DonorRegister,
 	DonorLogin,
 	GetAllBloodCamps,
-	GetAllCamps
+	GetAllCamps,
+	DonorDashboard
 };

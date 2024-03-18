@@ -1,7 +1,6 @@
 import { Router } from "express";
 import controller from "../controllers";
-const upload = require('../../util/slipupload');
-
+const upload = require("../../util/slipupload");
 
 const router = Router();
 
@@ -46,6 +45,7 @@ router.put("/item/increment/:id", controller.incrementQuantity);
 router.put("/item/decrement/:id", controller.decrementQuantity);
 
 // Campagin endpoints
+
 router.post("/campaign/create",upload.single('marketingSlip'), controller.createCamp);
 router.get("/campaign/", controller.getAllCamps);
 router.get("/campaign/:id", controller.getCampById);

@@ -94,7 +94,7 @@ const Header = () => {
 					</a>
 					{/* logo - end */}
 					{/* nav - start */}
-					<nav className="hidden gap-12 lg:flex 2xl:ml-16">
+					<nav className="hidden gap-10 lg:flex 2xl:ml-8">
 						<Link to="/">
 							<a className="text-lg font-semibold text-gray-800 hover:text-red-600 transition-colors duration-300">
 								Home
@@ -121,9 +121,29 @@ const Header = () => {
 						</a>
 						{permissionLevel === "STAFF" && (
 							<div className="relative dropdown">
-								<Link to="/staff">
+								<Link to="/staff/dashboard">
 									<button className="dropdown-button text-lg font-semibold text-gray-800 hover:text-red-500 transition-colors duration-300">
 										Dashboard
+									</button>
+								</Link>
+							</div>
+						)}
+
+						{permissionLevel === "DONOR" && (
+							<div className="relative dropdown">
+								<Link to="/donor">
+									<button className="dropdown-button text-lg font-semibold text-gray-800 hover:text-red-500 transition-colors duration-300">
+										Dashboard
+									</button>
+								</Link>
+								<Link to="/donor/medication/donate/" className="ml-10">
+									<button className="dropdown-button text-lg font-semibold text-gray-800 hover:text-red-500 transition-colors duration-300">
+										Medication
+									</button>
+								</Link>
+								<Link to="/donor/essential/donate/" className="ml-10">
+									<button className="dropdown-button text-lg font-semibold text-gray-800 hover:text-red-500 transition-colors duration-300">
+										Essentials
 									</button>
 								</Link>
 							</div>
@@ -153,12 +173,16 @@ const Header = () => {
 						) : (
 							<>
 								<div className="flex gap-3 max-w-sm">
-									<button className="py-2.5 px-6 rounded-lg text-sm font-medium bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-700 hover:to-red-800 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 transition-colors duration-300">
-										Sign-Up
-									</button>
-									<button className="py-2.5 px-6 rounded-lg text-sm font-medium text-white bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50 transition-colors duration-300">
-										Sign-In
-									</button>
+									<Link to="/donor/login">
+										<button className="py-2.5 px-6 rounded-lg text-sm font-medium bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-700 hover:to-red-800 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 transition-colors duration-300">
+											Sign-Up
+										</button>
+									</Link>
+									<Link to="/donor/register">
+										<button className="py-2.5 px-6 rounded-lg text-sm font-medium text-white bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50 transition-colors duration-300">
+											Sign-In
+										</button>
+									</Link>
 								</div>
 							</>
 						)}

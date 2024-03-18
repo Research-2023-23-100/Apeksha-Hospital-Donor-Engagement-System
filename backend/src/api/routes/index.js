@@ -45,11 +45,16 @@ router.put("/item/increment/:id", controller.incrementQuantity);
 router.put("/item/decrement/:id", controller.decrementQuantity);
 
 // Campagin endpoints
-router.post("/campagin/create", upload.single("marketingSlip"), controller.createCamp);
-router.get("/campagin/", controller.getAllCamps);
-router.get("/campagin/:id", controller.getCampById);
-router.put("/campagin/update/:id", controller.updateCamp);
-router.delete("/campagin/delete/:id", controller.deleteCamp);
+
+router.post("/campaign/create",upload.single('marketingSlip'), controller.createCamp);
+router.get("/campaign/", controller.getAllCamps);
+router.get("/campaign/:id", controller.getCampById);
+router.put("/campaign/update/:id", controller.updateCamp);
+router.delete("/campaign/delete/:id", controller.deleteCamp);
+router.put('/camp/update-staff/:id', controller.updateBloodCampStaff);
+router.put('/camp/update-required-items/:id', controller.updateBloodRequiredItems);
+router.put('/camp/update-account-status/:id', controller.updateBloodCampAccountStatus);
+
 
 // Donation Request endpoints
 router.post("/donation/request", controller.insertDonation);

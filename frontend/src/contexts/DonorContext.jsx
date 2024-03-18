@@ -7,16 +7,13 @@ const DonorContext = createContext();
 
 export function DonorProvider({ children }) {
 	const [donors, setDonors] = useState([]);
-
+	const navigate = useNavigate();
 	const [donor, setDonor] = useState({
 		name: "",
 		email: "",
 		contact: "",
 		nic: "",
-		bloodGroup: "",
 		password: "",
-		image1: "",
-		image2: "",
 	});
 
 	// Donor Login
@@ -42,6 +39,7 @@ export function DonorProvider({ children }) {
 			.then((response) => {
 				setDonors([...donors, response.data]);
 				makeToast({ type: "success", message: "Registration Successful" });
+				navigate("/donor/login")
 			})
 			.catch((err) => {
 				if (err.response.data.details == "Email already exists") {

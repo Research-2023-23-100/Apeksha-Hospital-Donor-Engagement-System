@@ -92,7 +92,6 @@ function OrganizerSignup() {
 			<div className="bg-white p-8 rounded-md shadow-md w-full max-w-[52rem] mt-5 mb-5">
 				<h2 className="text-2xl font-semibold mb-4">User Sign Up</h2>
 				<form onSubmit={handleSubmit}>
-					
 					<div className="mb-4">
 						<label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
 							Organizer Name

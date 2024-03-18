@@ -1,11 +1,8 @@
-import React from 'react'
-import GetAllBloodCamps from './GetAllBloodCamps'
-
+import React from "react";
+import GetAllBloodCamps from "./GetAllBloodCamps";
 
 function index() {
-  return (
-    <GetAllBloodCamps/>
-  )
+	return <GetAllBloodCamps />;
 }
 
-export default index
+export default index;

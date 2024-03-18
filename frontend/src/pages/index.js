@@ -26,7 +26,7 @@ import DonorLogin from "./donor-login";
 import BloodCampAdmin from "./blood-camp-admin-panel";
 import OrganizerHome from "./organizer-home";
 import GetAllBloodCamps from "./get-all-blood-camps/GetAllBloodCamps";
-
+import StaffDonationView from "./staff-donation-view";
 
 export {
 	Home,
@@ -56,6 +56,7 @@ export {
 	BloodCampAdmin,
 	OrganizerHome,
 	DonorLogin,
-	GetAllBloodCamps
+	GetAllBloodCamps,
+	StaffDonationView,
 
 };

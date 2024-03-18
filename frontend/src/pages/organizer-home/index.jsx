@@ -1,12 +1,8 @@
-import React from 'react'
-import OrganizerHome from './OrganizerHome'
-
-
+import React from "react";
+import OrganizerHome from "./OrganizerHome";
 
 function index() {
-  return (
-    <OrganizerHome/>
-  )
+	return <OrganizerHome />;
 }
 
-export default index
+export default index;

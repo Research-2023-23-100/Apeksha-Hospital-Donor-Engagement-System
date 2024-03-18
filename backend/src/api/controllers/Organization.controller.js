@@ -124,15 +124,38 @@ export const deleteOrganization = async (request, response, next) => {
 
 // Update Organizer Status
 // Update Organizer Status
+// export const updateOrganizerStatus = async (request, response, next) => {
+//   try {
+//     const { email } = request.body;
+//     const { accountStatus } = request.body;
+
+//     // Find the organizer by email and update their account status
+//     const updatedOrganizer = await OrganizationModel.findOneAndUpdate(
+//       { email: email }, // Find by email
+//       { accountStatus: accountStatus }, // Update account status
+//       { new: true } // Return the updated document
+//     );
+
+//     if (!updatedOrganizer) {
+//       response.status(404).json({ error: 'Organizer not found' });
+//       return;
+//     }
+
+//     response.json({ message: 'Organizer status updated successfully', organizer: updatedOrganizer });
+//   } catch (error) {
+//     console.error('Error updating organizer status:', error);
+//     response.status(500).json({ error: 'Error updating organizer status' });
+//   }
+// };
 export const updateOrganizerStatus = async (request, response, next) => {
   try {
-    const { email } = request.body;
+    const { id } = request.params;
     const { accountStatus } = request.body;
 
-    // Find the organizer by email and update their account status
-    const updatedOrganizer = await OrganizationModel.findOneAndUpdate(
-      { email: email }, // Find by email
-      { accountStatus: accountStatus }, // Update account status
+    // Find the organizer by ID and update their account status
+    const updatedOrganizer = await OrganizationModel.findByIdAndUpdate(
+      id, // Find by ID
+      { accountStatus }, // Update account status
       { new: true } // Return the updated document
     );
 

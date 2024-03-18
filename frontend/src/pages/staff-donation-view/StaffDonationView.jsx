@@ -16,7 +16,7 @@ const StaffDonationView = () => {
 				return (
 					<div>
 						<div className="shadow-lg rounded-lg overflow-hidden mx-4 md:mx-10 mt-6">
-							<table className="w-full table-fixed">
+							<table className="w-full table-fixed gap-10">
 								<thead>
 									<tr className="bg-gray-100">
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Item Name</th>
@@ -84,7 +84,7 @@ const StaffDonationView = () => {
 										.filter((elem) => elem.donationType === "MEDICATION")
 										.map((elem) => (
 											<tr key={elem.id}>
-												<td className="py-4 px-6 border-b border-gray-200">{elem.ItemName}</td>
+												<td className="py-4 px-6 border-b border-gray-200 gap-10">{elem.ItemName}</td>
 												<td className="py-4 px-6 border-b border-gray-200 truncate">{elem.quantity}</td>
 												<td className="py-4 px-6 border-b border-gray-200">{elem.name}</td>
 												<td className="py-4 px-6 border-b border-gray-200">{elem.email}</td>
@@ -121,7 +121,7 @@ const StaffDonationView = () => {
 
 	return (
 		<div>
-			<div className="md:mt-28">
+			<div className="md:mt-16">
 				<h2 className="mb-8 text-center text-3xl font-semibold text-gray-800">Donation Request</h2>
 			</div>
 			<div className="flex gap-8 justify-center">

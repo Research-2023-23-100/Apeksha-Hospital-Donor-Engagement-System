@@ -63,5 +63,5 @@ export {
 	DonorLogin,
 	GetAllBloodCamps,
 	GetAllCamps,
-	DonorDashboard
+	DonorDashboard,
 };

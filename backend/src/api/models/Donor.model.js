@@ -20,26 +20,9 @@ const DonorSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
-		bloodGroup: {
-			type: String,
-			required: true,
-		},
 		password: {
 			type: String,
 			required: true,
-		},
-		image1: {
-			type: String,
-			required: false,
-		},
-		image2: {
-			type: String,
-			required: false,
-		},
-		status: {
-			type: String,
-			default: "PENDING",
-			enum: ["PENDING", "ACTIVE", "BLOCK"],
 		},
 		permissionLevel: {
 			type: String,

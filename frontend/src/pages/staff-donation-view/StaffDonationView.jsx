@@ -9,6 +9,7 @@ const StaffDonationView = () => {
 		setCurrentPage(page);
 	};
 
+
 	const handleStatusChange = async (id, newStatus) => {
 		try {
 
@@ -27,6 +28,7 @@ const StaffDonationView = () => {
 	};
 
 	// Rendering content based on currentPage
+
 	const renderContent = () => {
 		switch (currentPage) {
 			case "Essential":
@@ -72,17 +74,16 @@ const StaffDonationView = () => {
 										</td>
 												<td className="py-4 px-6 border-b border-gray-200">
 													<span
-														className={`py-1 px-2 font-bold rounded-full text-xs ${
-															elem.status === "REJECT"
-																? "bg-red-500 text-white"
-																: elem.status === "PENDING"
-																	? "bg-orange-500 text-white"
-																	: elem.status === "COMPLETED"
+														className={`py-1 px-2 font-bold rounded-full text-xs ${elem.status === "REJECT"
+															? "bg-red-500 text-white"
+															: elem.status === "PENDING"
+																? "bg-orange-500 text-white"
+																: elem.status === "COMPLETED"
+																	? "bg-green-500 text-white"
+																	: elem.status === "ACCEPTED"
 																		? "bg-green-500 text-white"
-																		: elem.status === "ACCEPTED"
-																			? "bg-green-500 text-white"
-																			: ""
-														}`}
+																		: ""
+															}`}
 													>
 														{elem.status}
 													</span>
@@ -134,17 +135,16 @@ const StaffDonationView = () => {
 										</td>
 												<td className="py-4 px-6 border-b border-gray-200">
 													<span
-														className={`py-1 px-2 font-bold rounded-full text-xs ${
-															elem.status === "REJECT"
-																? "bg-red-500 text-white"
-																: elem.status === "PENDING"
-																	? "bg-orange-500 text-white"
-																	: elem.status === "COMPLETED"
+														className={`py-1 px-2 font-bold rounded-full text-xs ${elem.status === "REJECT"
+															? "bg-red-500 text-white"
+															: elem.status === "PENDING"
+																? "bg-orange-500 text-white"
+																: elem.status === "COMPLETED"
+																	? "bg-green-500 text-white"
+																	: elem.status === "ACCEPTED"
 																		? "bg-green-500 text-white"
-																		: elem.status === "ACCEPTED"
-																			? "bg-green-500 text-white"
-																			: ""
-														}`}
+																		: ""
+															}`}
 													>
 														{elem.status}
 													</span>

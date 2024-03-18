@@ -35,7 +35,8 @@ const PredictionForm = () => {
 	const handleRequest = async () => {
 		try {
 			const response = await axios.post(
-				"http://127.0.0.1:5000/predict",
+				// "http://127.0.0.1:5000/predict",
+				"https://mlmodel-4.onrender.com/predict",
 				new URLSearchParams(formData) // Convert object to form data
 			);
 

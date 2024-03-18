@@ -67,13 +67,15 @@ const StaffDashboard = () => {
 			<div className="grid grid-cols-1 gap-8 p-10 lg:grid-cols-2 xl:grid-cols-4 mt-24">
 				{/* Value card */}
 				<div className="flex items-center shadow justify-between p-4 bg-white rounded-md dark:bg-darker">
-					<div>
-						<h6 className="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light">
-							Donation
-						</h6>
-						<span className="text-xl font-semibold">$30,000</span>
-						<span className="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">+4.4%</span>
-					</div>
+					<Link to="/staff/medication/donate/">
+						<div>
+							<h6 className="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light">
+								Donation
+							</h6>
+							<span className="text-xl font-semibold">$30,000</span>
+							<span className="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">+4.4%</span>
+						</div>
+					</Link>
 					<div>
 						<span>
 							<svg
@@ -95,13 +97,15 @@ const StaffDashboard = () => {
 				</div>
 				{/* Users card */}
 				<div className="flex items-center shadow justify-between p-4 bg-white rounded-md dark:bg-darker">
-					<div>
-						<h6 className="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light">
-							Donors
-						</h6>
-						<span className="text-xl font-semibold">50,021</span>
-						<span className="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">+2.6%</span>
-					</div>
+					<Link to="/staff/essential/donate/">
+						<div>
+							<h6 className="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light">
+								Donors
+							</h6>
+							<span className="text-xl font-semibold">50,021</span>
+							<span className="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">+2.6%</span>
+						</div>
+					</Link>
 					<div>
 						<span>
 							<svg
@@ -122,6 +126,7 @@ const StaffDashboard = () => {
 					</div>
 				</div>
 				{/* Orders card */}
+
 				<div className="flex items-center shadow justify-between p-4 bg-white rounded-md dark:bg-darker">
 					<Link to="/staff/essentials">
 						<div>

@@ -26,6 +26,10 @@ import {
 	BloodDonorLogin,
 	BloodDonorSignUp,
 	BloodDonorHome,
+	DonorEssentialDonate,
+	DonorMedicationList,
+	DonorDonationCreate,
+	DonorMedicationCreate,
 	BloodCampAdmin,
 	OrganizerHome
 } from "../pages";
@@ -53,6 +57,13 @@ const AppRoutes = () => {
 						<Route path="/staff/item/create" element={<StaffCreateItem />} />
 						<Route path="/staff/item/" element={<StaffViewAllItems />} />
 						<Route path="/staff/donation/" element={<StaffDonationStatus />} />
+						<Route path="/staff/medication" element={<MedicationDashboard />} />
+
+						{/* Need to change file route as donor */}
+						<Route path="/staff/essential/donate/" element={<DonorEssentialDonate />} />
+						<Route path="/staff/medication/donate/" element={<DonorMedicationList />} />
+						<Route exact path="/staff/medication/donatation/create/:medication" element={<DonorMedicationCreate />} />
+						<Route exact path="/staff/donatation/create/:itemName" element={<DonorDonationCreate />} />
 					</Route>
 
 					{/* Donor Section */}
@@ -61,10 +72,10 @@ const AppRoutes = () => {
 						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
 					</Route>
 
-					{/* Donor Private Routes */}
+					{/* Donor Private Routes
 					<Route path="/donor" element={<PrivateRoute permissionLevel="DONOR" />}>
-						<Route path="/donor" element={<StaffDashboard />} />
-					</Route>
+						<Route path="/donor" element={<DonorDashboard />} />
+					</Route> */}
 
 					{/* Organization Section */}
 					<Route path="/org/login" element={<CheckLoginStatus />}>
@@ -75,7 +86,9 @@ const AppRoutes = () => {
 					<Route path="/org" element={<PrivateRoute permissionLevel="ORGANIZATION" />}>
 						{/* <Route path="/org" element={<orgDashboard />} /> */}
 					</Route>
-					<Route path="/medication" element={<MedicationDashboard />} />
+
+
+					{/* <Route path="/donor_med_list" element={<DonorMedicationList />} /> */}
 					<Route path="/camp-prediction" element={<CampPrediction />} />
 
 					<Route path="/under-review" element={<UnderReview />} />
@@ -90,7 +103,6 @@ const AppRoutes = () => {
 					<Route path="/blood-organizers" element={<ViewAllOrganizer />} />
 					<Route path="/organize-camp" element={<OrganizeDonationCamp />} />
 					<Route path="/blood-donor-home" element={<BloodDonorHome />} />
-					
 
 					<Route path="/donor-ask" element={<DonorHome />} />
 					<Route path="/blood-camp-admin" element={<BloodCampAdmin />} />

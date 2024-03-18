@@ -20,8 +20,7 @@ import {
 	updateOrganization,
 	deleteOrganization,
 	updateOrganizerStatus,
-	getOrganizerStatus
-	
+	getOrganizerStatus,
 } from "./Organization.controller";
 
 import {
@@ -33,14 +32,15 @@ import {
 	decrementQuantity,
 } from "./Item.controller";
 
+import { createCamp, getAllCamps, getCampById, updateCamp, deleteCamp } from "./Campagin.controller";
+
 import {
-	createCamp,
-getAllCamps,
-getCampById,
-updateCamp,
-deleteCamp
-	
-} from "./Campagin.controller";
+	deleteDonation,
+	getAllDonation,
+	getDonationDetails,
+	insertDonation,
+	changeDonationStatus,
+} from "./DonationRequest.controller";
 
 export default {
 	insert,
@@ -82,8 +82,16 @@ export default {
 
 	// Campagin Section
 	createCamp,
-getAllCamps,
-getCampById,
-updateCamp,
-deleteCamp
+	getAllCamps,
+	getCampById,
+	updateCamp,
+	deleteCamp,
+
+	
+	// Dontation Request
+	insertDonation,
+	getAllDonation,
+	getDonationDetails,
+	deleteDonation,
+	changeDonationStatus,
 };

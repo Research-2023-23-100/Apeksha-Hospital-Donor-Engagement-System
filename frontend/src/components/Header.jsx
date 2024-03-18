@@ -86,12 +86,10 @@ const Header = () => {
 			<div className={`fixed top-0 left-0 w-full z-50 transition-all ${isScrolled ? "bg-white shadow-md" : ""}`}>
 				<div className="mx-auto flex max-w-screen-2xl items-center justify-between px-4 md:px-8">
 					{/* logo - start */}
-					<a
-						href="/"
-						className="inline-flex items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
-						aria-label="logo"
-					>
-						<img src={logo} alt="Flowrift" width="10px" height="10px" className="mt-5 h-auto w-24 text-red-600" />
+					<a className="inline-flex items-center gap-2.5 text-2xl font-bold text-black md:text-3xl" aria-label="logo">
+						<Link to="/">
+							<img src={logo} alt="Flowrift" width="10px" height="10px" className="mt-5 h-auto w-24 text-red-600" />
+						</Link>
 						<div className="text-gray-600">LEND A HAND</div>
 					</a>
 					{/* logo - end */}
@@ -103,37 +101,12 @@ const Header = () => {
 							</a>
 						</Link>
 
-						<div
-							className="relative dropdown"
-							onMouseEnter={() => handleMouseEnter("menu1")}
-							onMouseLeave={() => handleMouseLeave("menu1")}
+						<a
+							href="#"
+							className="text-lg font-semibold text-gray-800 hover:text-red-600 transition-colors duration-300"
 						>
-							<button
-								className="dropdown-button text-lg font-semibold text-gray-800 hover:text-red-600 transition-colors duration-300"
-								onClick={handleClick}
-							>
-								Donate
-							</button>
-							{isOpen1 && (
-								<div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-1">
-									<Link to="/donor/essentials/list">
-										<a className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-100 hover:text-red-500 transition-colors duration-300">
-											Essential Items
-										</a>
-									</Link>
-									<a className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-100 hover:text-red-600 transition-colors duration-300">
-										Medication
-									</a>
-									<a className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-100 hover:text-red-600 transition-colors duration-300">
-										Upcoming Events
-									</a>
-									<a className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-100 hover:text-red-600 transition-colors duration-300">
-										Hair Donation
-									</a>
-								</div>
-							)}
-						</div>
-
+							Contact Us
+						</a>
 						<a
 							href="#"
 							className="text-lg font-semibold text-gray-800 hover:text-red-600 transition-colors duration-300"
@@ -144,50 +117,15 @@ const Header = () => {
 							href="#"
 							className="text-lg font-semibold text-gray-800 hover:text-red-600 transition-colors duration-300"
 						>
-							Contact Us
+							FAQ
 						</a>
 						{permissionLevel === "STAFF" && (
-							<div
-								className="relative dropdown"
-								onMouseEnter={() => handleMouseEnter("menu")}
-								onMouseLeave={() => handleMouseLeave("menu")}
-							>
-								<button
-									className="dropdown-button text-lg font-semibold text-gray-800 hover:text-indigo-500 transition-colors duration-300"
-									onClick={handleClick}
-								>
-									Dashboard
-								</button>
-								{isOpen && (
-									<div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-1">
-										<Link to="/staff/essentials">
-											<a
-												href="#"
-												className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-100 hover:text-indigo-500 transition-colors duration-300"
-											>
-												Essential Items
-											</a>
-										</Link>
-										<a
-											href="#"
-											className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-100 hover:text-indigo-500 transition-colors duration-300"
-										>
-											Medication
-										</a>
-										<a
-											href="#"
-											className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-100 hover:text-indigo-500 transition-colors duration-300"
-										>
-											Upcoming Events
-										</a>
-										<a
-											href="#"
-											className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-100 hover:text-indigo-500 transition-colors duration-300"
-										>
-											Hair Donation
-										</a>
-									</div>
-								)}
+							<div className="relative dropdown">
+								<Link to="/staff">
+									<button className="dropdown-button text-lg font-semibold text-gray-800 hover:text-red-500 transition-colors duration-300">
+										Dashboard
+									</button>
+								</Link>
 							</div>
 						)}
 					</nav>
@@ -199,7 +137,13 @@ const Header = () => {
 							<button onClick={logout} className="bg-red-600 rounded-full w-24 h-8 text-white font-semibold">
 								<div className="flex gap-2 justify-center items-center">
 									<span>
-										<svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											className="w-5 h-5"
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke="currentColor"
+										>
 											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 19l-7-7 7-7" />
 										</svg>
 									</span>

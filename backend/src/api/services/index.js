@@ -39,6 +39,14 @@ import {
 
 import { deleteCampagin, getAllCampagin, getCampaginDetails, insertCampagin } from "./Campagin.service";
 
+import {
+	deleteDonation,
+	getAllDonation,
+	getDonationDetails,
+	insertDonation,
+	changeDonationStatus,
+} from "./DonationRequest.service";
+
 export default {
 	insert,
 
@@ -80,4 +88,11 @@ export default {
 	getAllCampagin,
 	getCampaginDetails,
 	deleteCampagin,
+
+	//Donation Section
+	insertDonation,
+	getAllDonation,
+	getDonationDetails,
+	deleteDonation,
+	changeDonationStatus,
 };

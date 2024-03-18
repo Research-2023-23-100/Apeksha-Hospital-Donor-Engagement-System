@@ -17,9 +17,13 @@ import ViewAllOrganizer from "./view-all-organizer";
 import OrganizeDonationCamp from "./donation-camp-organize";
 import StaffDonationStatus from "./staff-donation-status";
 import DonorEssentialsList from "./donor-essential-list";
-import BloodDonorLogin from './donor-login';
-import BloodDonorSignUp from './donor-signup';
+import BloodDonorLogin from "./donor-login";
+import BloodDonorSignUp from "./donor-signup";
 import BloodDonorHome from "./blood-donor-home-page/BloodDonorHome";
+import DonorEssentialDonate from "./donor-essential-donate";
+import DonorMedicationList from "./donor-medication-list";
+import DonorDonationCreate from "./donar-donation-create";
+import DonorMedicationCreate from "./donor-medication-create";
 import BloodCampAdmin from "./blood-camp-admin-panel/BloodCampAdmin";
 import OrganizerHome from "./organizer-home/OrganizerHome";
 
@@ -48,7 +52,5 @@ export {
 	BloodDonorLogin,
 	BloodDonorSignUp,
 	BloodDonorHome,
-	BloodDonorCarousel,
-	BloodCampAdmin,
-	OrganizerHome
+	BloodDonorCarousel
 };

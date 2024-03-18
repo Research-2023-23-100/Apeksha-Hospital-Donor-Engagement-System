@@ -52,4 +52,11 @@ router.get("/campagin/:id", controller.getCampById);
 router.put("/campagin/update/:id", controller.updateCamp);
 router.delete("/campagin/delete/:id", controller.deleteCamp);
 
+// Donation Request endpoints
+router.post("/donation/request", controller.insertDonation);
+router.get("/donation/request/", controller.getAllDonation);
+router.get("/donation/request/:id", controller.getDonationDetails);
+router.delete("/donation/request/delete/:id", controller.deleteDonation);
+router.put("/donation/request/status/:id", controller.changeDonationStatus);
+
 export default router;

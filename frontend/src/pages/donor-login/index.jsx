@@ -1,11 +1,12 @@
-import React from "react";
-import BloodDonorSignUp from "./BloodDonorSignUp";
+import DonorLogin from "./DonorLogin";
 import { BloodDonorProvider } from "../../contexts/BloodDonorContext";
+
+import React from "react";
 
 function index() {
 	return (
 		<BloodDonorProvider>
-			<BloodDonorSignUp />
+			<DonorLogin />
 		</BloodDonorProvider>
 	);
 }

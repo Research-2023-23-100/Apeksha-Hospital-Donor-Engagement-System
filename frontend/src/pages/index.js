@@ -24,6 +24,7 @@ import DonorEssentialDonate from "./donor-essential-donate";
 import DonorMedicationList from "./donor-medication-list";
 import DonorDonationCreate from "./donar-donation-create";
 import DonorMedicationCreate from "./donor-medication-create";
+import HospitalStaffDashboard from "./hospital-staff-dashboard/index";
 
 export {
 	Home,
@@ -51,4 +52,5 @@ export {
 	DonorMedicationList,
 	DonorDonationCreate,
 	DonorMedicationCreate,
+	HospitalStaffDashboard
 };

@@ -76,7 +76,7 @@ const DonorRegister = () => {
                         </div>
 
                         <div className="flex justify-center mt-6">
-                            <button className="hover:shadow-form rounded-md bg-green-500 py-3 px-8 text-center text-base font-semibold text-white outline-none" type="submit">
+                            <button className="hover:shadow-form rounded-md bg-gray-700 py-3 px-8 text-center text-base font-semibold text-white outline-none" type="submit">
                                 Submit
                             </button>
                         </div>

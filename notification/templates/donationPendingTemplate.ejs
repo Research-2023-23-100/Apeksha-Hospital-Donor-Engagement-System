@@ -1,6 +1,5 @@
 <html>
   <body>
-    <div style="font-family: Arial, sans-serif; margin: 0 auto; padding: 20px">
       <h2 style="color: #333">Dear <%= name %>,</h2>
 
       <p>
@@ -8,10 +7,11 @@
       </p>
 
       <% donationItems.forEach(function(item) { %>
-        <p>
-          We wanted to inform you that your donation of <%= item.quantity %> <%= item.ItemName %> is
-          currently pending processing.
-        </p>
+      <p>
+        We wanted to inform you that your donation of <%= item.ItemName %> and
+        <%= item.quantity %> <%= item.quantity === 1 ? 'item' : 'items' %> is
+        currently pending processing.
+      </p>
       <% }); %>
 
       <p>

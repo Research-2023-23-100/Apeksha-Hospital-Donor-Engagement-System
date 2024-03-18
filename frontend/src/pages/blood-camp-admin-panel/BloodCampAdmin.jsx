@@ -44,8 +44,9 @@ function BloodCampAdmin() {
 
   const filteredOrganizers = organizers.filter((organizer) =>
     organizer.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
 
+  );
+   
   const accountStatusCounts = {
     active: filteredOrganizers.filter(org => org.accountStatus === 'active').length,
     block: filteredOrganizers.filter(org => org.accountStatus === 'block').length,

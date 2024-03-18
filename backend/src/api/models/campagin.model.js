@@ -19,26 +19,23 @@ const CampaginSchema = new mongoose.Schema({
     },
     place: {
         type: String,
-        default: "hospital",
+        
     },
     staff: {
         type: Number,
-        set: v => (v === null ? 0 : v), // Set to 0 if null is provided
         default: 0,
     },
     requiredItems: {
-        type: Number,
-        set: v => (v === null ? 0 : v), // Set to 0 if null is provided
+        type: Number, 
         default: 0,
     },
     accountStatus: {
         type: String,
-        enum: ["pending", "active", "block"],
+        enum: ["pending", "accept", "reject"],
         default: "pending",
     },
     expectedPeopleAmount: {
         type: Number,
-        set: v => (v === null ? 0 : v), // Set to 0 if null is provided
         default: 0,
     },
     date: {
@@ -47,7 +44,7 @@ const CampaginSchema = new mongoose.Schema({
     },
     marketingSlip: {
         type: String,
-        required: false,
+        required: true,
     },
 });
 

@@ -77,7 +77,7 @@ function OrganizeDonationCamp(props) {
         formDataWithFile.append("marketingSlip", formData.marketingSlip);
 
         try {
-            const response = await axios.post("http://localhost:5000/campagin/create", formDataWithFile, {
+            const response = await axios.post("http://localhost:5000/campaign/create", formDataWithFile, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
@@ -91,7 +91,7 @@ function OrganizeDonationCamp(props) {
                 place: "",
                 date: "",
                 marketingSlip: null,
-                expectedPeopleAmount: 0,
+                expectedPeopleAmount: "",
 				
             });
             toast.success("Blood donation camp created successfully!");

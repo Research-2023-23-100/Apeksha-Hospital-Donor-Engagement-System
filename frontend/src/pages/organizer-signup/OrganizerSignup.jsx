@@ -88,10 +88,11 @@ function OrganizerSignup() {
 	};
 
 	return (
-		<div className="min-h-screen flex justify-center items-center bg-gray-50">
+		<div className="min-h-screen flex justify-center items-center bg-gray-50 mt-10">
 			<div className="bg-white p-8 rounded-md shadow-md w-full max-w-[52rem] mt-5 mb-5">
 				<h2 className="text-2xl font-semibold mb-4">User Sign Up</h2>
 				<form onSubmit={handleSubmit}>
+				<div className=" grid grid-flow-col gap-3">
 					
 					<div className="mb-4">
 						<label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
@@ -117,6 +118,8 @@ function OrganizerSignup() {
 							className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
 						/>
 					</div>
+					</div>
+					<div className=" grid grid-flow-col gap-3">
 					<div className="mb-4">
 						<label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
 							Email Address
@@ -140,6 +143,7 @@ function OrganizerSignup() {
 							onChange={(e) => setPassword(e.target.value)}
 							className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
 						/>
+					</div>
 					</div>
 					<div className="mb-4">
 						<div className="flex justify-center space-x-4">

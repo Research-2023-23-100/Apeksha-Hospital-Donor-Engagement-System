@@ -39,7 +39,7 @@ export function DonorProvider({ children }) {
 			.then((response) => {
 				setDonors([...donors, response.data]);
 				makeToast({ type: "success", message: "Registration Successful" });
-				navigate("/donor/login")
+				navigate("/donor/login");
 			})
 			.catch((err) => {
 				if (err.response.data.details == "Email already exists") {

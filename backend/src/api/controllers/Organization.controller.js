@@ -37,6 +37,7 @@ export const loginOrganization = async (request, response, next) => {
   }
 };
 
+
 // Organization register
 export const registerOrganization = async (request, response, next) => {
   if (await OrganizationModel.findOne({ email: request.body.email })) {
@@ -120,41 +121,48 @@ export const deleteOrganization = async (request, response, next) => {
     });
 };
 
-// Update Donor Status
-export const updateDonorStatus = async (request, response, next) => {
-  try {
-    const { id } = request.params;
-    const { accountStatus } = request.body;
 
-    // Find the organizer by ID and update its account status
-    const updatedDonor = await Donor.findByIdAndUpdate(id, { accountStatus }, { new: true });
-
-    if (!updatedDonor) {
-      response.status(404).json({ error: 'Donor not found' });
-      return;
-    }
-
-    response.json({ message: 'Donor status updated successfully', donor: updatedDonor });
-  } catch (error) {
-    console.error('Error updating donor status:', error);
-    response.status(500).json({ error: 'Error updating donor status' });
-  }
-};
-
-// Get Donor Status
-export const getDonorStatus = async (request, response, next) => {
+// Update Organizer Status
+// Update Organizer Status
+export const updateOrganizerStatus = async (request, response, next) => {
   try {
     const { email } = request.body;
-    const donor = await Donor.findOne({ email });
+    const { accountStatus } = request.body;
 
-    if (!donor) {
-      response.status(404).json({ error: 'Donor not found' });
+    // Find the organizer by email and update their account status
+    const updatedOrganizer = await OrganizationModel.findOneAndUpdate(
+      { email: email }, // Find by email
+      { accountStatus: accountStatus }, // Update account status
+      { new: true } // Return the updated document
+    );
+
+    if (!updatedOrganizer) {
+      response.status(404).json({ error: 'Organizer not found' });
       return;
     }
 
-    response.json({ status: donor.accountStatus });
+    response.json({ message: 'Organizer status updated successfully', organizer: updatedOrganizer });
   } catch (error) {
-    console.error('Error fetching donor status:', error);
-    response.status(500).json({ error: 'Error fetching donor status' });
+    console.error('Error updating organizer status:', error);
+    response.status(500).json({ error: 'Error updating organizer status' });
   }
 };
+
+// Get Organizer Status
+export const getOrganizerStatus = async (request, response, next) => {
+  try {
+    const { email } = request.body;
+    const organizer = await OrganizationModel.findOne({ email });
+
+    if (!organizer) {
+      response.status(404).json({ error: 'Organizer not found' });
+      return;
+    }
+
+    response.json({ status: organizer.accountStatus });
+  } catch (error) {
+    console.error('Error fetching organizer status:', error);
+    response.status(500).json({ error: 'Error fetching organizer status' });
+  }
+}
+

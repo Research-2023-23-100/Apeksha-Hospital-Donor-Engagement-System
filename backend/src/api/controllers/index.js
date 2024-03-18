@@ -19,6 +19,9 @@ import {
 	getAllOrganization,
 	updateOrganization,
 	deleteOrganization,
+	updateOrganizerStatus,
+	getOrganizerStatus
+	
 } from "./Organization.controller";
 
 import {
@@ -31,11 +34,12 @@ import {
 } from "./Item.controller";
 
 import {
-	deleteCampagin,
-	editCampaginDetails,
-	getAllCampagin,
-	getCampaginDetails,
-	insertCampagin,
+	createCamp,
+getAllCamps,
+getCampById,
+updateCamp,
+deleteCamp
+	
 } from "./Campagin.controller";
 
 export default {
@@ -65,6 +69,8 @@ export default {
 	getAllOrganization,
 	updateOrganization,
 	deleteOrganization,
+	updateOrganizerStatus,
+	getOrganizerStatus,
 
 	// Item Section
 	insertItem,
@@ -75,9 +81,9 @@ export default {
 	decrementQuantity,
 
 	// Campagin Section
-	insertCampagin,
-	getAllCampagin,
-	getCampaginDetails,
-	deleteCampagin,
-	editCampaginDetails,
+	createCamp,
+getAllCamps,
+getCampById,
+updateCamp,
+deleteCamp
 };

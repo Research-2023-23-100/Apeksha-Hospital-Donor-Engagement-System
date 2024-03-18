@@ -1,61 +1,130 @@
-import CampaginService from "../services";
+const Camp = require('../models/campagin.model');
 
-export const insertCampagin = async (request, response, next) => {
-	await CampaginService.insertCampagin(request.body)
-		.then((data) => {
-			request.handleResponse.successRespond(response)(data);
-			next();
-		})
-		.catch((error) => {
-			request.handleResponse.errorRespond(response)(error.message);
-			next();
-		});
+// Create a new camp
+// exports.createCamp = async (req, res) => {
+//   try {
+//     const newCamp = await Camp.create(req.body);
+//     const { firstName, lastName, mobile, email, password } = req.body;
+//     res.status(201).json({
+//       success: true,
+//       data: newCamp
+//     });
+//   } catch (err) {
+//     res.status(400).json({
+//       success: false,
+//       message: err.message
+//     });
+//   }
+// };
+export const createCamp = async (req, res) => {
+    try {
+      const { organizerName, mobile, email,staff,
+      requiredItems,date} = req.body;
+  
+      // Create new camp with Cloudinary image URL and other details
+      const newCamp = await Camp.create({
+        organizerName,
+        mobile,
+        email,
+        staff,
+        requiredItems,
+        date,
+        marketingSlip: req.file.path, // URL of the uploaded image
+      });
+  
+      res.status(201).json({
+        success: true,
+        data: newCamp
+      });
+    } catch (err) {
+      res.status(400).json({
+        success: false,
+        message: err.message
+      });
+    }
+  };
+
+// Get all camps
+export const getAllCamps = async (req, res) => {
+  try {
+    const camps = await Camp.find();
+    res.status(200).json({
+      success: true,
+      data: camps
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: 'Server Error'
+    });
+  }
 };
 
-export const getAllCampagin = async (request, response, next) => {
-	await CampaginService.getAllCampagin("users")
-		.then(async (data) => {
-			request.handleResponse.successRespond(response)(data);
-			next();
-		})
-		.catch((error) => {
-			request.handleResponse.errorRespond(response)(error.message);
-			next();
-		});
+// Get a single camp by ID
+export const getCampById = async (req, res) => {
+  try {
+    const camp = await Camp.findById(req.params.id);
+    if (!camp) {
+      return res.status(404).json({
+        success: false,
+        message: 'Camp not found'
+      });
+    }
+    res.status(200).json({
+      success: true,
+      data: camp
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: 'Server Error'
+    });
+  }
 };
 
-export const getCampaginDetails = async (req, res, next) => {
-	await CampaginService.getCampaginDetails(req.params.id)
-		.then((data) => {
-			req.handleResponse.successRespond(res)(data);
-			next();
-		})
-		.catch((error) => {
-			req.handleResponse.errorRespond(res)(error.message);
-			next();
-		});
+// Update a camp by ID
+export const updateCamp = async (req, res) => {
+  try {
+    const camp = await Camp.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true
+    });
+    if (!camp) {
+      return res.status(404).json({
+        success: false,
+        message: 'Camp not found'
+      });
+    }
+    res.status(200).json({
+      success: true,
+      data: camp
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: 'Server Error'
+    });
+  }
 };
 
-export const deleteCampagin = async (request, response, next) => {
-	await CampaginService.deleteCampagin(request.params.id)
-		.then((data) => {
-			request.handleResponse.successRespond(response)(data);
-			next();
-		})
-		.catch((error) => {
-			request.handleResponse.errorRespond(response)(error.message);
-			next();
-		});
-};
-
-export const editCampaginDetails = async (request, response, next) => {
-	await CampaginService.editCampaginDetails(request.params.id, request.body)
-		.then((data) => {
-			request.handleResponse.successRespond(response)(data);
-			next();
-		})
-		.catch((error) => {
-			request.handleResponse.errorRespond(response)(error.message);
-			next();
-		});
+// Delete a camp by ID
+export const deleteCamp = async (req, res) => {
+  try {
+    const camp = await Camp.findByIdAndDelete(req.params.id);
+    if (!camp) {
+      return res.status(404).json({
+        success: false,
+        message: 'Camp not found'
+      });
+    }
+    res.status(200).json({
+      success: true,
+      message: 'Camp deleted'
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: 'Server Error'
+    });
+  }
 };

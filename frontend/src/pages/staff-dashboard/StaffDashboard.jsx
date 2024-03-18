@@ -64,7 +64,6 @@ const StaffDashboard = () => {
 
 	return (
 		<>
-		
 			<div className="grid grid-cols-1 gap-8 p-10 lg:grid-cols-2 xl:grid-cols-4">
 				{/* Value card */}
 				<div className="flex items-center shadow justify-between p-4 bg-white rounded-md dark:bg-darker">
@@ -73,7 +72,6 @@ const StaffDashboard = () => {
 							<h6 className="text-xs font-bold leading-none tracking-wider text-black uppercase dark:text-primary-light">
 								Donation
 							</h6>
-
 						</div>
 					</Link>
 					<div>

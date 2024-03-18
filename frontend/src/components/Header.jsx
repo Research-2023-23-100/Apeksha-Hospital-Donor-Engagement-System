@@ -147,9 +147,7 @@ const Header = () => {
 									</button>
 								</Link>
 							</div>
-
 						)}
-
 					</nav>
 
 					{/* nav - end */}

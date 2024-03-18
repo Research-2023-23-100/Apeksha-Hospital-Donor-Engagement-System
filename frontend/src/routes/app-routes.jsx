@@ -36,7 +36,6 @@ import {
 	DonorRegister,
 	DonorLogin,
 	DonorDashboard,
-
 } from "../pages";
 const AppRoutes = () => {
 	return (
@@ -67,10 +66,7 @@ const AppRoutes = () => {
 						<Route path="/staff/donation/list" element={<StaffDonationView />} />
 						<Route path="/staff/dashboard" element={<HospitalStaffDashboard />} />
 
-
 						{/* Need to change file route as donor */}
-
-
 					</Route>
 
 					{/* Donor Section */}
@@ -89,7 +85,6 @@ const AppRoutes = () => {
 						{/* Donor Essential Donation */}
 						<Route path="/donor/essential/donate/" element={<DonorEssentialDonate />} />
 						<Route exact path="/donor/donatation/create/:itemName" element={<DonorDonationCreate />} />
-
 					</Route>
 
 					{/* Organization Section */}

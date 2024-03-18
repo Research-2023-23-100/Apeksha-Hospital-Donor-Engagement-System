@@ -108,6 +108,7 @@ const StaffDonationView = () => {
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Donor Email</th>
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Hand Over Date</th>
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Donation Type</th>
+										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Change Status</th>
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Status</th>
 									</tr>
 								</thead>
@@ -123,14 +124,15 @@ const StaffDonationView = () => {
 												<td className="py-4 px-6 border-b border-gray-200">{elem.date?.slice(0, 10)}</td>
 												<td className="py-4 px-6 border-b border-gray-200">{elem.donationType}</td>
 												<td className="border px-4 py-2">
-											<select
+												<select
 												className="border rounded-md px-2 py-1"
-												value={organizer.accountStatus}
-												onChange={(e) => handleStatusChange(organizer._id, e.target.value)}
+												value={elem.status}
+												onChange={(e) => handleStatusChange(elem._id, e.target.value)}
 											>
-												<option value="pending">Pending</option>
-												<option value="active">Active</option>
-												<option value="block">Block</option>
+												<option value="PENDING">Pending</option>
+												<option value="ACCEPTED">Accepted</option>
+												<option value="COMPLETED">Completed</option>
+												<option value="REJECT">Rejected</option>
 											</select>
 										</td>
 												<td className="py-4 px-6 border-b border-gray-200">

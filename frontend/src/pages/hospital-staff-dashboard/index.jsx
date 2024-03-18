@@ -19,7 +19,7 @@ const HospitalStaffDashboard = () => {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8 mt-8">
                 {/* Value card */}
-                <div className="flex items-center shadow p-4 bg-white rounded-md dark:bg-darker">
+                <div className={`flex ${type==="general"? "bg-gray-100 border-2 border-gray-300 font-bold shadow-2xl hover:bg-gray-800":"bg-white  hover:bg-gray-800"}items-center shadow p-4  rounded-md dark:bg-darker`}>
                     <button onClick={() => setType("general")} className="w-full">
                         <div>
                             <h6 className="text-xs font-medium leading-none tracking-wider text-black uppercase dark:text-primary-light">
@@ -47,7 +47,7 @@ const HospitalStaffDashboard = () => {
                     </div>
                 </div>
                 {/* Users card */}
-                <div className="flex items-center shadow p-4 bg-white rounded-md dark:bg-darker">
+                <div className={`flex ${type==="essentials"? "bg-gray-100 border-2 border-gray-300 font-bold shadow-2xl hover:bg-gray-800":"bg-white  hover:bg-gray-800"}items-center shadow p-4  rounded-md dark:bg-darker`}>
                     <button onClick={() => setType("essentials")} className="w-full">
                         <div>
                             <h6 className="text-xs font-bold leading-none tracking-wider text-black uppercase dark:text-primary-light">
@@ -75,7 +75,7 @@ const HospitalStaffDashboard = () => {
                     </div>
                 </div>
                 {/* Orders card */}
-                <div className="flex items-center shadow p-4 bg-white rounded-md dark:bg-darker">
+                <div className={`flex ${type==="medication"? "bg-gray-100 border-2 border-gray-300 font-bold shadow-2xl hover:bg-gray-800":"bg-white  hover:bg-gray-800"}items-center shadow p-4  rounded-md dark:bg-darker`}>
                     <button onClick={() => setType("medication")} className="w-full">
                         <div>
                             <h6 className="text-xs font-bold leading-none tracking-wider text-black uppercase dark:text-primary-light">
@@ -103,7 +103,7 @@ const HospitalStaffDashboard = () => {
                     </div>
                 </div>
                 {/* Tickets card */}
-                <div className="flex items-center shadow p-4 bg-white rounded-md dark:bg-darker">
+                <div className={`flex ${type==="blood"? "bg-gray-100 border-2 border-gray-300 font-bold shadow-2xl hover:bg-gray-800":"bg-white  hover:bg-gray-800"}items-center shadow p-4  rounded-md dark:bg-darker`}>
                     <button onClick={() => setType("blood")} className="w-full">
                         <div>
                             <h6 className="text-xs font-bold leading-none tracking-wider text-black uppercase dark:text-primary-light">

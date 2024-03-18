@@ -24,10 +24,8 @@ function DonorAsk() {
 					<div className="grid grid-cols-2 md:grid-cols-2 gap-2 ">
 						{/* First red button with margin-bottom */}
 						<Link to="/organizer-login">
-  <button className="bg-red-500 text-white px-4 py-2 rounded-lg">
-    As Organizer
-  </button>
-</Link>
+							<button className="bg-red-500 text-white px-4 py-2 rounded-lg">As Organizer</button>
+						</Link>
 
 						{/* Second red button */}
 						<button className="bg-red-500 text-white px-4 py-2 rounded-lg">As Donor</button>

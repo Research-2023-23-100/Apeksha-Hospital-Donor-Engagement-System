@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function GetAllBloodCamps() {
-  return (
-    <div>GetAllBloodCamps</div>
-  )
+	return <div>GetAllBloodCamps</div>;
 }
 
-export default GetAllBloodCamps
+export default GetAllBloodCamps;

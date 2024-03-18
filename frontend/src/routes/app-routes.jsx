@@ -30,7 +30,8 @@ import {
 	DonorMedicationCreate,
 	BloodCampAdmin,
 	OrganizerHome,
-	GetAllBloodCamps
+	GetAllBloodCamps,
+	StaffDonationView,
 } from "../pages";
 const AppRoutes = () => {
 	return (
@@ -57,6 +58,7 @@ const AppRoutes = () => {
 						<Route path="/staff/item/" element={<StaffViewAllItems />} />
 						<Route path="/staff/donation/" element={<StaffDonationStatus />} />
 						<Route path="/staff/medication" element={<MedicationDashboard />} />
+						<Route path="/staff/donation/list" element={<StaffDonationView />} />
 
 						{/* Need to change file route as donor */}
 						<Route path="/staff/essential/donate/" element={<DonorEssentialDonate />} />
@@ -86,7 +88,6 @@ const AppRoutes = () => {
 						{/* <Route path="/org" element={<orgDashboard />} /> */}
 					</Route>
 
-
 					{/* <Route path="/donor_med_list" element={<DonorMedicationList />} /> */}
 					<Route path="/camp-prediction" element={<CampPrediction />} />
 
@@ -95,8 +96,6 @@ const AppRoutes = () => {
 					<Route path="/organizer-login" element={<OrganizerLogin />} />
 					<Route path="/organizer-signup" element={<OrganizerSignup />} />
 					<Route path="/organizer-home" element={<OrganizerHome />} />
-	
-
 
 					<Route path="/blood-organizers" element={<ViewAllOrganizer />} />
 					<Route path="/organize-camp" element={<OrganizeDonationCamp />} />

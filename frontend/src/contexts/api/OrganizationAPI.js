@@ -30,12 +30,12 @@ class OrganizationAPI {
 		return axios.delete(`${BASE_URL}/org/delete/${id}`, requestConfig);
 	}
 	// Update donor status
-	static updateDonorStatus(id, values) {
-		return axios.put(`${BASE_URL}/org/donor/update/${id}`, values, requestConfigJson);
+	static updateOrganizerStatus(id, values) {
+		return axios.put(`${BASE_URL}/org/update-status/${id}`, values, requestConfigJson);
 	}
 	// Get donor status
-	static getDonorStatus(email) {
-		return axios.get(`${BASE_URL}/org/donor/status`, { params: { email }, ...requestConfig });
+	static getOrganizerStatus(email) {
+		return axios.post(`${BASE_URL}/org/status`, email, requestConfigJson);
 	}
 }
 

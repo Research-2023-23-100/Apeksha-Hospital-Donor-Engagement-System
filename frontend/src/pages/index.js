@@ -21,6 +21,9 @@ import BloodDonorLogin from './donor-login';
 import BloodDonorSignUp from './donor-signup';
 import BloodDonorHome from "./blood-donor-home-page/BloodDonorHome";
 import BloodCampAdmin from "./blood-camp-admin-panel/BloodCampAdmin";
+import OrganizerHome from "./organizer-home/OrganizerHome";
+
+
 
 
 
@@ -46,5 +49,6 @@ export {
 	BloodDonorSignUp,
 	BloodDonorHome,
 	BloodDonorCarousel,
-	BloodCampAdmin
+	BloodCampAdmin,
+	OrganizerHome
 };

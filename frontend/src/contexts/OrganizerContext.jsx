@@ -30,13 +30,20 @@ export const OrganizerProvider = ({ children }) => {
   const login = (values) => {
     OrganizerAPI.login(values)
       .then((response) => {
-        localStorage.setItem("uId", response.data._id);
-        localStorage.setItem("name", response.data.name);
-        localStorage.setItem("email", response.data.email);
-        localStorage.setItem("authToken", response.data.token);
-        localStorage.setItem("permissionLevel", response.data.permissionLevel);
-        makeToast({ type: "success", message: "Login Successful" });
-        window.location.href = "/org";
+        const statusResponse = getOrganizerStatus(values.email);
+        console.log("status", statusResponse.data); 
+        if(statusResponse.accountStatus=='active'){
+          localStorage.setItem("uId", response.data._id);
+          localStorage.setItem("name", response.data.name);
+          localStorage.setItem("email", response.data.email);
+          localStorage.setItem("authToken", response.data.token);
+          localStorage.setItem("permissionLevel", response.data.permissionLevel);
+          makeToast({ type: "success", message: "Login Successful" });
+          window.location.href = "/organizer-home";
+        }else{
+          window.location.href = "/under-review";
+        }
+        
       })
       .catch((err) => {
         makeToast({ type: "error", message: "Invalid Email or Password" });
@@ -73,7 +80,7 @@ export const OrganizerProvider = ({ children }) => {
     }
   };
 
-  const updateDonorStatus = async (id, accountStatus) => {
+  const updateOrganizerStatus = async (id, accountStatus) => {
     try {
       const response = await OrganizerAPI.updateDonorStatus(id, accountStatus);
       console.log("Donor status updated successfully:", response.data);
@@ -82,9 +89,10 @@ export const OrganizerProvider = ({ children }) => {
     }
   };
 
-  const getDonorStatus = async (email) => {
+  const getOrganizerStatus = async (email) => {
     try {
-      const response = await OrganizerAPI.getDonorStatus(email);
+      console.log("email"+email)
+      const response = await OrganizerAPI.getOrganizerStatus(email);
       console.log("Donor status fetched successfully:", response.data);
       return response.data.status;
     } catch (error) {
@@ -102,8 +110,8 @@ export const OrganizerProvider = ({ children }) => {
         getOneOrganizer,
         login,
         deleteOrganizer,
-        updateDonorStatus,
-        getDonorStatus,
+        updateOrganizerStatus,
+        getOrganizerStatus,
         organizer,
         setOrganizer,
       }}

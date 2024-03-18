@@ -1,17 +1,55 @@
-import React, { useContext } from "react";
-import OrganizerContext from "../../contexts/OrganizerContext";
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const OrganizerLogin = () => {
-  const { login } = useContext(OrganizerContext);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const newOrganizer = {
-      email: formData.get("email"),
-      password: formData.get("password"),
-    };
-    login(newOrganizer);
+    const errors = {};
+
+    if (!email.trim()) {
+      errors.email = 'Email is required';
+    }
+
+    if (!password.trim()) {
+      errors.password = 'Password is required';
+    }
+
+    setErrors(errors);
+
+    if (Object.keys(errors).length === 0) {
+      try {
+        const response = await axios.post('http://localhost:5000/org/login', {
+          email,
+          password
+        });
+        // Save login information in local storage
+        localStorage.setItem("uId", response.data._id);
+        localStorage.setItem("name", response.data.name);
+        localStorage.setItem("email", response.data.email);
+        localStorage.setItem("authToken", response.data.token);
+        localStorage.setItem("permissionLevel", response.data.permissionLevel);
+
+        const statusResponse = await axios.post('http://localhost:5000/org/status', {
+          email
+        });
+
+        if (statusResponse.data.status === 'pending') {
+          navigate('/under-review');
+        } else {
+          navigate('/organizer-home');
+        }
+
+        console.log('Login successful:', response.data);
+      } catch (error) {
+        console.error('Error logging in:', error.response.data);
+      }
+    }
   };
 
   return (
@@ -42,11 +80,14 @@ const OrganizerLogin = () => {
                   <input
                     id="email"
                     name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="user@example.com"
                     type="email"
                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                   />
                 </div>
+                {errors.email && <p className="text-red-500">{errors.email}</p>}
               </div>
 
               <div className="mt-6">
@@ -60,12 +101,15 @@ const OrganizerLogin = () => {
                   <input
                     id="password"
                     name="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     type="password"
                     required=""
                     placeholder="***********"
                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                   />
                 </div>
+                {errors.password && <p className="text-red-500">{errors.password}</p>}
               </div>
 
               <div className="mt-6 flex items-center justify-between">

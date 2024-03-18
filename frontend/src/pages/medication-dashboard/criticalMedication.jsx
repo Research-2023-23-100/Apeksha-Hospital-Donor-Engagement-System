@@ -84,7 +84,7 @@ const CriticalMedication = () => {
 	}, [filteredMedications]);
 
 	return (
-		<div className="container px-20 mx-auto mt-32 border-2 border-slate-300 p-8">
+		<div className="container px-20 mx-auto mt-36 border-2 border-slate-300 p-8">
 			<div className="flex justify-between mb-4">
 				<div className="border-2 border-slate-300 p-8">
 					<h1 className="text-3xl font-semibold mb-6">Medication Priority Level</h1>

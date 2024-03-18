@@ -28,10 +28,12 @@ import {
 	DonorMedicationList,
 	DonorDonationCreate,
 	DonorMedicationCreate,
+  HospitalStaffDashboard,
 	BloodCampAdmin,
 	OrganizerHome,
 	GetAllBloodCamps,
 	StaffDonationView,
+
 } from "../pages";
 const AppRoutes = () => {
 	return (
@@ -59,6 +61,8 @@ const AppRoutes = () => {
 						<Route path="/staff/donation/" element={<StaffDonationStatus />} />
 						<Route path="/staff/medication" element={<MedicationDashboard />} />
 						<Route path="/staff/donation/list" element={<StaffDonationView />} />
+						<Route path="/staff/dashboard" element={<HospitalStaffDashboard />} />
+
 
 						{/* Need to change file route as donor */}
 						<Route path="/staff/essential/donate/" element={<DonorEssentialDonate />} />

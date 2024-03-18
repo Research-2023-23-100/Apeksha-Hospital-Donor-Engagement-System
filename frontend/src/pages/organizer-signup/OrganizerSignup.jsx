@@ -8,8 +8,7 @@ function OrganizerSignup() {
 
 	const { submitOrganizer } = useContext(OrganizerContext);
 
-	const [firstName, setFirstName] = useState("");
-	const [lastName, setLastName] = useState("");
+	const [name, setName] = useState("");
 	const [mobile, setMobile] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -75,8 +74,7 @@ function OrganizerSignup() {
 		// Check if both front and rear image URLs are not empty
 		if (urlf && urlr) {
 			const newOrganizer = {
-				firstName: firstName,
-				lastName: lastName,
+				name: name,
 				mobile: mobile,
 				email: email,
 				password: password,
@@ -95,26 +93,14 @@ function OrganizerSignup() {
 				<h2 className="text-2xl font-semibold mb-4">User Sign Up</h2>
 				<form onSubmit={handleSubmit}>
 					<div className="mb-4">
-						<label htmlFor="firstName" className="block text-gray-700 font-semibold mb-2">
-							First Name
+						<label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
+							Organizer Name
 						</label>
 						<input
 							type="text"
-							id="firstName"
-							value={firstName}
-							onChange={(e) => setFirstName(e.target.value)}
-							className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
-						/>
-					</div>
-					<div className="mb-4">
-						<label htmlFor="lastName" className="block text-gray-700 font-semibold mb-2">
-							Last Name
-						</label>
-						<input
-							type="text"
-							id="lastName"
-							value={lastName}
-							onChange={(e) => setLastName(e.target.value)}
+							id="name"
+							value={name}
+							onChange={(e) => setName(e.target.value)}
 							className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
 						/>
 					</div>

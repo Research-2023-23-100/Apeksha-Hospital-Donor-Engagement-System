@@ -51,7 +51,7 @@ const DonorMedicationList = () => {
 										<div className="ml-10">{medication}</div>
 									</td>
 									<td className="px-4 py-2">
-										<Link to={`/staff/medication/donatation/create/${medication}`}>
+										<Link to={`/donor/medication/donatation/create/${medication}`}>
 											<button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
 												Place a donation Request
 											</button>

@@ -1,5 +1,6 @@
 import { Router } from "express";
 import controller from "../controllers";
+const upload = require("../../util/slipupload");
 
 const router = Router();
 
@@ -32,6 +33,8 @@ router.get("/org/", controller.getAllOrganization);
 router.get("/org/:id", controller.getOneOrganization);
 router.put("/org/update/:id", controller.updateOrganization);
 router.delete("/org/delete/:id", controller.deleteOrganization);
+router.put("/org/update-status/:id", controller.updateOrganizerStatus);
+router.post("/org/status", controller.getOrganizerStatus);
 
 // Essentials Items endpoints
 router.post("/item/create", controller.insertItem);
@@ -42,11 +45,11 @@ router.put("/item/increment/:id", controller.incrementQuantity);
 router.put("/item/decrement/:id", controller.decrementQuantity);
 
 // Campagin endpoints
-router.post("/campagin/create", controller.insertCampagin);
-router.get("/campagin/", controller.getAllCampagin);
-router.get("/campagin/:id", controller.getCampaginDetails);
-router.put("/campagin/update/:id", controller.editCampaginDetails);
-router.delete("/campagin/delete/:id", controller.deleteCampagin);
+router.post("/campagin/create", upload.single("marketingSlip"), controller.createCamp);
+router.get("/campagin/", controller.getAllCamps);
+router.get("/campagin/:id", controller.getCampById);
+router.put("/campagin/update/:id", controller.updateCamp);
+router.delete("/campagin/delete/:id", controller.deleteCamp);
 
 // Donation Request endpoints
 router.post("/donation/request", controller.insertDonation);

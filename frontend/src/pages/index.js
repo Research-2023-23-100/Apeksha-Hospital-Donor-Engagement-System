@@ -11,20 +11,24 @@ import CampPrediction from "./donor-camp-prediction";
 import DonorHome from "./donor-ask-page";
 import OrganizerSignup from "./organizer-signup";
 import OrganizerLogin from "./organizer-login";
-
 import UnderReview from "./under-review";
 import ViewAllOrganizer from "./view-all-organizer";
 import OrganizeDonationCamp from "./donation-camp-organize";
 import StaffDonationStatus from "./staff-donation-status";
 import DonorEssentialsList from "./donor-essential-list";
-import BloodDonorLogin from "./blood-donor-login";
-import BloodDonorSignUp from "./blood-donor-signup";
-import BloodDonorHome from "./blood-donor-home-page/BloodDonorHome";
+import BloodDonorHome from "./blood-donor-home-page";
 import DonorEssentialDonate from "./donor-essential-donate";
 import DonorMedicationList from "./donor-medication-list";
 import DonorDonationCreate from "./donar-donation-create";
 import DonorMedicationCreate from "./donor-medication-create";
-
+import HospitalStaffDashboard from "./hospital-staff-dashboard/index";
+import BloodCampAdmin from "./blood-camp-admin-panel";
+import OrganizerHome from "./organizer-home";
+import GetAllBloodCamps from "./get-all-blood-camps/GetAllBloodCamps";
+import StaffDonationView from "./staff-donation-view";
+import DonorRegister from "./donor-register";
+import DonorLogin from "./donor-login";
+import DonorDashboard from "./donor-dashboard";
 export {
 	Home,
 	StaffLogin,
@@ -43,12 +47,18 @@ export {
 	OrganizeDonationCamp,
 	StaffDonationStatus,
 	DonorEssentialsList,
-	BloodDonorLogin,
-	BloodDonorSignUp,
 	BloodDonorHome,
 	BloodDonorCarousel,
 	DonorEssentialDonate,
 	DonorMedicationList,
 	DonorDonationCreate,
 	DonorMedicationCreate,
+	HospitalStaffDashboard,
+	BloodCampAdmin,
+	OrganizerHome,
+	GetAllBloodCamps,
+	StaffDonationView,
+	DonorRegister,
+	DonorLogin,
+	DonorDashboard,
 };

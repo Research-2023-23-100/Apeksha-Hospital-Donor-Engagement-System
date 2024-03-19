@@ -21,15 +21,17 @@ function DonorAsk() {
 							standard for excellence and reliability.
 						</p>
 					</div>
-					<div className="grid grid-cols-2 md:grid-cols-2 gap-2 ">
+					<div className="grid grid-cols-3 md:grid-cols-3 gap-2 ">
 						{/* First red button with margin-bottom */}
 						<Link to="/organizer-login">
-							<button className="bg-red-500 text-white px-4 py-2 rounded-lg">As Organizer</button>
+							<button className="bg-red-500 text-sm text-white px-4 py-2 rounded-lg">Organizer Login</button>
 						</Link>
-
+						<Link to="/organizer-signup">
+							<button className="bg-red-500 text-white text-sm px-4 py-2 rounded-lg">Organizer SignUp</button>
+						</Link>
 						{/* Second red button */}
 						<Link to="/blood-donor-home">
-						<button className="bg-red-500 text-white px-4 py-2 rounded-lg">As Donor</button>
+						<button className="bg-red-500 text-white text-sm px-4 py-2 rounded-lg">As Donor</button>
 						</Link>
 					</div>
 				</div>

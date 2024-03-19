@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import image1 from "../../assets/bloodbag.png"
 
 const OrganizerLogin = () => {
 	const [email, setEmail] = useState("");
@@ -56,7 +57,7 @@ const OrganizerLogin = () => {
 		<>
 			<div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8 px-6">
 				<div className="sm:mx-auto sm:w-full sm:max-w-md">
-					<img className="mx-auto h-20 w-auto" src="https://www.svgrepo.com/show/301692/login.svg" alt="Workflow" />
+					<img className="mx-auto h-20 w-auto" src={image1} alt="Workflow" />
 					<h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">Welcome Back Organizer</h2>
 				</div>
 
@@ -128,7 +129,7 @@ const OrganizerLogin = () => {
 								<span className="block w-full rounded-md shadow-sm">
 									<button
 										type="submit"
-										className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
+										className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
 									>
 										Sign in
 									</button>

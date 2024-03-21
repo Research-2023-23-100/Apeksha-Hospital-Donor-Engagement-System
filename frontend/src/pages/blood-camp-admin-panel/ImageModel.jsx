@@ -18,7 +18,7 @@ export default function ImageModal({ visible, onClose, image }) {
 				</div>
 
 				<div className="flex justify-center items-center">
-					<img src={image} className="w-[15rem] h-[15rem]" alt="Modal" />
+					<img src={image} className="w-[20rem] h-[20rem]" alt="Modal" />
 				</div>
 			</div>
 		</>

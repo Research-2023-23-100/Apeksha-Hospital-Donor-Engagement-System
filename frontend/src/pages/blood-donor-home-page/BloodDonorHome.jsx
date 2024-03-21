@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import imageblood from "../../assets/blood-child.jpg";
+import imageblood from "../../assets/bloodbag.png";
 import BloodDonorCarousel from "../carousel-home";
 import DonorContext from "../../contexts/DonorContext";
 
@@ -89,7 +89,7 @@ function CampsPage() {
 		<div className="mt-[5rem] w-full p-10">
     {/* Upcoming Events */}
     <div className="mb-8 max-w-full">
-        <h2 className="text-2xl font-bold mb-4">Upcoming Events</h2>
+        <h2 className="text-2xl font-bold mb-4">Upcoming Blood Camp Events</h2>
         {/* Add your upcoming events component here */}
     </div>
 	
@@ -101,8 +101,9 @@ function CampsPage() {
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {camps.filter(cmp=>cmp.accountStatus === 'Approved').map((camp) => (
                 <div key={camp._id} className="bg-white shadow-md rounded-md p-4">
-                    <h3 className="text-xl font-semibold mb-2">{camp.place}</h3>
-                    <p>Date: {new Date(camp.date).toLocaleDateString()}</p>
+				<img src={imageblood}></img>
+                    <h3 className="text-xl font-semibold mb-2">Place:{camp.place}</h3>
+                    <p className="text-xl font-semibold">Date: {new Date(camp.date).toLocaleDateString()}</p>
                     {/* Add more details here as needed */}
                 </div>
             ))}

@@ -19,6 +19,7 @@ const CampaginSchema = new mongoose.Schema({
     },
     place: {
         type: String,
+        default: "Apeksha Hospital",
         
     },
     staff: {

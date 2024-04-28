@@ -1,5 +1,5 @@
 import React from "react";
-import handbookPDF from "../../assets/Hasitha_Sanjaya.pdf"; // Assuming the PDF file is in the same directory
+import handbookPDF from "../../assets/donationorg.pdf"; // Assuming the PDF file is in the same directory
 import Carousel from "../carousel-home";
 import { Link } from "react-router-dom";
 

@@ -1,10 +1,13 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import OrganizerContext from "../../contexts/OrganizerContext";
+import { useNavigate } from "react-router-dom"; 
 
 function OrganizerSignup() {
 	const PRESET_NAME = "g0q5rala";
 	const CLOUD_NAME = "dv8fo0kwp";
+	const navigate = useNavigate();
+
 
 	const { submitOrganizer } = useContext(OrganizerContext);
 
@@ -82,6 +85,9 @@ function OrganizerSignup() {
 				imageBack: urlr,
 			};
 			submitOrganizer(newOrganizer);
+			setTimeout(() => {
+                navigate('/under-review'); // Redirect after a delay
+            },2000)
 		} else {
 			alert("Please upload both front and rear images before submitting.");
 		}

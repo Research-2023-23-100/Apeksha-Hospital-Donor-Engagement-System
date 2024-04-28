@@ -5,7 +5,7 @@ import Camp from '../models/campagin.model';
 export const createCamp = async (req, res) => {
 
   try {
-    const { organizerName, mobile, email, staff, requiredItems, date,expectedPeopleAmount } = req.body;
+    const { organizerName, mobile, email, staff, requiredItems, date,expectedPeopleAmount,place } = req.body;
 
     // Create new camp with Cloudinary image URL and other details
     const newCamp = await Camp.create({
@@ -16,6 +16,7 @@ export const createCamp = async (req, res) => {
       requiredItems,
       date,
       expectedPeopleAmount,
+	  place,
       marketingSlip: req.file.path, // URL of the uploaded image
     });
 

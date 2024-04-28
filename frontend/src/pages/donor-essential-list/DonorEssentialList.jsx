@@ -6,13 +6,13 @@ const DonorEssentialsList = () => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const itemsPerPage = 8;
 
-	// Sorting items by ItemName in ascending order
-	const sortedItems = dbItems.slice().sort((a, b) => a.ItemName.localeCompare(b.ItemName));
+	// Sorting items by ItemName in ascending order if dbItems is available and is an array
+	const sortedItems = Array.isArray(dbItems) ? dbItems?.slice().sort((a, b) => a.ItemName.localeCompare(b.ItemName)) : [];
 
 	// Logic to calculate index of the first and last item on the current page
 	const indexOfLastItem = currentPage * itemsPerPage;
 	const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-	const currentItems = sortedItems.slice(indexOfFirstItem, indexOfLastItem);
+	const currentItems = sortedItems?.slice(indexOfFirstItem, indexOfLastItem);
 
 	// Logic for pagination
 	const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -21,6 +21,16 @@ const DonorEssentialsList = () => {
 		// Handle donation logic here, for example, redirect to donation page or trigger a donation modal
 		console.log("Donating item with ID:", itemId);
 	};
+
+	// Render loading state if dbItems is not available
+	if (!Array.isArray(dbItems)) {
+		return <div>Loading...</div>;
+	}
+
+	// Render if dbItems is available but empty
+	if (Array.isArray(dbItems) && dbItems.length === 0) {
+		return <div>No items available</div>;
+	}
 
 	return (
 		<>

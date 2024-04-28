@@ -7,12 +7,12 @@ const DonorEssentialsList = () => {
 	const itemsPerPage = 8;
 
 	// Sorting items by ItemName in ascending order
-	const sortedItems = dbItems.slice().sort((a, b) => a.ItemName.localeCompare(b.ItemName));
+	const sortedItems = dbItems?.slice().sort((a, b) => a.ItemName.localeCompare(b.ItemName));
 
 	// Logic to calculate index of the first and last item on the current page
 	const indexOfLastItem = currentPage * itemsPerPage;
 	const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-	const currentItems = sortedItems.slice(indexOfFirstItem, indexOfLastItem);
+	const currentItems = sortedItems?.slice(indexOfFirstItem, indexOfLastItem);
 
 	// Logic for pagination
 	const paginate = (pageNumber) => setCurrentPage(pageNumber);

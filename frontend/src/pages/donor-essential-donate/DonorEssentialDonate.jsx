@@ -52,7 +52,7 @@ const DonorEssentialDonate = () => {
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
     // Get current items for the current page
-    const currentItems = Array.isArray(filteredItems) ? filteredItems.slice(indexOfFirstItem, indexOfLastItem) : [];
+    const currentItems = Array.isArray(filteredItems) ? filteredItems?.slice(indexOfFirstItem, indexOfLastItem) : [];
 
     // Array of all months
     const months = [

@@ -23,14 +23,14 @@ const DonorEssentialsList = () => {
 	};
 
 	// Render loading state if dbItems is not available
-	if (!Array.isArray(dbItems)) {
-		return <div>Loading...</div>;
-	}
+	// if (!Array.isArray(dbItems)) {
+	// 	return <div>Loading...</div>;
+	// }
 
-	// Render if dbItems is available but empty
-	if (Array.isArray(dbItems) && dbItems.length === 0) {
-		return <div>No items available</div>;
-	}
+	// // Render if dbItems is available but empty
+	// if (Array.isArray(dbItems) && dbItems.length === 0) {
+	// 	return <div>No items available</div>;
+	// }
 
 	return (
 		<>

@@ -11,6 +11,6 @@ export default defineConfig({
 	},
 	define: {
 		// Pass the Cloudinary URL as a global variable
-		"process.env.CLOUDINARY_URL": JSON.stringify(process.env.VITE_CLOUDINARY_URL),
+		"process.env.CLOUDINARY_URL": JSON.stringify(process.env.CLOUDINARY_URL),
 	},
 });

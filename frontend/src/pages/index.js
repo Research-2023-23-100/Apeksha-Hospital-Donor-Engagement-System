@@ -19,7 +19,10 @@ import HairDonationHome from "./Hair-donation/hair_home";
 import HairSampleUpload1 from "./Hair-donation/hairSampleUpload1";
 import HairSampleUpload2 from "./Hair-donation/hairSampleUpload2";
 import HairSampleUpload3 from "./Hair-donation/hairSampleUpload3";
-
+import DonationReject from "./Hair-donation/donateReject";
+import Thankyou  from "./Hair-donation/thankyou";
+import HairOutput1  from "./Hair-donation/hairOutput1";
+import HairOutput2  from "./Hair-donation/hairOutput2";
 
 export {
 	Home,
@@ -43,4 +46,9 @@ export {
 	HairSampleUpload1,
 	HairSampleUpload2,
 	HairSampleUpload3,
+	DonationReject,
+	Thankyou,
+	HairOutput2,
+	HairOutput1,
+	
 };

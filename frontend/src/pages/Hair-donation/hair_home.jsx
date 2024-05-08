@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import HairBGimage from '../../assets/hair/hairBG.jpg';
+import HairBGimage from '../../assets/hair/hairBG1.jpg';
 import Home2 from '../../assets/hair/Home 2.jpg';
 import step1 from '../../assets/hair/step1.jpeg';
 import step2 from '../../assets/hair/step2.jpg';
@@ -44,7 +44,7 @@ const Home = () => {
                 <div className="md:w-3/4 md:pl-8">
                     <h2 className="text-5xl md:text-6xl font-bold text-red-800 mb-5">Thinking of donating your hair to Apeksha Canser Hospital - Sri Lanka?</h2>
 
-                    <p className="text-xl text-red-700 mb-4">Before you book that salon appointment, please watch celebrity hairdresser Andrew Barton show you the best way to cut your hair for LPT.</p>
+                    <p className="text-xl text-red-700 mb-4">Before you book that salon appointment, please watch celebrity hairdresser Andrew Barton show you the best way to cut your hair for Apeksha Hospital.</p>
                     <p className="text-xl text-red-700 mb-4">Donating your long locks to help children and young people experiencing the devastating effects of hair loss is an incredibly generous thing to do.</p>
                     <p className="text-xl text-red-700 mb-4">By following the advice on this short film, you can help us boost the confidence and self-esteem of young people at what can be a very challenging time in their young lives.</p>
                     <p className="text-xl text-red-700 mb-4">And please don't forget that we need financial donations to help us cover the cost of making, fitting, and styling our wigs.</p>

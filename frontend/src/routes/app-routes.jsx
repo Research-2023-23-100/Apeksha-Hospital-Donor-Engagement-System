@@ -27,6 +27,10 @@ import {
 	HairSampleUpload1,
 	HairSampleUpload2,
 	HairSampleUpload3,
+	DonationReject,
+	Thankyou,
+	HairOutput1,
+	HairOutput2,
 } from "../pages";
 const AppRoutes = () => {
 	return (
@@ -73,13 +77,24 @@ const AppRoutes = () => {
 					<Route path="/Hair_Donation" element={<HairDonationHome />}>
 						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
 					</Route>
+					<Route path="/donateReject" element={<DonationReject />}>
+						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
+					</Route>
+					<Route path="/Thankyou" element={<Thankyou />}>
+						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
+					</Route>
 					<Route path="/hair_sample" element={<HairSampleUpload1 />}>
 						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
 					</Route>
 					<Route path="/hair_sample2" element={<HairSampleUpload2 />}>
 						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
 					</Route>
-
+					<Route path="/HairOutput1" element={<HairOutput1 />}>
+						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
+					</Route>
+					<Route path="/HairOutput2" element={<HairOutput2 />}>
+						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
+					</Route>
 					<Route path="/hair_sample3" element={<HairSampleUpload3/>}>
 						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
 					</Route>

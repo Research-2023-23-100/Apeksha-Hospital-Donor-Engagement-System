@@ -26,3 +26,10 @@ services:
     env_file:
       - ./notification/.env
     restart: always 
+  
+  inventory:
+    image: sahanpunchihewa19/research-inventory-model:dev
+    container_name: research-inventory-model
+    ports:
+      - "8000:8000"
+    restart: always

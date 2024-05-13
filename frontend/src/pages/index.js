@@ -16,6 +16,15 @@ import ViewAllOrganizer from "./view-all-organizer";
 import OrganizeDonationCamp from "./donation-camp-organize";
 import StaffDonationStatus from "./staff-donation-status";
 import DonorEssentialsList from "./donor-essential-list";
+import HairDonationHome from "./Hair-donation/hair_home";
+import HairSampleUpload1 from "./Hair-donation/hairSampleUpload1";
+import HairSampleUpload2 from "./Hair-donation/hairSampleUpload2";
+import HairSampleUpload3 from "./Hair-donation/hairSampleUpload3";
+import DonationReject from "./Hair-donation/donateReject";
+import Thankyou  from "./Hair-donation/thankyou";
+import HairOutput1  from "./Hair-donation/hairOutput1";
+import HairOutput2  from "./Hair-donation/hairOutput2";
+
 import BloodDonorHome from "./blood-donor-home-page";
 import DonorEssentialDonate from "./donor-essential-donate";
 import DonorMedicationList from "./donor-medication-list";
@@ -29,6 +38,9 @@ import StaffDonationView from "./staff-donation-view";
 import DonorRegister from "./donor-register";
 import DonorLogin from "./donor-login";
 import DonorDashboard from "./donor-dashboard";
+
+import HairDonation from "./hair-donation-test";
+
 export {
 	Home,
 	StaffLogin,
@@ -47,6 +59,15 @@ export {
 	OrganizeDonationCamp,
 	StaffDonationStatus,
 	DonorEssentialsList,
+	HairDonationHome,
+	HairSampleUpload1,
+	HairSampleUpload2,
+	HairSampleUpload3,
+	DonationReject,
+	Thankyou,
+	HairOutput2,
+	HairOutput1,
+	
 	BloodDonorHome,
 	BloodDonorCarousel,
 	DonorEssentialDonate,
@@ -61,4 +82,6 @@ export {
 	DonorLogin,
 	GetAllCamps,
 	DonorDashboard,
+
+	HairDonation,
 };

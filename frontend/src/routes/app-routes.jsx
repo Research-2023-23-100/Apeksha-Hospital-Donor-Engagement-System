@@ -43,7 +43,8 @@ import {
 	StaffDonationView,
 	DonorRegister,
 	DonorLogin,
-	DonorDashboard
+	DonorDashboard,
+	HairDonation,
 } from "../pages";
 const AppRoutes = () => {
 	return (
@@ -57,6 +58,7 @@ const AppRoutes = () => {
 					<Route path="/donor/essentials/list" element={<DonorEssentialsList />} />
 					<Route path="/donor/register" element={<DonorRegister />} />
 					<Route path="/donor/medication/donate/" element={<DonorMedicationList />} />
+					<Route path="/hair" element={<HairDonation />} />
 
 					{/* Staff Section */}
 					{/* Staff Check Login Status */}

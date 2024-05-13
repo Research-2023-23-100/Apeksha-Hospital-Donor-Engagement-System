@@ -6,8 +6,9 @@ import StaffCreateItem from "./staff-create-item";
 import StaffViewAllItems from "./staff-view-all-items";
 import MedicationDashboard from "./medication-dashboard";
 import Carousel from "./carousel-home";
+import BloodDonorCarousel from "./carousel-blood-donor-home";
 import CampPrediction from "./donor-camp-prediction";
-import DonorHome from "./donor-home";
+import DonorHome from "./donor-ask-page";
 import OrganizerSignup from "./organizer-signup";
 import OrganizerLogin from "./organizer-login";
 import UnderReview from "./under-review";
@@ -24,6 +25,19 @@ import Thankyou  from "./Hair-donation/thankyou";
 import HairOutput1  from "./Hair-donation/hairOutput1";
 import HairOutput2  from "./Hair-donation/hairOutput2";
 
+import BloodDonorHome from "./blood-donor-home-page";
+import DonorEssentialDonate from "./donor-essential-donate";
+import DonorMedicationList from "./donor-medication-list";
+import DonorDonationCreate from "./donar-donation-create";
+import DonorMedicationCreate from "./donor-medication-create";
+import HospitalStaffDashboard from "./hospital-staff-dashboard/index";
+import BloodCampAdmin from "./blood-camp-admin-panel";
+import OrganizerHome from "./organizer-home";
+import GetAllCamps from './get-all-camps/GetAllCamps';
+import StaffDonationView from "./staff-donation-view";
+import DonorRegister from "./donor-register";
+import DonorLogin from "./donor-login";
+import DonorDashboard from "./donor-dashboard";
 export {
 	Home,
 	StaffLogin,
@@ -51,4 +65,18 @@ export {
 	HairOutput2,
 	HairOutput1,
 	
+	BloodDonorHome,
+	BloodDonorCarousel,
+	DonorEssentialDonate,
+	DonorMedicationList,
+	DonorDonationCreate,
+	DonorMedicationCreate,
+	HospitalStaffDashboard,
+	BloodCampAdmin,
+	OrganizerHome,
+	StaffDonationView,
+	DonorRegister,
+	DonorLogin,
+	GetAllCamps,
+	DonorDashboard,
 };

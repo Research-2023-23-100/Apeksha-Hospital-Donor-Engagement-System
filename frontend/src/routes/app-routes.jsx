@@ -31,6 +31,19 @@ import {
 	Thankyou,
 	HairOutput1,
 	HairOutput2,
+	BloodDonorHome,
+	DonorEssentialDonate,
+	DonorMedicationList,
+	DonorDonationCreate,
+	DonorMedicationCreate,
+	HospitalStaffDashboard,
+	BloodCampAdmin,
+	OrganizerHome,
+	GetAllCamps,
+	StaffDonationView,
+	DonorRegister,
+	DonorLogin,
+	DonorDashboard
 } from "../pages";
 const AppRoutes = () => {
 	return (
@@ -42,6 +55,8 @@ const AppRoutes = () => {
 					{/* Public Routes */}
 					<Route path="/" element={<Home />} />
 					<Route path="/donor/essentials/list" element={<DonorEssentialsList />} />
+					<Route path="/donor/register" element={<DonorRegister />} />
+					<Route path="/donor/medication/donate/" element={<DonorMedicationList />} />
 
 					{/* Staff Section */}
 					{/* Staff Check Login Status */}
@@ -56,17 +71,29 @@ const AppRoutes = () => {
 						<Route path="/staff/item/create" element={<StaffCreateItem />} />
 						<Route path="/staff/item/" element={<StaffViewAllItems />} />
 						<Route path="/staff/donation/" element={<StaffDonationStatus />} />
+						<Route path="/staff/medication" element={<MedicationDashboard />} />
+						<Route path="/staff/donation/list" element={<StaffDonationView />} />
+						<Route path="/staff/dashboard" element={<HospitalStaffDashboard />} />
+
+						{/* Need to change file route as donor */}
 					</Route>
 
 					{/* Donor Section */}
 					{/* Donor Check Login Status */}
 					<Route path="/donor/login" element={<CheckLoginStatus />}>
-						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
+						<Route path="/donor/login" element={<DonorLogin />} />
 					</Route>
 
 					{/* Donor Private Routes */}
 					<Route path="/donor" element={<PrivateRoute permissionLevel="DONOR" />}>
-						<Route path="/donor" element={<StaffDashboard />} />
+						<Route path="/donor" element={<DonorDashboard />} />
+						{/* Donor Medication Donation */}
+
+						<Route exact path="/donor/medication/donatation/create/:medication" element={<DonorMedicationCreate />} />
+
+						{/* Donor Essential Donation */}
+						<Route path="/donor/essential/donate/" element={<DonorEssentialDonate />} />
+						<Route exact path="/donor/donatation/create/:itemName" element={<DonorDonationCreate />} />
 					</Route>
 
 					{/* Organization Section */}
@@ -102,17 +129,24 @@ const AppRoutes = () => {
 					<Route path="/org" element={<PrivateRoute permissionLevel="ORGANIZATION" />}>
 						{/* <Route path="/org" element={<orgDashboard />} /> */}
 					</Route>
-					<Route path="/medication" element={<MedicationDashboard />} />
+
+					{/* <Route path="/donor_med_list" element={<DonorMedicationList />} /> */}
 					<Route path="/camp-prediction" element={<CampPrediction />} />
 
 					<Route path="/under-review" element={<UnderReview />} />
 
 					<Route path="/organizer-login" element={<OrganizerLogin />} />
 					<Route path="/organizer-signup" element={<OrganizerSignup />} />
+					<Route path="/organizer-home" element={<OrganizerHome />} />
 
 					<Route path="/blood-organizers" element={<ViewAllOrganizer />} />
 					<Route path="/organize-camp" element={<OrganizeDonationCamp />} />
-					<Route path="/donor-home" element={<DonorHome />} />
+					<Route path="/blood-donor-home" element={<BloodDonorHome />} />
+
+					<Route path="/donor-ask" element={<DonorHome />} />
+					<Route path="/blood-camp-admin" element={<BloodCampAdmin />} />
+					
+					<Route path="/get-all-camps" element={<GetAllCamps />} />
 				</Routes>
 
 				<Footer />

@@ -17,3 +17,19 @@ services:
     env_file:
       - ./backend/.env
     restart: always
+
+  notification:
+    image: sahanpunchihewa19/research-notification:dev
+    container_name: research-notification
+    ports:
+      - "5006:5006"
+    env_file:
+      - ./notification/.env
+    restart: always 
+  
+  inventory:
+    image: sahanpunchihewa19/research-inventory-model:dev
+    container_name: research-inventory-model
+    ports:
+      - "8000:8000"
+    restart: always

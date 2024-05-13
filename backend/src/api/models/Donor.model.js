@@ -12,6 +12,10 @@ const DonorSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
+		contact: {
+			type: String,
+			required: true,
+		},
 		nic: {
 			type: String,
 			required: true,

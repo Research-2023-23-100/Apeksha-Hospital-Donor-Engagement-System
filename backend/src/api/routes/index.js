@@ -1,5 +1,6 @@
 import { Router } from "express";
 import controller from "../controllers";
+const upload = require("../../util/slipupload");
 
 const router = Router();
 
@@ -23,6 +24,7 @@ router.get("/donor/", controller.getAllDonor);
 router.get("/donor/:id", controller.getOneDonor);
 router.put("/donor/update/:id", controller.updateDonor);
 router.delete("/donor/delete/:id", controller.deleteDonor);
+router.put("/donor/status/:id", controller.changeStatus);
 
 // Organization endpoints
 router.post("/org/register", controller.registerOrganization);
@@ -31,12 +33,34 @@ router.get("/org/", controller.getAllOrganization);
 router.get("/org/:id", controller.getOneOrganization);
 router.put("/org/update/:id", controller.updateOrganization);
 router.delete("/org/delete/:id", controller.deleteOrganization);
+router.put("/org/update-status/:id", controller.updateOrganizerStatus);
+router.post("/org/status", controller.getOrganizerStatus);
 
+// Essentials Items endpoints
 router.post("/item/create", controller.insertItem);
 router.get("/item/", controller.getAllItems);
 router.get("/item/:id", controller.getItemDetails);
 router.delete("/item/delete/:id", controller.deleteItem);
 router.put("/item/increment/:id", controller.incrementQuantity);
 router.put("/item/decrement/:id", controller.decrementQuantity);
+
+// Campagin endpoints
+
+router.post("/campaign/create",upload.single('marketingSlip'), controller.createCamp);
+router.get("/campaign/", controller.getAllCamps);
+router.get("/campaign/:id", controller.getCampById);
+router.put("/campaign/update/:id", controller.updateCamp);
+router.delete("/campaign/delete/:id", controller.deleteCamp);
+router.put('/camp/update-staff/:id', controller.updateBloodCampStaff);
+router.put('/camp/update-required-items/:id', controller.updateBloodRequiredItems);
+router.put('/camp/update-account-status/:id', controller.updateBloodCampAccountStatus);
+
+
+// Donation Request endpoints
+router.post("/donation/request", controller.insertDonation);
+router.get("/donation/request/", controller.getAllDonation);
+router.get("/donation/request/:id", controller.getDonationDetails);
+router.delete("/donation/request/delete/:id", controller.deleteDonation);
+router.put("/donation/request/status/:id", controller.changeDonationStatus);
 
 export default router;

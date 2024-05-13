@@ -16,6 +16,19 @@ const OrganizationSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
+		imageFront: {
+			type: String,
+			required: true,
+		},
+		imageBack: {
+			type: String,
+			required: true,
+		},
+		accountStatus: {
+			type: String,
+			enum: ["pending", "active", "block"],
+			default: "pending",
+		},
 		permissionLevel: {
 			type: String,
 			default: "ORGANIZATION",

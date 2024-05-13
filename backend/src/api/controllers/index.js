@@ -2,7 +2,15 @@ import { insert } from "./Sample.controller";
 
 import { loginStaff, registerStaff, getAllStaff, getOneStaff, updateStaff, deleteStaff } from "./Staff.controller";
 
-import { loginDonor, registerDonor, getAllDonor, getOneDonor, updateDonor, deleteDonor } from "./Donor.controller";
+import {
+	loginDonor,
+	registerDonor,
+	getAllDonor,
+	getOneDonor,
+	updateDonor,
+	deleteDonor,
+	changeStatus,
+} from "./Donor.controller";
 
 import {
 	loginOrganization,
@@ -11,6 +19,8 @@ import {
 	getAllOrganization,
 	updateOrganization,
 	deleteOrganization,
+	updateOrganizerStatus,
+	getOrganizerStatus,
 } from "./Organization.controller";
 
 import {
@@ -21,6 +31,16 @@ import {
 	incrementQuantity,
 	decrementQuantity,
 } from "./Item.controller";
+
+import { createCamp, getAllCamps, getCampById, updateCamp, deleteCamp,updateBloodCampStaff,updateBloodRequiredItems,updateBloodCampAccountStatus } from "./Campagin.controller";
+
+import {
+	deleteDonation,
+	getAllDonation,
+	getDonationDetails,
+	insertDonation,
+	changeDonationStatus,
+} from "./DonationRequest.controller";
 
 export default {
 	insert,
@@ -40,6 +60,7 @@ export default {
 	getOneDonor,
 	updateDonor,
 	deleteDonor,
+	changeStatus,
 
 	//Organization Section
 	loginOrganization,
@@ -48,6 +69,8 @@ export default {
 	getAllOrganization,
 	updateOrganization,
 	deleteOrganization,
+	updateOrganizerStatus,
+	getOrganizerStatus,
 
 	// Item Section
 	insertItem,
@@ -56,4 +79,21 @@ export default {
 	deleteItem,
 	incrementQuantity,
 	decrementQuantity,
+
+	// Campagin Section
+	createCamp,
+	getAllCamps,
+	getCampById,
+	updateCamp,
+	deleteCamp,
+	updateBloodCampStaff,
+	updateBloodRequiredItems,
+	updateBloodCampAccountStatus,
+
+	// Dontation Request
+	insertDonation,
+	getAllDonation,
+	getDonationDetails,
+	deleteDonation,
+	changeDonationStatus,
 };

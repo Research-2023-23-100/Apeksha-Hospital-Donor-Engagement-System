@@ -1,11 +1,11 @@
 import React, { createContext, useContext, useState } from "react";
-import DonorAPI from "./api/DonorAPI";
+import DonorAPI from "./api/blooddonorAPI";
 
 const BloodDonorContext = createContext();
 
 export const useDonorContext = () => useContext(DonorContext);
 
-export const DonorProvider = ({ children }) => {
+export const BloodDonorProvider = ({ children }) => {
 	const [donors, setDonors] = useState([]);
 
 	const [donor, setDonor] = useState({
@@ -78,11 +78,11 @@ export const DonorProvider = ({ children }) => {
 	};
 
 	return (
-		<DonorContext.Provider
+		<BloodDonorContext.Provider
 			value={{ donors, submitDonor, getAllDonors, getOneDonor, deleteDonor, loginDonor, donor, setDonor }}
 		>
 			{children}
-		</DonorContext.Provider>
+		</BloodDonorContext.Provider>
 	);
 };
 

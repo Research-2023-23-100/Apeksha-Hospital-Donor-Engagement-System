@@ -38,6 +38,9 @@ import StaffDonationView from "./staff-donation-view";
 import DonorRegister from "./donor-register";
 import DonorLogin from "./donor-login";
 import DonorDashboard from "./donor-dashboard";
+
+import HairDonation from "./hair-donation-test";
+
 export {
 	Home,
 	StaffLogin,
@@ -79,4 +82,6 @@ export {
 	DonorLogin,
 	GetAllCamps,
 	DonorDashboard,
+
+	HairDonation,
 };

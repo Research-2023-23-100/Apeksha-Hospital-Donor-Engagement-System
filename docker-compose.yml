@@ -33,3 +33,17 @@ services:
     ports:
       - "8000:8000"
     restart: always
+
+  hair:
+    image: sahanpunchihewa19/research-hair-donation:dev
+    container_name: research-hair-donation
+    ports:
+      - "3000:3000"
+    restart: always
+  
+  blood:
+    image: sahanpunchihewa19/research-blood-donation:dev
+    container_name: research-blood-donation
+    ports:
+      - "3001:3001"
+    restart: always

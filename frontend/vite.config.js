@@ -9,4 +9,7 @@ export default defineConfig({
 			overlay: false,
 		},
 	},
+	define: {
+		"process.env.CLOUDINARY_URL": JSON.stringify(process.env.CLOUDINARY_URL),
+	},
 });

@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import DonorContext from "../../contexts/DonorContext";
+import BloodDonorHome from "../blood-donor-home-page"
 
 const DonorDashboard = () => {
 	return (
 		<>
-			<h1>Donor Dashboard</h1>
+			<div className="div">
+				<BloodDonorHome />
+			</div>
 		</>
 	);
 };

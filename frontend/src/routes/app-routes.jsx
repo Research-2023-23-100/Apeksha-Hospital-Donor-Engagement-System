@@ -130,20 +130,23 @@ const AppRoutes = () => {
 					{/* Organization Private Routes */}
 					<Route path="/org" element={<PrivateRoute permissionLevel="ORGANIZATION" />}>
 						{/* <Route path="/org" element={<orgDashboard />} /> */}
+						<Route path="/org/organize-camp" element={<OrganizeDonationCamp />} />
+						<Route path="/org/organizer-home" element={<OrganizerHome />} />
+						<Route path="/org/camp-prediction" element={<CampPrediction />} />
 					</Route>
 
 					{/* <Route path="/donor_med_list" element={<DonorMedicationList />} /> */}
-					<Route path="/camp-prediction" element={<CampPrediction />} />
+					
 
 					<Route path="/under-review" element={<UnderReview />} />
 
 					<Route path="/organizer-login" element={<OrganizerLogin />} />
 					<Route path="/organizer-signup" element={<OrganizerSignup />} />
-					<Route path="/organizer-home" element={<OrganizerHome />} />
+					
 
 					<Route path="/blood-organizers" element={<ViewAllOrganizer />} />
-					<Route path="/organize-camp" element={<OrganizeDonationCamp />} />
-					<Route path="/blood-donor-home" element={<BloodDonorHome />} />
+					
+					{/* <Route path="/blood-donor-home" element={<BloodDonorHome />} /> */}
 
 					<Route path="/donor-ask" element={<DonorHome />} />
 					<Route path="/blood-camp-admin" element={<BloodCampAdmin />} />

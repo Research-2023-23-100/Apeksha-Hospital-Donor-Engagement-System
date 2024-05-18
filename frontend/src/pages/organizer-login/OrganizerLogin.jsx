@@ -43,7 +43,7 @@ const OrganizerLogin = () => {
 				if (statusResponse.data.status === "pending") {
 					navigate("/under-review");
 				} else {
-					navigate("/organizer-home");
+					navigate("/org/organizer-home");
 				}
 
 				console.log("Login successful:", response.data);

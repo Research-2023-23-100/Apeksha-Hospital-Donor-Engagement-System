@@ -72,9 +72,7 @@ function BloodCampAdmin() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   // Function to toggle the visibility of the GetAllCamps component
-  const toggleGetAllCamps = () => {
-    setShowGetAllCamps((prevShowGetAllCamps) => !prevShowGetAllCamps);
-  };
+  
 
   return (
 	
@@ -91,9 +89,7 @@ function BloodCampAdmin() {
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
-      <button onClick={toggleGetAllCamps} className="bg-blue-500 text-white px-4 py-2 rounded mb-4 ml-5">
-        Toggle GetAllCamps
-      </button>
+      
       {showGetAllCamps && <GetAllCamps />} {/* Conditionally render the GetAllCamps component */}
       <div className="overflow-x-auto">
 	  <table class="w-full text-sm text-left rtl:text-right text-white dark:text-black">

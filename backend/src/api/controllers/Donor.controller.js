@@ -143,3 +143,23 @@ export const changeStatus = async (request, response, next) => {
 			next();
 		});
 };
+
+// // Update donated count for a donor
+
+export const updateDonatedCount = async (req, res) => {
+	try {
+	  const { id } = req.params;
+	  const { donatedCount } = req.body;
+  
+	  const updatedDonor = await DonorModel.findByIdAndUpdate(id, { donatedCount }, { new: true });
+  
+	  if (!updatedDonor) {
+		return res.status(404).json({ success: false, message: 'Donor not found' });
+	  }
+  
+	  res.status(200).json({ success: true, data: updatedDonor });
+	} catch (error) {
+	  res.status(500).json({ success: false, message: error.message });
+	}
+  };
+  

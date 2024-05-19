@@ -25,6 +25,7 @@ router.get("/donor/:id", controller.getOneDonor);
 router.put("/donor/update/:id", controller.updateDonor);
 router.delete("/donor/delete/:id", controller.deleteDonor);
 router.put("/donor/status/:id", controller.changeStatus);
+router.put("/donor/update-donated-count/:id", controller.updateDonatedCount);
 
 // Organization endpoints
 router.post("/org/register", controller.registerOrganization);
@@ -44,7 +45,7 @@ router.delete("/item/delete/:id", controller.deleteItem);
 router.put("/item/increment/:id", controller.incrementQuantity);
 router.put("/item/decrement/:id", controller.decrementQuantity);
 
-// Campagin endpoints
+// Campaign endpoints
 
 router.post("/campaign/create",upload.single('marketingSlip'), controller.createCamp);
 router.get("/campaign/", controller.getAllCamps);

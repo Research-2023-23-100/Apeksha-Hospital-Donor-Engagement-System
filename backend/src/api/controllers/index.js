@@ -33,7 +33,16 @@ import {
 	decrementQuantity,
 } from "./Item.controller";
 
-import { createCamp, getAllCamps, getCampById, updateCamp, deleteCamp,updateBloodCampStaff,updateBloodRequiredItems,updateBloodCampAccountStatus } from "./Campagin.controller";
+import {
+	createCamp,
+	getAllCamps,
+	getCampById,
+	updateCamp,
+	deleteCamp,
+	updateBloodCampStaff,
+	updateBloodRequiredItems,
+	updateBloodCampAccountStatus,
+} from "./Campagin.controller";
 
 import {
 	deleteDonation,

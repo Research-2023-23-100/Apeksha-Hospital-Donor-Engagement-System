@@ -42,6 +42,8 @@ import DonorDashboard from "./donor-dashboard";
 import HairDonation from "./hair-donation-test";
 import BloodCampStaffDashboard from './blood-camp-staff-dashborad';
 import AllDonors from './view-all-donors/AllDonors';
+import AboutUs from "./about-us";
+import FAQ from "./faq";
 
 export {
 	Home,
@@ -87,4 +89,6 @@ export {
 	BloodCampStaffDashboard,
 	AllDonors,
 	HairDonation,
+	AboutUs,
+	FAQ,
 };

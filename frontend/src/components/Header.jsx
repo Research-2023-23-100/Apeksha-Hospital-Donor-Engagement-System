@@ -151,6 +151,11 @@ const Header = () => {
 										Essentials
 									</button>
 								</Link>
+								<Link to="#" className="ml-10">
+									<button className="dropdown-button text-lg font-semibold text-gray-800 hover:text-red-500 transition-colors duration-300">
+										Hair 
+									</button>
+								</Link>
 							</div>
 						)}
 					</nav>

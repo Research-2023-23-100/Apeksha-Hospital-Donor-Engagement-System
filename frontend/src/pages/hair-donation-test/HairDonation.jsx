@@ -2,23 +2,15 @@ import React, { useState, useEffect, useContext } from "react";
 import HairDonationContext from "../../contexts/HairDonationContext";
 
 const HairDonation = () => {
+	const { hairDonation } = useContext(HairDonationContext);
 
-    const {hairDonation} = useContext(HairDonationContext)
+	console.log(hairDonation);
 
-    console.log(hairDonation);
-
-    return (
-
-        <>
-
-            <h1> Hello World</h1>
-
-
-
-        </>
-    );
-
-
+	return (
+		<>
+			<h1> Hello World</h1>
+		</>
+	);
 };
 
 export default HairDonation;

@@ -102,25 +102,18 @@ const Header = () => {
 							</a>
 						</Link>
 
-						<a
-							href="#"
-							className="text-lg font-semibold text-gray-800 hover:text-red-600 transition-colors duration-300"
-						>
-							Contact Us
-						</a>
+						<Link to="/contact-us">
+							<a className="text-lg font-semibold text-gray-800 hover:text-red-600 transition-colors duration-300">
+								Contact Us
+							</a>
+						</Link>
 						<Link to="/about-us">
-							<a
-
-								className="text-lg font-semibold text-gray-800 hover:text-red-600 transition-colors duration-300"
-							>
+							<a className="text-lg font-semibold text-gray-800 hover:text-red-600 transition-colors duration-300">
 								About Us
 							</a>
 						</Link>
 						<Link to="/faq">
-							<a
-								href="#"
-								className="text-lg font-semibold text-gray-800 hover:text-red-600 transition-colors duration-300"
-							>
+							<a className="text-lg font-semibold text-gray-800 hover:text-red-600 transition-colors duration-300">
 								FAQ
 							</a>
 						</Link>
@@ -153,7 +146,7 @@ const Header = () => {
 								</Link>
 								<Link to="/donor/Hair_Donation" className="ml-10">
 									<button className="dropdown-button text-lg font-semibold text-gray-800 hover:text-red-500 transition-colors duration-300">
-										Hair 
+										Hair
 									</button>
 								</Link>
 							</div>

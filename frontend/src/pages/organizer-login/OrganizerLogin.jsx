@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import image1 from "../../assets/bloodbag.png"
+import image1 from "../../assets/bloodbag.png";
 
 const OrganizerLogin = () => {
 	const [email, setEmail] = useState("");

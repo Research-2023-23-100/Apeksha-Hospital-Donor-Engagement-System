@@ -47,15 +47,14 @@ router.put("/item/decrement/:id", controller.decrementQuantity);
 
 // Campaign endpoints
 
-router.post("/campaign/create",upload.single('marketingSlip'), controller.createCamp);
+router.post("/campaign/create", upload.single("marketingSlip"), controller.createCamp);
 router.get("/campaign/", controller.getAllCamps);
 router.get("/campaign/:id", controller.getCampById);
 router.put("/campaign/update/:id", controller.updateCamp);
 router.delete("/campaign/delete/:id", controller.deleteCamp);
-router.put('/camp/update-staff/:id', controller.updateBloodCampStaff);
-router.put('/camp/update-required-items/:id', controller.updateBloodRequiredItems);
-router.put('/camp/update-account-status/:id', controller.updateBloodCampAccountStatus);
-
+router.put("/camp/update-staff/:id", controller.updateBloodCampStaff);
+router.put("/camp/update-required-items/:id", controller.updateBloodRequiredItems);
+router.put("/camp/update-account-status/:id", controller.updateBloodCampAccountStatus);
 
 // Donation Request endpoints
 router.post("/donation/request", controller.insertDonation);

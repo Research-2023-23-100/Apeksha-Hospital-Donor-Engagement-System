@@ -15,6 +15,7 @@ const Home = () => {
                 className="relative left-0 top-0 z-0 bg-cover bg-center h-80 md:h-screen flex items-center justify-center text-center text-white"
                 style={{
                     backgroundImage: `url(${HairBGimage})`,
+                    marginTop: '120px'
                 }}
             >
                 <div className="container mx-auto relative z-10">
@@ -98,7 +99,7 @@ Before donating your hair, follow the steps below to check if the hair meets the
             <div className="flex justify-center">
             <div className="flex justify-center">
             <div className="flex justify-center">
-            <Link to="/hair_sample">
+            <Link to="/donor/hair_sample">
     <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-5 px-5 rounded-lg shadow-lg transition duration-300" style={{ width: '500px' }}>
    CHECK THE QUALITY OF YOUR HAIR
     </button></Link>

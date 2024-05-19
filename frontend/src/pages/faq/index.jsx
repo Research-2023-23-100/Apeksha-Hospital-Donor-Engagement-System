@@ -4,15 +4,15 @@ const FAQ = () => {
 	return (
 		<>
 			{/* component */}
-			<div className="max-w-screen-xl mx-auto px-5 bg-white min-h-sceen">
+			<div className="max-w-screen-xl mx-auto px-5 bg-white min-h-screen">
 				<div className="flex flex-col items-center">
-					<p className="text-black text-xl mt-28">Frequenty Asked Questions</p>
+					<p className="text-black text-xl mt-28">Frequently Asked Questions</p>
 				</div>
 				<div className="grid divide-y divide-neutral-200 max-w-xl mx-auto mt-8">
 					<div className="py-5">
 						<details className="group">
 							<summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-								<span> What is a SAAS platform?</span>
+								<span> What is the Lend A Hand System?</span>
 								<span className="transition group-open:rotate-180">
 									<svg
 										fill="none"
@@ -30,15 +30,14 @@ const FAQ = () => {
 								</span>
 							</summary>
 							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
-								SAAS platform is a cloud-based software service that allows users to access and use a variety of tools
-								and functionality.
+								The Lend A Hand System is a platform designed to facilitate and enhance communication and interaction between the hospital and its donors. It allows donors to track their contributions, receive updates, and engage with hospital initiatives.
 							</p>
 						</details>
 					</div>
 					<div className="py-5">
 						<details className="group">
 							<summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-								<span> How does billing work?</span>
+								<span> How can I make a donation?</span>
 								<span className="transition group-open:rotate-180">
 									<svg
 										fill="none"
@@ -56,16 +55,67 @@ const FAQ = () => {
 								</span>
 							</summary>
 							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
-								We offers a variety of billing options, including monthly and annual subscription plans, as well as
-								pay-as-you-go pricing for certain services. Payment is typically made through a credit card or other
-								secure online payment method.
+								You can make a donation through our website by navigating to the 'Donor Dashboard' section. We accept various donation methods excluding credit cards, bank transfers, and online payment systems.
+							</p>
+						</details>
+					</div>
+
+					<div className="py-5">
+						<details className="group">
+							<summary className="flex justify-between items-center font-medium cursor-pointer list-none">
+								<span>How can I confirm if my donation was received?</span>
+								<span className="transition group-open:rotate-180">
+									<svg
+										fill="none"
+										height={24}
+										shapeRendering="geometricPrecision"
+										stroke="currentColor"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										strokeWidth="1.5"
+										viewBox="0 0 24 24"
+										width={24}
+									>
+										<path d="M6 9l6 6 6-6" />
+									</svg>
+								</span>
+							</summary>
+							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
+								Upon completion of your donation, you will receive a confirmation email from Lend A Hand acknowledging the receipt of your contribution. Additionally, you can log in to your account on our website to view your donation history and confirm the transaction.
+							</p>
+						</details>
+					</div>
+
+
+					<div className="py-5">
+						<details className="group">
+							<summary className="flex justify-between items-center font-medium cursor-pointer list-none">
+								<span> How do I track my donations?</span>
+								<span className="transition group-open:rotate-180">
+									<svg
+										fill="none"
+										height={24}
+										shapeRendering="geometricPrecision"
+										stroke="currentColor"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										strokeWidth="1.5"
+										viewBox="0 0 24 24"
+										width={24}
+									>
+										<path d="M6 9l6 6 6-6" />
+									</svg>
+								</span>
+							</summary>
+							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
+								You can track your donations by logging into your account on our website. Your donation history and receipts will be available in your profile section.
 							</p>
 						</details>
 					</div>
 					<div className="py-5">
 						<details className="group">
 							<summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-								<span> Can I get a refund for my subscription?</span>
+								<span> Can I volunteer at Apeksha Hospital?</span>
 								<span className="transition group-open:rotate-180">
 									<svg
 										fill="none"
@@ -83,16 +133,14 @@ const FAQ = () => {
 								</span>
 							</summary>
 							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
-								We offers a 30-day money-back guarantee for most of its subscription plans. If you are not satisfied
-								with your subscription within the first 30 days, you can request a full refund. Refunds for
-								subscriptions that have been active for longer than 30 days may be considered on a case-by-case basis.
+								Yes, we welcome volunteers to help with various activities and events. Please visit the as a 'Organizer' section of our website to find out more and to sign up.
 							</p>
 						</details>
 					</div>
 					<div className="py-5">
 						<details className="group">
 							<summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-								<span> How do I cancel my subscription?</span>
+								<span> How do I update my contact information?</span>
 								<span className="transition group-open:rotate-180">
 									<svg
 										fill="none"
@@ -110,61 +158,7 @@ const FAQ = () => {
 								</span>
 							</summary>
 							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
-								To cancel your We subscription, you can log in to your account and navigate to the subscription
-								management page. From there, you should be able to cancel your subscription and stop future billing.
-							</p>
-						</details>
-					</div>
-					<div className="py-5">
-						<details className="group">
-							<summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-								<span> Can I try this platform for free?</span>
-								<span className="transition group-open:rotate-180">
-									<svg
-										fill="none"
-										height={24}
-										shapeRendering="geometricPrecision"
-										stroke="currentColor"
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth="1.5"
-										viewBox="0 0 24 24"
-										width={24}
-									>
-										<path d="M6 9l6 6 6-6" />
-									</svg>
-								</span>
-							</summary>
-							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
-								We offers a free trial of its platform for a limited time. During the trial period, you will have access
-								to a limited set of features and functionality, but you will not be charged.
-							</p>
-						</details>
-					</div>
-					<div className="py-5">
-						<details className="group">
-							<summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-								<span> How do I access documentation?</span>
-								<span className="transition group-open:rotate-180">
-									<svg
-										fill="none"
-										height={24}
-										shapeRendering="geometricPrecision"
-										stroke="currentColor"
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth="1.5"
-										viewBox="0 0 24 24"
-										width={24}
-									>
-										<path d="M6 9l6 6 6-6" />
-									</svg>
-								</span>
-							</summary>
-							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
-								Documentation is available on the company's website and can be accessed by logging in to your account.
-								The documentation provides detailed information on how to use the , as well as code examples and other
-								resources.
+								To update your contact information, log in to your account and navigate to the 'Profile' section. Here you can update your email address, phone number, and other personal information.
 							</p>
 						</details>
 					</div>
@@ -189,15 +183,14 @@ const FAQ = () => {
 								</span>
 							</summary>
 							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
-								If you need help with the platform or have any other questions, you can contact the company's support
-								team by submitting a support request through the website or by emailing support@We.com.
+								If you need assistance, you can contact our support team by submitting a request through the 'Contact Us' section of our website or by emailing support@apekshahospital.com.
 							</p>
 						</details>
 					</div>
 					<div className="py-5">
 						<details className="group">
 							<summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-								<span> Do you offer any discounts or promotions?</span>
+								<span> What are the benefits of becoming a regular donor?</span>
 								<span className="transition group-open:rotate-180">
 									<svg
 										fill="none"
@@ -215,35 +208,7 @@ const FAQ = () => {
 								</span>
 							</summary>
 							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
-								We may offer discounts or promotions from time to time. To stay up-to-date on the latest deals and
-								special offers, you can sign up for the company's newsletter or follow it on social media.
-							</p>
-						</details>
-					</div>
-					<div className="py-5">
-						<details className="group">
-							<summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-								<span> How do we compare to other similar services?</span>
-								<span className="transition group-open:rotate-180">
-									<svg
-										fill="none"
-										height={24}
-										shapeRendering="geometricPrecision"
-										stroke="currentColor"
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth="1.5"
-										viewBox="0 0 24 24"
-										width={24}
-									>
-										<path d="M6 9l6 6 6-6" />
-									</svg>
-								</span>
-							</summary>
-							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
-								This platform is a highly reliable and feature-rich service that offers a wide range of tools and
-								functionality. It is competitively priced and offers a variety of billing options to suit different
-								needs and budgets.
+								Regular donors enjoy several benefits, including regular updates on how their contributions are making a difference, exclusive invitations to donor events, and recognition on our donor wall.
 							</p>
 						</details>
 					</div>

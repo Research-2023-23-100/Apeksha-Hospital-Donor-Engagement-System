@@ -6,29 +6,24 @@ import HairDonationAPI from "./api/HairDonationAPI";
 const HairDonationContext = createContext();
 
 export function HairDonationProvider({ children }) {
+	const [hairDonation, setHairDonation] = useState([]);
 
-    const [hairDonation, setHairDonation] = useState([]);
+	useEffect(() => {
+		HairDonationAPI.testapi().then((response) => {
+			setHairDonation(response.data);
+		});
+	}, []);
 
-    useEffect(() => {
-        HairDonationAPI.testapi().then((response) => {
-            setHairDonation(response.data);
-        });
-    }, []);
-
-
-
-
-
-    return (
-        <HairDonationContext.Provider
-            value={{
-                hairDonation,
-                setHairDonation,
-            }}
-        >
-            {children}
-        </HairDonationContext.Provider>
-    );
+	return (
+		<HairDonationContext.Provider
+			value={{
+				hairDonation,
+				setHairDonation,
+			}}
+		>
+			{children}
+		</HairDonationContext.Provider>
+	);
 }
 
 export default HairDonationContext;

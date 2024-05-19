@@ -1,11 +1,8 @@
-import React from 'react'
-import GetAllCamps from './GetAllCamps'
-
+import React from "react";
+import GetAllCamps from "./GetAllCamps";
 
 function index() {
-  return (
-    <GetAllCamps/>
-  )
+	return <GetAllCamps />;
 }
 
-export default index
+export default index;

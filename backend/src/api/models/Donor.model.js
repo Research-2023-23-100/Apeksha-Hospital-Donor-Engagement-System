@@ -22,7 +22,7 @@ const DonorSchema = new mongoose.Schema(
 		},
 		donatedCount: {
 			type: Number,
-			default : 0,
+			default: 0,
 		},
 		password: {
 			type: String,

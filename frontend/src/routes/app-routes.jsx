@@ -96,37 +96,43 @@ const AppRoutes = () => {
 						{/* Donor Essential Donation */}
 						<Route path="/donor/essential/donate/" element={<DonorEssentialDonate />} />
 						<Route exact path="/donor/donatation/create/:itemName" element={<DonorDonationCreate />} />
+
+						{/* Hair donation Routes */}
+						<Route path="/donor/Hair_Donation" element={<HairDonationHome />}/>
+
+						{/* Hair sample upload 1 Routes */}
+						<Route path="/donor/hair_sample" element={<HairSampleUpload1 />}/>
+
+						{/* Hair sample upload 2 Routes */}
+						<Route path="/donor/hair_sample2" element={<HairSampleUpload2 />}/>
+
+						{/* Hair sample upload 3 Routes */}
+						<Route path="/donor/hair_sample3" element={<HairSampleUpload3 />}/>
+
+						{/* Hair Output 1 Routes */}
+						<Route path="/donor/HairOutput1" element={<HairOutput1 />}/>
+						
+						{/* Hair Output 2 Routes */}
+						<Route path="/donor/HairOutput2" element={<HairOutput2 />}/>
+					
+					    {/* Hair reject Routes */}
+						<Route path="/donor/donateReject" element={<DonationReject />}/>
+
+						{/* Hair donation successful Routes */}
+						<Route path="/donor/Thankyou" element={<Thankyou />}/>
+
 					</Route>
+
+
+
 
 					{/* Organization Section */}
 					<Route path="/org/login" element={<CheckLoginStatus />}>
 						{/* <Route path="/org/login" element={<orgLogin />} /> */}
 					</Route>
-					{/* Hair donation Routes */}
-					<Route path="/Hair_Donation" element={<HairDonationHome />}>
-						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
-					</Route>
-					<Route path="/donateReject" element={<DonationReject />}>
-						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
-					</Route>
-					<Route path="/Thankyou" element={<Thankyou />}>
-						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
-					</Route>
-					<Route path="/hair_sample" element={<HairSampleUpload1 />}>
-						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
-					</Route>
-					<Route path="/hair_sample2" element={<HairSampleUpload2 />}>
-						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
-					</Route>
-					<Route path="/HairOutput1" element={<HairOutput1 />}>
-						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
-					</Route>
-					<Route path="/HairOutput2" element={<HairOutput2 />}>
-						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
-					</Route>
-					<Route path="/hair_sample3" element={<HairSampleUpload3/>}>
-						{/* <Route path="/donor/login" element={<donroLogin />} /> */}
-					</Route>
+					
+				
+					
 					{/* Organization Private Routes */}
 					<Route path="/org" element={<PrivateRoute permissionLevel="ORGANIZATION" />}>
 						{/* <Route path="/org" element={<orgDashboard />} /> */}
@@ -147,7 +153,7 @@ const AppRoutes = () => {
 
 					<Route path="/donor-ask" element={<DonorHome />} />
 					<Route path="/blood-camp-admin" element={<BloodCampAdmin />} />
-					
+
 					<Route path="/get-all-camps" element={<GetAllCamps />} />
 				</Routes>
 

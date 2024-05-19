@@ -61,7 +61,7 @@ const PredictionForm = () => {
 
 	const handleOrganizeCamp = () => {
 		// Navigate to the /organize-camp route and pass prediction as state
-		navigate("/organize-camp", { state: { prediction } });
+		navigate("/org/organize-camp", { state: { prediction } });
 	};
 
 	return (

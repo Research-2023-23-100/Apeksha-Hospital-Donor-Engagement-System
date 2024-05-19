@@ -1,20 +1,16 @@
 import React, { useRef } from "react";
+import { useLocation, Link } from "react-router-dom";
 import Home2 from '../../assets/hair/1.jpg';
 
 const HairOutput2 = () => {
-  const fileInputRef = useRef(null);
+  const location = useLocation();
+  const message = location.state?.message;
 
-  const handleUpload = () => {
-    fileInputRef.current.click();
-  };
-
-  return (<>
-
-
-    <section>
+return (<>
+<section>
       <div className="bg-white-100">
         {/* Table for Image and Content */}
-        <table className="w-full">
+        <table className="w-full" style={{marginTop: '120px'}}>
           <tbody>
             <tr>
               {/* Image Part */}
@@ -55,16 +51,18 @@ const HairOutput2 = () => {
                   <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
                     <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
                       <form className="space-y-6" action="#" method="POST">
-                        <div>
-                          <label htmlFor="images" className="block text-sm font-medium text-gray-700">
-                          <center> #OUT PUT</center> 
+                      <div>
+                          <label htmlFor="output" className="block text-sm font-medium text-gray-700">
+                         
                           </label>
-                          
+                          <p className="mt-1 text-center text-lg text-gray-700">{message}</p>
                         </div>
                         <div>
-                          <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                            NEXT
-                          </button>
+                          <Link to="/donor/hair_sample3">
+                            <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                              NEXT
+                            </button>
+                          </Link>
                         </div>
                       </form>
                     </div>

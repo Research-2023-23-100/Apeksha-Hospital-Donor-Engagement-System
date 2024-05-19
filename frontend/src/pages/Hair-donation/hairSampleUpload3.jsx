@@ -1,11 +1,32 @@
-import React, { useRef } from "react";
-import Home2 from '../../assets/hair/T3.png';
+import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Home2 from '../../assets/hair/T1.png';
+import axios from "axios";
 
 const HairSampleUpload3 = () => {
+    const [file, setFile] = useState(null);
     const fileInputRef = useRef(null);
+    const navigate = useNavigate();
 
     const handleUpload = () => {
         fileInputRef.current.click();
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append("imagefile", file);
+        try {
+            const res = await axios.post("http://127.0.0.1:3000/danruff_upload", formData);
+            const url1 = res.data.prediction;
+            if (url1 === "Danruff hair ") {
+                navigate("/donor/donateReject", { state: { message: url1 } });
+            } else if (url1 === "Not a danruff hair and you can donate your hair") {
+                navigate("/donor/Thankyou", { state: { message: url1 } });
+            }
+        } catch (err) {
+            console.log(err);
+        }
     };
 
     return (<>
@@ -14,11 +35,11 @@ const HairSampleUpload3 = () => {
         <section>
             <div className="bg-white-100">
                 {/* Table for Image and Content */}
-                <table className="w-full">
+                <table className="w-full" style={{ marginTop: '120px' }}>
                     <tbody>
                         <tr>
                             {/* Image Part */}
-                            <td className="w-1/2">
+                            <td className="w-1/2" >
                                 <img
                                     src={Home2}
                                     alt="Hair donation"
@@ -61,7 +82,7 @@ const HairSampleUpload3 = () => {
                                                     </label>
                                                     <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                                         <div className="space-y-1 text-center">
-                                                            <input id="file-upload" ref={fileInputRef} name="file-upload" type="file" className="sr-only" onChange={handleUpload} />
+                                                            <input id="file-upload" ref={fileInputRef} name="imagefile" type="file" className="sr-only" onChange={(e) => setFile(e.target.files[0])} />
                                                             <label htmlFor="file-upload" className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                                                                 <span>Upload a file</span>
                                                             </label>
@@ -70,7 +91,7 @@ const HairSampleUpload3 = () => {
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                    <button type="submit" onClick={handleSubmit} className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                                         Upload Images
                                                     </button>
                                                 </div>

@@ -94,7 +94,7 @@ function OrganizeDonationCamp(props) {
             toast.success("Blood donation camp created successfully!");
 
             // Redirect to organizer's home page
-            navigate("/organizer-home"); 
+            navigate("/org/organizer-home"); 
         } catch (error) {
             console.error("Error creating camp:", error);
         }

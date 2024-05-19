@@ -10,6 +10,7 @@ import {
 	updateDonor,
 	deleteDonor,
 	changeStatus,
+	updateDonatedCount,
 } from "./Donor.controller";
 
 import {
@@ -61,6 +62,7 @@ export default {
 	updateDonor,
 	deleteDonor,
 	changeStatus,
+	updateDonatedCount,
 
 	//Organization Section
 	loginOrganization,

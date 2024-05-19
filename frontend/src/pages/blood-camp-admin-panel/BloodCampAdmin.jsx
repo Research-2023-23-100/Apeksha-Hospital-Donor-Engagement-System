@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ImageModal from "./ImageModel";
 import { Pie } from "react-chartjs-2";
+import GetAllCamps from "../get-all-camps/GetAllCamps";
+
 
 function BloodCampAdmin() {
   const [organizers, setOrganizers] = useState([]);
@@ -10,6 +12,7 @@ function BloodCampAdmin() {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [organizersPerPage] = useState(5);
+  const [showGetAllCamps, setShowGetAllCamps] = useState(false);
 
   const handleOnClose = () => {
     setShowModal("false");
@@ -68,6 +71,9 @@ function BloodCampAdmin() {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  // Function to toggle the visibility of the GetAllCamps component
+  
+
   return (
 	
     <div className="container mx-auto px-4 py-8 mt-[5rem] ">
@@ -83,6 +89,8 @@ function BloodCampAdmin() {
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
+      
+      {showGetAllCamps && <GetAllCamps />} {/* Conditionally render the GetAllCamps component */}
       <div className="overflow-x-auto">
 	  <table class="w-full text-sm text-left rtl:text-right text-white dark:text-black">
         <thead class="text-xs text-black font-bold uppercase bg-gray-50 dark:bg-blue-200 ">

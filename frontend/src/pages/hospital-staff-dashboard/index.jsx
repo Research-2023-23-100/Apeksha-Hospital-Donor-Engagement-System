@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import MedicationDashboard from "../medication-dashboard";
 import StaffDashboard from "../staff-dashboard";
-import BloodCampAdmin from "../blood-camp-admin-panel";
+import BloodCampAdmin from "../blood-camp-staff-dashborad";
 import StaffDonationView from "../staff-donation-view";
 import { Link } from "react-router-dom";
 

@@ -16,6 +16,10 @@ const OrganizationSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
+		mobile: {
+			type: String,
+			required: true,
+		},
 		imageFront: {
 			type: String,
 			required: true,

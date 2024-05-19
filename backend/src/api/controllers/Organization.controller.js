@@ -49,6 +49,7 @@ export const registerOrganization = async (request, response, next) => {
 			name: request.body.name,
 			email: request.body.email,
 			password: request.body.password,
+			mobile: request.body.mobile,
 			imageBack: request.body.imageBack,
 			imageFront: request.body.imageFront,
 			permissionLevel: "ORGANIZATION",

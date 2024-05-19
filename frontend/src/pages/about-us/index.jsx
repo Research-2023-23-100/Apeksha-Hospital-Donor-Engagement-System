@@ -11,7 +11,7 @@ import guide4 from '../../assets/hair/2.jpg';
 
 const AboutUs = () => {
     return (
-        <div className="bg-white-100">  {/* Ensure that 'bg-red-100' is a valid class in your CSS framework */}
+        <div className="bg-white-100"> 
             {/* Hero Banner */}
             <section
                 className="relative left-0 top-0 z-0 bg-cover bg-center h-150 md:h-screen flex items-center justify-center text-center text-white"
@@ -44,6 +44,7 @@ const AboutUs = () => {
                 </div>
 
             </section>
+            
             {/* Introduction Section */}
             <section className="bg-white py-16 md:flex md:items-center">
                 <div className="md:w-1/2 md:pr-8">

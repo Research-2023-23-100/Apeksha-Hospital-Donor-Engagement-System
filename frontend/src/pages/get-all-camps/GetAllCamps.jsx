@@ -3,6 +3,7 @@ import axios from 'axios';
 import ImageModal from "./ImageModel";
 import { Pie } from 'react-chartjs-2';
 
+
 function GetAllCamps() {
   const [camps, setCamps] = useState([]);
   const [img, setImg] = useState("");
@@ -13,6 +14,8 @@ function GetAllCamps() {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(5);
   const [availableStaff, setAvailableStaff] = useState(200);
+  const [availableItem, setAvailableItem] = useState(200);
+  const [initialAvailableStaff] = useState(200);
 
   const updateStaff = async (id, newStaff) => {
     try {
@@ -83,6 +86,7 @@ function GetAllCamps() {
       ]
     };
     const totalStaffCount = camps.reduce((total, camp) => total + camp.staff, 0);
+   
     const totalRequireItem = camps.reduce((total, camp) => total + camp.requiredItems, 0);
     console.log(totalStaffCount)
   // Pagination
@@ -115,28 +119,29 @@ function GetAllCamps() {
 
            {/* Pie Chart */}
       <div className=' flex-shrink-0 w-64 ml-[6rem] mb-5'>
-      <h2 className="text-lg font-semibold mb-4">Account Status Distribution</h2>
+      <h2 className="text-lg font-semibold mb-4">Medical Staff Distribution</h2>
         <Pie
           data={{
             labels: ['Available Staff', 'Allocated Staff'],
             datasets: [{
-              data: [availableStaff, 500 - totalStaffCount],
+              data: [500-totalStaffCount,totalStaffCount],
               backgroundColor: ['#09b5a7', '#4969de']
             }]
           }}
         />
       </div>
       <div className=' flex-shrink-0 w-64 ml-[6rem] mb-5'>
-      <h2 className="text-lg font-semibold mb-4">Account Status Distribution</h2>
+      <h2 className="text-lg font-semibold mb-4">Medical Items Distribution</h2>
         <Pie
           data={{
-            labels: ['Available Staff', 'Allocated Staff'],
+            labels: ['Available Items', 'Allocated Items'],
             datasets: [{
-              data: [availableStaff, 1000 - totalRequireItem],
+              data: [1000 - totalRequireItem,totalRequireItem],
               backgroundColor: ['#22c55e', '#FF6384']
             }]
           }}
         />
+        
       </div>
       </div>
         <table className='min-w-full divide-y divide-gray-200'>

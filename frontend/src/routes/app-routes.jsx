@@ -45,6 +45,10 @@ import {
 	DonorLogin,
 	DonorDashboard,
 	HairDonation,
+	BloodCampStaffDashboard,
+	AllDonors,
+	AboutUs,
+	FAQ,
 } from "../pages";
 const AppRoutes = () => {
 	return (
@@ -59,6 +63,8 @@ const AppRoutes = () => {
 					<Route path="/donor/register" element={<DonorRegister />} />
 					<Route path="/donor/medication/donate/" element={<DonorMedicationList />} />
 					<Route path="/hair" element={<HairDonation />} />
+					<Route path="/about-us" element={<AboutUs />} />
+					<Route path="/faq" element={<FAQ />} />
 
 					{/* Staff Section */}
 					{/* Staff Check Login Status */}
@@ -76,10 +82,14 @@ const AppRoutes = () => {
 						<Route path="/staff/medication" element={<MedicationDashboard />} />
 						<Route path="/staff/donation/list" element={<StaffDonationView />} />
 						<Route path="/staff/dashboard" element={<HospitalStaffDashboard />} />
+						<Route path="/staff/camp-dashboard" element={<BloodCampStaffDashboard />} />
+						<Route path="/staff/all-donors" element={<AllDonors />} />
+						<Route path="/staff/blood-donor-home" element={<BloodDonorHome />} />
+						<Route path="/staff/blood-organizers" element={<ViewAllOrganizer />} />
 
 						{/* Need to change file route as donor */}
 					</Route>
-
+					
 					{/* Donor Section */}
 					{/* Donor Check Login Status */}
 					<Route path="/donor/login" element={<CheckLoginStatus />}>
@@ -136,24 +146,19 @@ const AppRoutes = () => {
 					{/* Organization Private Routes */}
 					<Route path="/org" element={<PrivateRoute permissionLevel="ORGANIZATION" />}>
 						{/* <Route path="/org" element={<orgDashboard />} /> */}
+						<Route path="/org/camp-prediction" element={<CampPrediction />} />
+						<Route path="/org/organizer-home" element={<OrganizerHome />} />
+						<Route path="/org/organize-camp" element={<OrganizeDonationCamp />} />
 					</Route>
 
 					{/* <Route path="/donor_med_list" element={<DonorMedicationList />} /> */}
-					<Route path="/camp-prediction" element={<CampPrediction />} />
+					
 
 					<Route path="/under-review" element={<UnderReview />} />
-
 					<Route path="/organizer-login" element={<OrganizerLogin />} />
 					<Route path="/organizer-signup" element={<OrganizerSignup />} />
-					<Route path="/organizer-home" element={<OrganizerHome />} />
-
-					<Route path="/blood-organizers" element={<ViewAllOrganizer />} />
-					<Route path="/organize-camp" element={<OrganizeDonationCamp />} />
-					<Route path="/blood-donor-home" element={<BloodDonorHome />} />
-
 					<Route path="/donor-ask" element={<DonorHome />} />
 					<Route path="/blood-camp-admin" element={<BloodCampAdmin />} />
-
 					<Route path="/get-all-camps" element={<GetAllCamps />} />
 				</Routes>
 

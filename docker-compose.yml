@@ -47,3 +47,10 @@ services:
     ports:
       - "3001:3001"
     restart: always
+  
+  medication:
+    image: sahanpunchihewa19/research-medication-model:dev
+    container_name: research-medication-model
+    ports:
+      - "8001:8001"
+    restart: always

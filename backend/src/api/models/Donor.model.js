@@ -20,6 +20,10 @@ const DonorSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
+		donatedCount: {
+			type: Number,
+			default : 0,
+		},
 		password: {
 			type: String,
 			required: true,

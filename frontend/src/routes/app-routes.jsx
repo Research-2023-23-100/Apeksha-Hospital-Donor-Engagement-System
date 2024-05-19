@@ -46,7 +46,9 @@ import {
 	DonorDashboard,
 	HairDonation,
 	BloodCampStaffDashboard,
-	AllDonors
+	AllDonors,
+	AboutUs,
+	FAQ,
 } from "../pages";
 const AppRoutes = () => {
 	return (
@@ -61,6 +63,8 @@ const AppRoutes = () => {
 					<Route path="/donor/register" element={<DonorRegister />} />
 					<Route path="/donor/medication/donate/" element={<DonorMedicationList />} />
 					<Route path="/hair" element={<HairDonation />} />
+					<Route path="/about-us" element={<AboutUs />} />
+					<Route path="/faq" element={<FAQ />} />
 
 					{/* Staff Section */}
 					{/* Staff Check Login Status */}

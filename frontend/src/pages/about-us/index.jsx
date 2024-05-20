@@ -62,10 +62,6 @@ const AboutUs = () => {
                     </p>
                 </div>
             </section>
-
-
-
-
             <section className="container mx-auto py-16">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="bg-white rounded-lg shadow-lg p-6">

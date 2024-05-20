@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CampsPage from "../blood-donor-home-page/BloodDonorHome";
-
+import DonorEssentialView from "../donar-essential-view";
+import DonorMedicationView from "../donor-medicaion-view";
 
 
 const DonorMainDashboard = () => {
@@ -18,26 +19,26 @@ const DonorMainDashboard = () => {
           Blood Campaigns
         </button>
         <button
-          onClick={() => setView("getAllCamps")}
+          onClick={() => setView("donEssentials")}
           className={`px-4 py-2 rounded-md ${
-            view === "getAllCamps" ? "bg-red-700 text-white" : "bg-gray-200"
-          }`}
-        >
-          Medication Donation
-        </button>
-        <button
-          onClick={() => setView("allDonors")}
-          className={`px-4 py-2 rounded-md ${
-            view === "allDonors" ? "bg-red-700 text-white" : "bg-gray-200"
+            view === "donEssentials" ? "bg-red-700 text-white" : "bg-gray-200"
           }`}
         >
           Essential Donation
         </button>
+        <button
+          onClick={() => setView("donMed")}
+          className={`px-4 py-2 rounded-md ${
+            view === "donMed" ? "bg-red-700 text-white" : "bg-gray-200"
+          }`}
+        >
+          Medication Donation
+        </button>
       </div>
       <div className="mt-8">
         {view === "bloodCampAdmin" && <CampsPage />}
-        {view === "getAllCamps" && <GetAllCamps />}
-        {view === "allDonors" && <AllDonors />}
+        {view === "donEssentials" && <DonorEssentialView />}
+        {view === "donMed" && <DonorMedicationView />}
       </div>
     </div>
   );

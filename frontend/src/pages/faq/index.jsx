@@ -30,7 +30,9 @@ const FAQ = () => {
 								</span>
 							</summary>
 							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
-								The Lend A Hand System is a platform designed to facilitate and enhance communication and interaction between the hospital and its donors. It allows donors to track their contributions, receive updates, and engage with hospital initiatives.
+								The Lend A Hand System is a platform designed to facilitate and enhance communication and interaction
+								between the hospital and its donors. It allows donors to track their contributions, receive updates, and
+								engage with hospital initiatives.
 							</p>
 						</details>
 					</div>
@@ -55,7 +57,8 @@ const FAQ = () => {
 								</span>
 							</summary>
 							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
-								You can make a donation through our website by navigating to the 'Donor Dashboard' section. We accept various donation methods excluding credit cards, bank transfers, and online payment systems.
+								You can make a donation through our website by navigating to the 'Donor Dashboard' section. We accept
+								various donation methods excluding credit cards, bank transfers, and online payment systems.
 							</p>
 						</details>
 					</div>
@@ -81,11 +84,12 @@ const FAQ = () => {
 								</span>
 							</summary>
 							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
-								Upon completion of your donation, you will receive a confirmation email from Lend A Hand acknowledging the receipt of your contribution. Additionally, you can log in to your account on our website to view your donation history and confirm the transaction.
+								Upon completion of your donation, you will receive a confirmation email from Lend A Hand acknowledging
+								the receipt of your contribution. Additionally, you can log in to your account on our website to view
+								your donation history and confirm the transaction.
 							</p>
 						</details>
 					</div>
-
 
 					<div className="py-5">
 						<details className="group">
@@ -108,7 +112,8 @@ const FAQ = () => {
 								</span>
 							</summary>
 							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
-								You can track your donations by logging into your account on our website. Your donation history and receipts will be available in your profile section.
+								You can track your donations by logging into your account on our website. Your donation history and
+								receipts will be available in your profile section.
 							</p>
 						</details>
 					</div>
@@ -133,7 +138,8 @@ const FAQ = () => {
 								</span>
 							</summary>
 							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
-								Yes, we welcome volunteers to help with various activities and events. Please visit the as a 'Organizer' section of our website to find out more and to sign up.
+								Yes, we welcome volunteers to help with various activities and events. Please visit the as a 'Organizer'
+								section of our website to find out more and to sign up.
 							</p>
 						</details>
 					</div>
@@ -158,7 +164,8 @@ const FAQ = () => {
 								</span>
 							</summary>
 							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
-								To update your contact information, log in to your account and navigate to the 'Profile' section. Here you can update your email address, phone number, and other personal information.
+								To update your contact information, log in to your account and navigate to the 'Profile' section. Here
+								you can update your email address, phone number, and other personal information.
 							</p>
 						</details>
 					</div>
@@ -183,7 +190,8 @@ const FAQ = () => {
 								</span>
 							</summary>
 							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
-								If you need assistance, you can contact our support team by submitting a request through the 'Contact Us' section of our website or by emailing support@apekshahospital.com.
+								If you need assistance, you can contact our support team by submitting a request through the 'Contact
+								Us' section of our website or by emailing support@apekshahospital.com.
 							</p>
 						</details>
 					</div>
@@ -208,7 +216,8 @@ const FAQ = () => {
 								</span>
 							</summary>
 							<p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
-								Regular donors enjoy several benefits, including regular updates on how their contributions are making a difference, exclusive invitations to donor events, and recognition on our donor wall.
+								Regular donors enjoy several benefits, including regular updates on how their contributions are making a
+								difference, exclusive invitations to donor events, and recognition on our donor wall.
 							</p>
 						</details>
 					</div>

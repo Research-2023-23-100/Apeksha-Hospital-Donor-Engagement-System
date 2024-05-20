@@ -1,0 +1,41 @@
+<html>
+  <body>
+    <h2 style="color: #333">Dear <%= name %>,</h2>
+
+    <p>
+      We are pleased to inform you that we have accepted your donation request. Your support is invaluable to us, and we deeply appreciate your commitment to our cause.
+    </p>
+
+    <% if (donationItems && donationItems.length > 0) { %>
+      <p>Your donation details are as follows:</p>
+      <ul>
+        <% donationItems.forEach(function(item) { %>
+          <li>
+            <strong>Item:</strong> <%= item.ItemName %> - 
+            <strong>Quantity:</strong> <%= item.quantity %> <%= item.quantity === 1 ? 'item' : 'items' %>
+          </li>
+        <% }); %>
+      </ul>
+    <% } else { %>
+      <p>It seems there was an error processing your donation details. Please contact us to resolve this issue.</p>
+    <% } %>
+
+    <p>
+      Please hand over your donation at your earliest convenience. You can deliver your donation to our facility at the following address:
+    </p>
+    <p>
+      <strong>Apeksha Hospital Maharagama</strong><br>
+      [Insert Hospital Address Here]
+    </p>
+
+    <p>
+      If you have any questions or need further assistance, please do not hesitate to reach out to our support team at
+      <a href="mailto:donation@apekshahospital.com">donation@apekshahospital.com</a>.
+    </p>
+
+    <p>Once again, thank you for your generosity and support.</p>
+
+    <p>Warm regards,</p>
+    <p>Apeksha Hospital Maharagama</p>
+  </body>
+</html>

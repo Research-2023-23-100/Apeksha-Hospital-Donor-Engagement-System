@@ -21,9 +21,9 @@ import HairSampleUpload1 from "./Hair-donation/hairSampleUpload1";
 import HairSampleUpload2 from "./Hair-donation/hairSampleUpload2";
 import HairSampleUpload3 from "./Hair-donation/hairSampleUpload3";
 import DonationReject from "./Hair-donation/donateReject";
-import Thankyou  from "./Hair-donation/thankyou";
-import HairOutput1  from "./Hair-donation/hairOutput1";
-import HairOutput2  from "./Hair-donation/hairOutput2";
+import Thankyou from "./Hair-donation/thankyou";
+import HairOutput1 from "./Hair-donation/hairOutput1";
+import HairOutput2 from "./Hair-donation/hairOutput2";
 
 import BloodDonorHome from "./blood-donor-home-page";
 import DonorEssentialDonate from "./donor-essential-donate";
@@ -33,15 +33,18 @@ import DonorMedicationCreate from "./donor-medication-create";
 import HospitalStaffDashboard from "./hospital-staff-dashboard/index";
 import BloodCampAdmin from "./blood-camp-admin-panel";
 import OrganizerHome from "./organizer-home";
-import GetAllCamps from './get-all-camps/GetAllCamps';
+import GetAllCamps from "./get-all-camps/GetAllCamps";
 import StaffDonationView from "./staff-donation-view";
 import DonorRegister from "./donor-register";
 import DonorLogin from "./donor-login";
 import DonorDashboard from "./donor-dashboard";
 
 import HairDonation from "./hair-donation-test";
-import BloodCampStaffDashboard from './blood-camp-staff-dashborad';
-import AllDonors from './view-all-donors/AllDonors';
+import BloodCampStaffDashboard from "./blood-camp-staff-dashborad";
+import AllDonors from "./view-all-donors/AllDonors";
+import AboutUs from "./about-us";
+import FAQ from "./faq";
+import ContactUs from "./contact-us";
 import DonorMain from './donor-main-dashboard'
 import DonorMainDashboard from './donor-main-dashboard/index';
 
@@ -71,7 +74,6 @@ export {
 	Thankyou,
 	HairOutput2,
 	HairOutput1,
-	
 	BloodDonorHome,
 	BloodDonorCarousel,
 	DonorEssentialDonate,
@@ -89,5 +91,8 @@ export {
 	BloodCampStaffDashboard,
 	AllDonors,
 	HairDonation,
-	DonorMainDashboard
+	DonorMainDashboard,
+	AboutUs,
+	FAQ,
+	ContactUs,
 };

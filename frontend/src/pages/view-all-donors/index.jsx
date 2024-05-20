@@ -1,11 +1,8 @@
-import React from 'react'
-import AllDonors from './AllDonors'
-
+import React from "react";
+import AllDonors from "./AllDonors";
 
 function index() {
-  return (
-    <AllDonors/>
-  )
+	return <AllDonors />;
 }
 
-export default index
+export default index;

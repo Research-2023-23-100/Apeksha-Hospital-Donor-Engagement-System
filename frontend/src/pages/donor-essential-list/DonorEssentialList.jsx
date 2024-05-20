@@ -7,7 +7,9 @@ const DonorEssentialsList = () => {
 	const itemsPerPage = 8;
 
 	// Sorting items by ItemName in ascending order if dbItems is available and is an array
-	const sortedItems = Array.isArray(dbItems) ? dbItems?.slice().sort((a, b) => a.ItemName.localeCompare(b.ItemName)) : [];
+	const sortedItems = Array.isArray(dbItems)
+		? dbItems?.slice().sort((a, b) => a.ItemName.localeCompare(b.ItemName))
+		: [];
 
 	// Logic to calculate index of the first and last item on the current page
 	const indexOfLastItem = currentPage * itemsPerPage;

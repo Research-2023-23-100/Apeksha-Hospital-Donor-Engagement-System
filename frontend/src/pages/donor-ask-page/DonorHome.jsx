@@ -30,7 +30,7 @@ function DonorAsk() {
 							<button className="bg-red-500 text-white text-sm px-4 py-2 rounded-lg">Organizer SignUp</button>
 						</Link>
 						{/* Second red button */}
-						<Link to="/blood-donor-home">
+						<Link to="/donor/main">
 						<button className="bg-red-500 text-white text-sm px-4 py-2 rounded-lg">As Donor</button>
 						</Link>
 					</div>

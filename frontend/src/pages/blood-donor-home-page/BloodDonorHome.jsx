@@ -51,7 +51,7 @@ function CampsPage() {
 
   return (
     <div>
-      <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row mt-[7rem] ml-[3rem]">
+      <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row mt-[2rem] ml-[3rem]">
         {/* Left Side Column with Image */}
         <div className="md:w-1/3">
           <BloodDonorCarousel />

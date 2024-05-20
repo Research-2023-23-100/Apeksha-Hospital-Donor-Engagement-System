@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 import {
+
 	Home,
 	StaffLogin,
 	StaffDashboard,
@@ -47,6 +48,7 @@ import {
 	HairDonation,
 	BloodCampStaffDashboard,
 	AllDonors,
+	DonorMainDashboard,
 	AboutUs,
 	FAQ,
 	ContactUs,
@@ -101,6 +103,7 @@ const AppRoutes = () => {
 					{/* Donor Private Routes */}
 					<Route path="/donor" element={<PrivateRoute permissionLevel="DONOR" />}>
 						<Route path="/donor" element={<DonorDashboard />} />
+						<Route path="/donor/main" element={<DonorMainDashboard />} />
 						{/* Donor Medication Donation */}
 
 						<Route exact path="/donor/medication/donatation/create/:medication" element={<DonorMedicationCreate />} />

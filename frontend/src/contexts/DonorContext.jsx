@@ -26,7 +26,7 @@ export function DonorProvider({ children }) {
 				localStorage.setItem("authToken", response.data.token);
 				localStorage.setItem("permissionLevel", response.data.permissionLevel);
 				makeToast({ type: "success", message: "Login Successful" });
-				window.location.href = "/donor";
+				window.location.href = "/donor/main";
 			})
 			.catch((err) => {
 				makeToast({ type: "error", message: "Invalid Email or Password" });

@@ -45,6 +45,8 @@ import AllDonors from "./view-all-donors/AllDonors";
 import AboutUs from "./about-us";
 import FAQ from "./faq";
 import ContactUs from "./contact-us";
+import DonorMain from './donor-main-dashboard'
+import DonorMainDashboard from './donor-main-dashboard/index';
 
 export {
 	Home,
@@ -89,6 +91,7 @@ export {
 	BloodCampStaffDashboard,
 	AllDonors,
 	HairDonation,
+	DonorMainDashboard,
 	AboutUs,
 	FAQ,
 	ContactUs,

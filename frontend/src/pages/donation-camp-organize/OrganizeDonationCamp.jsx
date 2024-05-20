@@ -71,36 +71,34 @@ function OrganizeDonationCamp(props) {
 		formDataWithFile.append("date", formData.date);
 		formDataWithFile.append("expectedPeopleAmount", formData.expectedPeopleAmount);
 		formDataWithFile.append("organizerId", formData.organizerId);
-    formDataWithFile.append("marketingSlip", formData.marketingSlip);
+		formDataWithFile.append("marketingSlip", formData.marketingSlip);
 
-        try {
-            const response = await axios.post("http://localhost:5000/campaign/create", formDataWithFile, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            });
-            console.log("Camp created:", response.data);
-            // Reset form data after submission
-            setFormData({
-                organizerName: "",
-                mobile: "",
-                email: "",
-                place: "",
-                date: "",
-                marketingSlip: null,
-                expectedPeopleAmount: "",
-				
-            });
-            toast.success("Blood donation camp created successfully!");
+		try {
+			const response = await axios.post("http://localhost:5000/campaign/create", formDataWithFile, {
+				headers: {
+					"Content-Type": "multipart/form-data",
+				},
+			});
+			console.log("Camp created:", response.data);
+			// Reset form data after submission
+			setFormData({
+				organizerName: "",
+				mobile: "",
+				email: "",
+				place: "",
+				date: "",
+				marketingSlip: null,
+				expectedPeopleAmount: "",
+			});
+			toast.success("Blood donation camp created successfully!");
 
-            // Redirect to organizer's home page
-            navigate("/org/organizer-home"); 
-        } catch (error) {
-            console.error("Error creating camp:", error);
-        }
-    };
-    return (
-
+			// Redirect to organizer's home page
+			navigate("/org/organizer-home");
+		} catch (error) {
+			console.error("Error creating camp:", error);
+		}
+	};
+	return (
 		<div className="flex">
 			<div className=" mx-auto mt-[5rem] grid grid-cols-2 gap-4">
 				<div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md mt-[5rem]">

@@ -49,6 +49,7 @@ import {
 	AllDonors,
 	AboutUs,
 	FAQ,
+	ContactUs,
 } from "../pages";
 const AppRoutes = () => {
 	return (
@@ -65,6 +66,7 @@ const AppRoutes = () => {
 					<Route path="/hair" element={<HairDonation />} />
 					<Route path="/about-us" element={<AboutUs />} />
 					<Route path="/faq" element={<FAQ />} />
+					<Route path="/contact-us" element={<ContactUs />} />
 
 					{/* Staff Section */}
 					{/* Staff Check Login Status */}
@@ -89,7 +91,7 @@ const AppRoutes = () => {
 
 						{/* Need to change file route as donor */}
 					</Route>
-					
+
 					{/* Donor Section */}
 					{/* Donor Check Login Status */}
 					<Route path="/donor/login" element={<CheckLoginStatus />}>
@@ -108,41 +110,35 @@ const AppRoutes = () => {
 						<Route exact path="/donor/donatation/create/:itemName" element={<DonorDonationCreate />} />
 
 						{/* Hair donation Routes */}
-						<Route path="/donor/Hair_Donation" element={<HairDonationHome />}/>
+						<Route path="/donor/Hair_Donation" element={<HairDonationHome />} />
 
 						{/* Hair sample upload 1 Routes */}
-						<Route path="/donor/hair_sample" element={<HairSampleUpload1 />}/>
+						<Route path="/donor/hair_sample" element={<HairSampleUpload1 />} />
 
 						{/* Hair sample upload 2 Routes */}
-						<Route path="/donor/hair_sample2" element={<HairSampleUpload2 />}/>
+						<Route path="/donor/hair_sample2" element={<HairSampleUpload2 />} />
 
 						{/* Hair sample upload 3 Routes */}
-						<Route path="/donor/hair_sample3" element={<HairSampleUpload3 />}/>
+						<Route path="/donor/hair_sample3" element={<HairSampleUpload3 />} />
 
 						{/* Hair Output 1 Routes */}
-						<Route path="/donor/HairOutput1" element={<HairOutput1 />}/>
-						
+						<Route path="/donor/HairOutput1" element={<HairOutput1 />} />
+
 						{/* Hair Output 2 Routes */}
-						<Route path="/donor/HairOutput2" element={<HairOutput2 />}/>
-					
-					    {/* Hair reject Routes */}
-						<Route path="/donor/donateReject" element={<DonationReject />}/>
+						<Route path="/donor/HairOutput2" element={<HairOutput2 />} />
+
+						{/* Hair reject Routes */}
+						<Route path="/donor/donateReject" element={<DonationReject />} />
 
 						{/* Hair donation successful Routes */}
-						<Route path="/donor/Thankyou" element={<Thankyou />}/>
-
+						<Route path="/donor/Thankyou" element={<Thankyou />} />
 					</Route>
-
-
-
 
 					{/* Organization Section */}
 					<Route path="/org/login" element={<CheckLoginStatus />}>
 						{/* <Route path="/org/login" element={<orgLogin />} /> */}
 					</Route>
-					
-				
-					
+
 					{/* Organization Private Routes */}
 					<Route path="/org" element={<PrivateRoute permissionLevel="ORGANIZATION" />}>
 						{/* <Route path="/org" element={<orgDashboard />} /> */}
@@ -152,7 +148,6 @@ const AppRoutes = () => {
 					</Route>
 
 					{/* <Route path="/donor_med_list" element={<DonorMedicationList />} /> */}
-					
 
 					<Route path="/under-review" element={<UnderReview />} />
 					<Route path="/organizer-login" element={<OrganizerLogin />} />

@@ -39,7 +39,7 @@ const StaffDonationView = () => {
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Quantity</th>
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Donor Name</th>
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Donor Email</th>
-										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Hand Over Date</th>
+										<th className="w-4 py-4 px-32 text-left text-gray-600 font-bold">Hand Over Date</th>
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Donation Type</th>
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Change Status</th>
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Status</th>
@@ -54,7 +54,7 @@ const StaffDonationView = () => {
 												<td className="py-4 px-6 border-b border-gray-200 truncate">{elem.quantity}</td>
 												<td className="py-4 px-6 border-b border-gray-200">{elem.name}</td>
 												<td className="py-4 px-6 border-b border-gray-200">{elem.email}</td>
-												<td className="py-4 px-6 border-b border-gray-200">{elem.date?.slice(0, 10)}</td>
+												<td className="py-4 px-32 border-b border-gray-200">{elem.date?.slice(0, 10)}</td>
 												<td className="py-4 px-6 border-b border-gray-200">{elem.donationType}</td>
 												<td className="border px-4 py-2">
 													<select
@@ -103,7 +103,7 @@ const StaffDonationView = () => {
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Quantity</th>
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Donor Name</th>
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Donor Email</th>
-										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Hand Over Date</th>
+										<th className="w-4 py-4 px-32 text-left text-gray-600 font-bold">Hand Over Date</th>
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Donation Type</th>
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Change Status</th>
 										<th className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold">Status</th>
@@ -118,7 +118,7 @@ const StaffDonationView = () => {
 												<td className="py-4 px-6 border-b border-gray-200 truncate">{elem.quantity}</td>
 												<td className="py-4 px-6 border-b border-gray-200">{elem.name}</td>
 												<td className="py-4 px-6 border-b border-gray-200">{elem.email}</td>
-												<td className="py-4 px-6 border-b border-gray-200">{elem.date?.slice(0, 10)}</td>
+												<td className="py-4 px-32 border-b border-gray-200">{elem.date?.slice(0, 10)}</td>
 												<td className="py-4 px-6 border-b border-gray-200">{elem.donationType}</td>
 												<td className="border px-4 py-2">
 													<select
